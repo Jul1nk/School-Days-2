@@ -2,3 +2,7 @@ res://scenes/world.tscn
 res://scripts/player.gd
 res://scenes/player.tscn
 res://editor/floor_tileset.tres
+res://scenes/world_test.tscn
+res://scripts/wall_maker.gd
+res://editor/wall_tileset.tres
+res://editor/wall_tileset_shadow.tres

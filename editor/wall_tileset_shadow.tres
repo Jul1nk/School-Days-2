@@ -1,0 +1,19 @@
+[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://m278ot3kd50d"]
+
+[ext_resource type="Texture2D" uid="uid://cg3jj2s47ofxj" path="res://assets/vfx/wall_tile.png" id="1_esejh"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ujqmt"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cdd8m"]
+texture = ExtResource("1_esejh")
+0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_ujqmt")
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[resource]
+occlusion_layer_0/light_mask = 1
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_cdd8m")
