@@ -6,3 +6,4 @@ res://scenes/world_test.tscn
 res://scripts/wall_maker.gd
 res://editor/wall_tileset.tres
 res://editor/wall_tileset_shadow.tres
+res://editor/shadow_shader.gdshader

@@ -11,15 +11,15 @@ var direction = Vector2.RIGHT
 
 
 
-func _process(_delta):
-	mouse_pos = get_local_mouse_position()
-	mouse_sprite.position = mouse_pos
-	
-	rotatage.rotation = atan2(mouse_pos.y, mouse_pos.x)
 
 
 
 func _physics_process(_delta):
+	mouse_pos = get_local_mouse_position()
+	mouse_sprite.position = mouse_pos
+	
+	rotatage.rotation = atan2(mouse_pos.y, mouse_pos.x)
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var mvt_direction = Vector2(Input.get_axis("left", "right"),Input.get_axis("up", "down"))
