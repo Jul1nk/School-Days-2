@@ -1,33 +1,97 @@
-[gd_scene load_steps=5 format=3 uid="uid://uklat60xqlk6"]
+[gd_scene load_steps=6 format=3 uid="uid://uklat60xqlk6"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_3m2ps"]
 [ext_resource type="Texture2D" uid="uid://026h7fuafqv2" path="res://assets/vfx/floor_tiles.png" id="2_if4hq"]
-[ext_resource type="Texture2D" uid="uid://bissrnoxmethh" path="res://assets/vfx/light.png" id="3_oox1j"]
+[ext_resource type="Texture2D" uid="uid://tpc7qv2wg741" path="res://assets/vfx/player_spritesheet.png" id="3_24s5u"]
+[ext_resource type="Texture2D" uid="uid://br20kqjeipdha" path="res://assets/vfx/light2.png" id="3_xk8rs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_do65j"]
-radius = 15.0
+radius = 9.0
 
 [node name="player" type="CharacterBody2D"]
+texture_filter = 1
 script = ExtResource("1_3m2ps")
 
+[node name="sprite" type="Node2D" parent="."]
+
+[node name="CanvasLayer6" type="CanvasLayer" parent="sprite"]
+follow_viewport_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="sprite/CanvasLayer6"]
+texture_filter = 1
+texture = ExtResource("3_24s5u")
+hframes = 4
+vframes = 4
+frame = 5
+
+[node name="CanvasLayer5" type="CanvasLayer" parent="sprite"]
+follow_viewport_enabled = true
+follow_viewport_scale = 1.02
+
+[node name="Sprite2D" type="Sprite2D" parent="sprite/CanvasLayer5"]
+texture_filter = 1
+texture = ExtResource("3_24s5u")
+hframes = 4
+vframes = 4
+frame = 4
+
+[node name="CanvasLayer4" type="CanvasLayer" parent="sprite"]
+follow_viewport_enabled = true
+follow_viewport_scale = 1.04
+
+[node name="Sprite2D" type="Sprite2D" parent="sprite/CanvasLayer4"]
+texture_filter = 1
+texture = ExtResource("3_24s5u")
+hframes = 4
+vframes = 4
+frame = 3
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="sprite"]
+follow_viewport_enabled = true
+follow_viewport_scale = 1.06
+
+[node name="Sprite2D" type="Sprite2D" parent="sprite/CanvasLayer3"]
+texture_filter = 1
+texture = ExtResource("3_24s5u")
+hframes = 4
+vframes = 4
+frame = 2
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="sprite"]
+follow_viewport_enabled = true
+follow_viewport_scale = 1.08
+
+[node name="Sprite2D" type="Sprite2D" parent="sprite/CanvasLayer2"]
+texture_filter = 1
+texture = ExtResource("3_24s5u")
+hframes = 4
+vframes = 4
+frame = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="sprite"]
+follow_viewport_enabled = true
+follow_viewport_scale = 1.1
+
+[node name="Sprite2D" type="Sprite2D" parent="sprite/CanvasLayer"]
+texture_filter = 1
+texture = ExtResource("3_24s5u")
+hframes = 4
+vframes = 4
+
 [node name="rotatage" type="Node2D" parent="."]
+texture_filter = 1
 
-[node name="player_sprite" type="Sprite2D" parent="rotatage"]
-scale = Vector2(0.25, 1)
-texture = ExtResource("2_if4hq")
-
-[node name="PointLight2D" type="PointLight2D" parent="rotatage"]
+[node name="Flashlight" type="PointLight2D" parent="rotatage"]
 z_index = 7
 blend_mode = 2
 range_layer_max = 5
 shadow_enabled = true
-texture = ExtResource("3_oox1j")
+texture = ExtResource("3_xk8rs")
 
 [node name="player_col" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_do65j")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="mouse_sprite" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.125, 0.5)
 texture = ExtResource("2_if4hq")
