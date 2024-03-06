@@ -1,0 +1,52 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://daitmkm6lwgq0"]
+
+[sub_resource type="Shader" id="Shader_n7l1i"]
+code = "shader_type canvas_item;
+
+uniform sampler2D screen_texture : hint_screen_texture, filter_nearest, repeat_enable;
+
+uniform float epsilon = 0.1;
+uniform vec2 fog_tiling = vec2(1.0,1.0);
+uniform vec2 fog_offset_speed = vec2(0.01,0.01);
+uniform sampler2D noise;
+
+void fragment() {
+	COLOR = texture(screen_texture, SCREEN_UV);
+	
+	// If pixel color is sufficiently black: make it foggy
+	if ((COLOR-vec4(0.0,0.0,0.0,1.0)).r <= epsilon) {
+		//COLOR = vec4(0.0,1.0,0.0,1.0); //to better see which pixels are affected
+		
+		vec2 noise_uv = mod(UV * fog_tiling + fog_offset_speed * TIME,1.0);
+		vec4 noise_tex = texture(noise, noise_uv);
+		
+		COLOR = noise_tex;
+	}
+}
+
+//void light() {
+	// Called for every pixel for every light affecting the CanvasItem.
+	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
+[sub_resource type="Gradient" id="Gradient_63yys"]
+offsets = PackedFloat32Array(0.311594, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.0962047, 0.0962048, 0.0962047, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0subw"]
+noise_type = 4
+domain_warp_enabled = true
+domain_warp_type = 1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_q08kx"]
+seamless = true
+color_ramp = SubResource("Gradient_63yys")
+noise = SubResource("FastNoiseLite_0subw")
+
+[resource]
+shader = SubResource("Shader_n7l1i")
+shader_parameter/epsilon = 0.03
+shader_parameter/fog_tiling = Vector2(16, 16)
+shader_parameter/fog_offset_speed = Vector2(0.01, 0.01)
+shader_parameter/noise = SubResource("NoiseTexture2D_q08kx")

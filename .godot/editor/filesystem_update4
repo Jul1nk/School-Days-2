@@ -1,9 +1,12 @@
 res://scenes/world.tscn
 res://editor/floor_tileset.tres
 res://editor/wall_tileset.tres
-res://editor/shadow_shader.gdshader
+res://editor/bush_tileset.tres
+res://editor/bush_tileset_shadow.tres
+res://editor/fog_material.tres
+res://editor/fog_shader.gdshader
+res://editor/branch_tileset.tres
 res://scenes/player.tscn
 res://scenes/world_test.tscn
-res://scripts/player.gd
-res://editor/fog_shader.gdshader
+res://scenes/pause_menu.tscn
 res://scripts/wall_maker.gd

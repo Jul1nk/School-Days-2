@@ -1,0 +1,14 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cbrmc2qhr2xxt"]
+
+[ext_resource type="Texture2D" uid="uid://b51d3pptucmqp" path="res://assets/vfx/branch_tile16.png" id="1_jtom3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_msmg4"]
+texture = ExtResource("1_jtom3")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[resource]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_msmg4")

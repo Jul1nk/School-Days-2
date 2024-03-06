@@ -6,7 +6,8 @@ extends Node2D
 @export var colors: Array[Color]
 
 @onready var input = $Input
-@onready var tilemap = $Input/CanvasLayer/TileMap
+@onready var tilemap_walls = $Input/CanvasLayer/TileMap_Walls
+@onready var tilemap_bushes = $Input/CanvasLayer/TileMap_Bushes
 @onready var canvas_modulate = $Input/CanvasModulate
 
 @onready var output = $Output
@@ -23,7 +24,8 @@ func _ready():
 	for i in range(nb_layers):
 		#New layer
 		var canvas_i = CanvasLayer.new()
-		var tilemap_i = tilemap.duplicate()
+		var tilemap_walls_i = tilemap_walls.duplicate()
+		var tilemap_bushes_i = tilemap_bushes.duplicate()
 		var canvas_mod_i = canvas_modulate.duplicate()
 		
 		#CanvasLayer setup
@@ -31,13 +33,23 @@ func _ready():
 		canvas_i.follow_viewport_scale = current_distance
 		current_distance += layer_distance *0.01
 		
+		#Wall color
+		tilemap_walls_i.modulate = colors[i%nb_layers]
+		
+		#Alternate between bush and branch
+		if i != 0:
+			tilemap_bushes_i.tile_set = load("res://editor/bush_tileset.tres")
+		else:
+			tilemap_bushes_i.tile_set = load("res://editor/branch_tileset.tres")
+		
 		#If Tilemap is last, make it emit shadows
 		if i == nb_layers-1:
-			tilemap_i.tile_set = load("res://editor/wall_tileset_shadow.tres")
-		tilemap_i.modulate = colors[i%nb_layers]
+			tilemap_walls_i.tile_set = load("res://editor/wall_tileset_shadow.tres")
+			tilemap_bushes_i.tile_set = load("res://editor/wall_tileset_shadow.tres")
 		
 		#Output tree setup
-		canvas_i.add_child(tilemap_i)
+		canvas_i.add_child(tilemap_walls_i)
+		canvas_i.add_child(tilemap_bushes_i)
 		canvas_i.add_child(canvas_mod_i)
 		output.add_child(canvas_i)
 	

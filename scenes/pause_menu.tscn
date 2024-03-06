@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://bg56it833hu6p"]
+
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_5077y"]
+[ext_resource type="Texture2D" uid="uid://bsbhhaa482neh" path="res://icon.svg" id="2_nailo"]
+
+[sub_resource type="Shader" id="Shader_n7l1i"]
+code = "shader_type canvas_item;
+
+uniform sampler2D screen_texture : hint_screen_texture, filter_nearest, repeat_enable;
+
+uniform float epsilon = 0.1;
+uniform vec2 fog_tiling = vec2(1.0,1.0);
+uniform vec2 fog_offset_speed = vec2(0.01,0.01);
+uniform sampler2D noise;
+
+void fragment() {
+	COLOR = texture(screen_texture, SCREEN_UV);
+	
+	// If pixel color is sufficiently black: make it foggy
+	if ((COLOR-vec4(0.0,0.0,0.0,1.0)).r <= epsilon) {
+		//COLOR = vec4(0.0,1.0,0.0,1.0); //to better see which pixels are affected
+		
+		vec2 noise_uv = mod(UV * fog_tiling + fog_offset_speed * TIME,1.0);
+		vec4 noise_tex = texture(noise, noise_uv);
+		
+		COLOR = noise_tex;
+	}
+}
+
+//void light() {
+	// Called for every pixel for every light affecting the CanvasItem.
+	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
+[sub_resource type="Gradient" id="Gradient_skpia"]
+offsets = PackedFloat32Array(0.311594, 1)
+colors = PackedColorArray(0.0940678, 0.0185482, 0.0156416, 1, 0.159557, 0.126564, 0.0943713, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3qgyk"]
+noise_type = 4
+domain_warp_enabled = true
+domain_warp_type = 1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_pfrla"]
+seamless = true
+color_ramp = SubResource("Gradient_skpia")
+noise = SubResource("FastNoiseLite_3qgyk")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wdh2j"]
+shader = SubResource("Shader_n7l1i")
+shader_parameter/epsilon = 0.03
+shader_parameter/fog_tiling = Vector2(2, 2)
+shader_parameter/fog_offset_speed = Vector2(0.01, 0.01)
+shader_parameter/noise = SubResource("NoiseTexture2D_pfrla")
+
+[node name="pause_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5077y")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_wdh2j")
+position = Vector2(242, 146)
+scale = Vector2(4, 4)
+texture = ExtResource("2_nailo")
