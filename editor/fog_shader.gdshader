@@ -10,8 +10,9 @@ uniform sampler2D noise;
 void fragment() {
 	COLOR = texture(screen_texture, SCREEN_UV);
 	
+	// If pixel color is sufficiently black: make it foggy
 	if ((COLOR-vec4(0.0,0.0,0.0,1.0)).r <= epsilon) {
-		//COLOR = vec4(0.0,1.0,0.0,1.0);
+		//COLOR = vec4(0.0,1.0,0.0,1.0); //to better see which pixels are affected
 		
 		vec2 noise_uv = mod(UV * fog_tiling + fog_offset_speed * TIME,1.0);
 		vec4 noise_tex = texture(noise, noise_uv);

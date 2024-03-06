@@ -6,3 +6,4 @@ res://scenes/player.tscn
 res://scenes/world_test.tscn
 res://scripts/player.gd
 res://editor/fog_shader.gdshader
+res://scripts/wall_maker.gd
