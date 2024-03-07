@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cye17wpdukni4"]
+[gd_scene load_steps=12 format=3 uid="uid://cye17wpdukni4"]
 
 [ext_resource type="PackedScene" uid="uid://uklat60xqlk6" path="res://scenes/player.tscn" id="1_jay8r"]
 [ext_resource type="TileSet" uid="uid://ur3wjutcoubb" path="res://editor/floor_tileset.tres" id="2_okhfk"]
@@ -9,6 +9,7 @@
 [ext_resource type="TileSet" uid="uid://dc5wyc1vsdgqq" path="res://editor/bush_tileset.tres" id="5_vbueo"]
 [ext_resource type="TileSet" uid="uid://cbrmc2qhr2xxt" path="res://editor/branch_tileset.tres" id="5_x55rg"]
 [ext_resource type="TileSet" uid="uid://dfp6fkpxd56an" path="res://editor/bush_tileset_shadow.tres" id="6_gl513"]
+[ext_resource type="PackedScene" uid="uid://jxp872moy3fp" path="res://scenes/object_instance.tscn" id="10_400ue"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_25amq"]
 polygon = PackedVector2Array(66.1667, -242.5, 66.1667, -232.5, 104.167, -232.5, 104.167, -242.5)
@@ -165,68 +166,10 @@ texture = ExtResource("5_m0rr6")
 position = Vector2(-5.83333, 30)
 occluder = SubResource("OccluderPolygon2D_25amq")
 
-[node name="Desk" type="Node2D" parent="."]
+[node name="object_instance" parent="." instance=ExtResource("10_400ue")]
+position = Vector2(-192, -576)
 
-[node name="CanvasLayer1" type="CanvasLayer" parent="Desk"]
-follow_viewport_enabled = true
-
-[node name="Desk2" type="Sprite2D" parent="Desk/CanvasLayer1"]
+[node name="Sprite2D" type="Sprite2D" parent="object_instance"]
 texture_filter = 1
-position = Vector2(-144, -560)
 texture = ExtResource("5_20okk")
-vframes = 3
-frame = 2
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="Desk"]
-follow_viewport_enabled = true
-follow_viewport_scale = 1.02
-
-[node name="Desk2" type="Sprite2D" parent="Desk/CanvasLayer2"]
-texture_filter = 1
-position = Vector2(-144, -560)
-texture = ExtResource("5_20okk")
-vframes = 3
-frame = 1
-
-[node name="CanvasLayer3" type="CanvasLayer" parent="Desk"]
-follow_viewport_enabled = true
-follow_viewport_scale = 1.04
-
-[node name="Desk2" type="Sprite2D" parent="Desk/CanvasLayer3"]
-texture_filter = 1
-position = Vector2(-144, -560)
-texture = ExtResource("5_20okk")
-vframes = 3
-frame = 1
-
-[node name="CanvasLayer4" type="CanvasLayer" parent="Desk"]
-follow_viewport_enabled = true
-follow_viewport_scale = 1.06
-
-[node name="Desk2" type="Sprite2D" parent="Desk/CanvasLayer4"]
-texture_filter = 1
-position = Vector2(-144, -560)
-texture = ExtResource("5_20okk")
-vframes = 3
-frame = 1
-
-[node name="CanvasLayer5" type="CanvasLayer" parent="Desk"]
-follow_viewport_enabled = true
-follow_viewport_scale = 1.08
-
-[node name="Desk2" type="Sprite2D" parent="Desk/CanvasLayer5"]
-texture_filter = 1
-position = Vector2(-144, -560)
-texture = ExtResource("5_20okk")
-vframes = 3
-frame = 1
-
-[node name="CanvasLayer6" type="CanvasLayer" parent="Desk"]
-follow_viewport_enabled = true
-follow_viewport_scale = 1.1
-
-[node name="Desk2" type="Sprite2D" parent="Desk/CanvasLayer6"]
-texture_filter = 1
-position = Vector2(-144, -560)
-texture = ExtResource("5_20okk")
-vframes = 3
+centered = false
