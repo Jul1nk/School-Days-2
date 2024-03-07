@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cye17wpdukni4"]
+[gd_scene load_steps=10 format=3 uid="uid://cye17wpdukni4"]
 
 [ext_resource type="PackedScene" uid="uid://uklat60xqlk6" path="res://scenes/player.tscn" id="1_jay8r"]
 [ext_resource type="TileSet" uid="uid://ur3wjutcoubb" path="res://editor/floor_tileset.tres" id="2_okhfk"]
@@ -6,13 +6,9 @@
 [ext_resource type="TileSet" uid="uid://cp21qd1jh162v" path="res://editor/wall_tileset.tres" id="4_2a8hr"]
 [ext_resource type="Texture2D" uid="uid://b8f4i4snlhpq1" path="res://assets/vfx/desk.png" id="5_20okk"]
 [ext_resource type="Texture2D" uid="uid://bujp2g6hjue5i" path="res://assets/vfx/door.png" id="5_m0rr6"]
-[ext_resource type="TileSet" uid="uid://dc5wyc1vsdgqq" path="res://editor/bush_tileset.tres" id="5_vbueo"]
-[ext_resource type="TileSet" uid="uid://cbrmc2qhr2xxt" path="res://editor/branch_tileset.tres" id="5_x55rg"]
-[ext_resource type="TileSet" uid="uid://dfp6fkpxd56an" path="res://editor/bush_tileset_shadow.tres" id="6_gl513"]
 [ext_resource type="PackedScene" uid="uid://jxp872moy3fp" path="res://scenes/object_instance.tscn" id="10_400ue"]
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_25amq"]
-polygon = PackedVector2Array(66.1667, -242.5, 66.1667, -232.5, 104.167, -232.5, 104.167, -242.5)
+[ext_resource type="Material" uid="uid://daitmkm6lwgq0" path="res://editor/fog_material.tres" id="11_x4wxn"]
+[ext_resource type="Texture2D" uid="uid://cg3jj2s47ofxj" path="res://assets/vfx/wall_tile.png" id="12_j1rlm"]
 
 [node name="world" type="Node2D"]
 texture_filter = 1
@@ -25,6 +21,35 @@ follow_viewport_enabled = true
 position = Vector2(83, -367)
 
 [node name="Camera2D" type="Camera2D" parent="CanvasLayer_Entities/CharacterBody2D"]
+position_smoothing_enabled = true
+
+[node name="desk" parent="CanvasLayer_Entities" instance=ExtResource("10_400ue")]
+position = Vector2(-192, -576)
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("5_20okk")
+
+[node name="door" parent="CanvasLayer_Entities" instance=ExtResource("10_400ue")]
+position = Vector2(64, -212)
+nb_frames = 10
+layer_distance = 2.5
+shadow_top = true
+solid = true
+sprite_texture = ExtResource("5_m0rr6")
+
+[node name="desk2" parent="CanvasLayer_Entities" instance=ExtResource("10_400ue")]
+position = Vector2(-192, -504)
+solid = true
+sprite_texture = ExtResource("5_20okk")
+
+[node name="door2" parent="CanvasLayer_Entities" instance=ExtResource("10_400ue")]
+position = Vector2(20, -352)
+rotation = 1.5708
+nb_frames = 10
+layer_distance = 2.5
+shadow_top = true
+solid = true
+sprite_texture = ExtResource("5_m0rr6")
 
 [node name="CanvasLayer_Floor" type="CanvasLayer" parent="."]
 layer = 0
@@ -68,108 +93,13 @@ color = Color(0, 0, 0, 1)
 
 [node name="Output" type="Node2D" parent="Wall_Maker"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
-
-[node name="Door" type="Sprite2D" parent="CanvasLayer"]
-texture_filter = 1
-position = Vector2(80, -208)
-texture = ExtResource("5_m0rr6")
-
-[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
-position = Vector2(257, 36)
-color = Color(0, 0, 0, 1)
-
-[node name="TileMap" type="TileMap" parent="CanvasLayer"]
-texture_filter = 1
-tile_set = ExtResource("5_x55rg")
-format = 2
-layer_0/tile_data = PackedInt32Array(-4849646, 0, 0, -4784110, 0, 0, -4849645, 0, 0, -4784109, 0, 0, -4849644, 0, 0, -4784108, 0, 0, -4849643, 0, 0, -4784107, 0, 0)
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
-follow_viewport_scale = 1.05
-
-[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer2"]
-position = Vector2(257, 36)
-color = Color(0, 0, 0, 1)
-
-[node name="TileMap" type="TileMap" parent="CanvasLayer2"]
-texture_filter = 1
-tile_set = ExtResource("5_vbueo")
-format = 2
-layer_0/tile_data = PackedInt32Array(-4849646, 0, 0, -4784110, 0, 0, -4849645, 0, 0, -4784109, 0, 0, -4849644, 0, 0, -4784108, 0, 0, -4849643, 0, 0, -4784107, 0, 0)
-
-[node name="Door" type="Sprite2D" parent="CanvasLayer2"]
-texture_filter = 1
-position = Vector2(80, -208)
-texture = ExtResource("5_m0rr6")
-
-[node name="CanvasLayer3" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
-follow_viewport_scale = 1.1
-
-[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer3"]
-position = Vector2(257, 36)
-color = Color(0, 0, 0, 1)
-
-[node name="TileMap" type="TileMap" parent="CanvasLayer3"]
-texture_filter = 1
-tile_set = ExtResource("5_x55rg")
-format = 2
-layer_0/tile_data = PackedInt32Array(-4849646, 0, 0, -4784110, 0, 0, -4849645, 0, 0, -4784109, 0, 0, -4849644, 0, 0, -4784108, 0, 0, -4784107, 0, 0, -4849643, 0, 0)
-
-[node name="Door2" type="Sprite2D" parent="CanvasLayer3"]
-texture_filter = 1
-position = Vector2(80, -208)
-texture = ExtResource("5_m0rr6")
-
-[node name="CanvasLayer4" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
-follow_viewport_scale = 1.15
-
-[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer4"]
-position = Vector2(257, 36)
-color = Color(0, 0, 0, 1)
-
-[node name="TileMap" type="TileMap" parent="CanvasLayer4"]
-texture_filter = 1
-tile_set = ExtResource("5_vbueo")
-format = 2
-layer_0/tile_data = PackedInt32Array(-4849646, 0, 0, -4784110, 0, 0, -4849645, 0, 0, -4784109, 0, 0, -4849644, 0, 0, -4784108, 0, 0, -4849643, 0, 0, -4784107, 0, 0)
-
-[node name="Door2" type="Sprite2D" parent="CanvasLayer4"]
-texture_filter = 1
-position = Vector2(80, -208)
-texture = ExtResource("5_m0rr6")
-
-[node name="CanvasLayer5" type="CanvasLayer" parent="."]
+[node name="Shader_CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
 follow_viewport_enabled = true
 follow_viewport_scale = 1.2
 
-[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer5"]
-position = Vector2(257, 36)
-color = Color(0, 0, 0, 1)
-
-[node name="TileMap" type="TileMap" parent="CanvasLayer5"]
-texture_filter = 1
-tile_set = ExtResource("6_gl513")
-format = 2
-layer_0/tile_data = PackedInt32Array(-4849646, 0, 0, -4784110, 0, 0, -4849645, 0, 0, -4784109, 0, 0, -4849644, 0, 0, -4784108, 0, 0, -4849643, 0, 0, -4784107, 0, 0)
-
-[node name="Door2" type="Sprite2D" parent="CanvasLayer5"]
-texture_filter = 1
-position = Vector2(80, -208)
-texture = ExtResource("5_m0rr6")
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="CanvasLayer5"]
-position = Vector2(-5.83333, 30)
-occluder = SubResource("OccluderPolygon2D_25amq")
-
-[node name="object_instance" parent="." instance=ExtResource("10_400ue")]
-position = Vector2(-192, -576)
-
-[node name="Sprite2D" type="Sprite2D" parent="object_instance"]
-texture_filter = 1
-texture = ExtResource("5_20okk")
-centered = false
+[node name="Sprite2D" type="Sprite2D" parent="Shader_CanvasLayer"]
+material = ExtResource("11_x4wxn")
+position = Vector2(241, 113)
+scale = Vector2(512, 512)
+texture = ExtResource("12_j1rlm")

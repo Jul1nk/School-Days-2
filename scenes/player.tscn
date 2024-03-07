@@ -10,6 +10,7 @@ radius = 9.0
 
 [node name="player" type="CharacterBody2D"]
 texture_filter = 1
+motion_mode = 1
 script = ExtResource("1_3m2ps")
 
 [node name="sprite" type="Node2D" parent="."]
@@ -69,6 +70,7 @@ vframes = 4
 frame = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="sprite"]
+layer = 2
 follow_viewport_enabled = true
 follow_viewport_scale = 1.1
 

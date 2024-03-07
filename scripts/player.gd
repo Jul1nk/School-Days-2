@@ -17,7 +17,7 @@ var direction = Vector2.RIGHT
 func _process(_delta):
 		#Handling action keys
 	if Input.is_action_just_pressed("flashlight"):
-		flashlight.visible = !flashlight.visible
+		flashlight.energy = 1 - flashlight.energy
 
 
 func _physics_process(_delta):
