@@ -13,3 +13,4 @@ res://scenes/object_instance.tscn
 res://scripts/object_instance.gd
 res://scripts/player.gd
 res://scripts/TEST.gd
+res://scripts/wall_maker.gd

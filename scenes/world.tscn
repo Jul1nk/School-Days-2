@@ -68,7 +68,9 @@ layer_0/tile_data = PackedInt32Array(0, 2, 0, 65536, 131074, 0, 131072, 65538, 0
 
 [node name="Wall_Maker" type="Node2D" parent="."]
 script = ExtResource("3_tw3sl")
-colors = Array[Color]([Color(0.870588, 0.623529, 0.278431, 1), Color(0.992157, 0.819608, 0.47451, 1), Color(0.239216, 0.2, 0.2, 1), Color(0.996078, 0.882353, 0.721569, 1), Color(0, 0, 0, 1)])
+nb_layers = 20
+layer_distance = 1
+colors = Array[Color]([Color(0.870588, 0.623529, 0.278431, 1), Color(0.992157, 0.819608, 0.47451, 1), Color(0.239216, 0.2, 0.2, 1), Color(0.996078, 0.882353, 0.721569, 1), Color(0.996078, 0.882353, 0.721569, 1)])
 
 [node name="Input" type="Node2D" parent="Wall_Maker"]
 

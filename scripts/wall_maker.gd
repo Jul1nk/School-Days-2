@@ -19,6 +19,7 @@ extends Node2D
 
 func _ready():
 	var current_distance = 1.0
+	var nb_colors = colors.size()
 	
 		#Creation of the layers
 	for i in range(nb_layers):
@@ -34,7 +35,8 @@ func _ready():
 		current_distance += layer_distance *0.01
 		
 		#Wall color
-		tilemap_walls_i.modulate = colors[i%nb_layers]
+		@warning_ignore("integer_division") #Annoying but avoids error
+		tilemap_walls_i.modulate = colors[(i*nb_colors)/nb_layers]
 		
 		#Alternate between bush and branch
 		if i != 0:

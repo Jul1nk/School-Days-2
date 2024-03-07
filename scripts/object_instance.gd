@@ -59,7 +59,7 @@ func _ready():
 			canvas_i.add_child(light_occluder)
 		
 		#Collision setup if object is solid
-		if solid:
+		if solid and i==0:
 			var static_body = StaticBody2D.new()
 			#Collision setup
 			var collision_polygon = CollisionShape2D.new()
