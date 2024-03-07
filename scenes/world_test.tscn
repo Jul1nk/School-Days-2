@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scripts/wall_maker.gd" id="3_0c1xy"]
 [ext_resource type="TileSet" uid="uid://cp21qd1jh162v" path="res://editor/wall_tileset.tres" id="4_m85p8"]
 [ext_resource type="Material" uid="uid://daitmkm6lwgq0" path="res://editor/fog_material.tres" id="5_e8pj1"]
-[ext_resource type="TileSet" uid="uid://dc5wyc1vsdgqq" path="res://editor/bush_tileset.tres" id="5_eqrru"]
+[ext_resource type="TileSet" uid="uid://dc5wyc1vsdgqq" path="res://editor/bush1_tileset.tres" id="5_eqrru"]
 [ext_resource type="Texture2D" uid="uid://cg3jj2s47ofxj" path="res://assets/vfx/wall_tile.png" id="6_kmq0e"]
 
 [node name="world_test" type="Node2D"]

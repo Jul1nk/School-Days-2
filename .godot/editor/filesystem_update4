@@ -14,3 +14,4 @@ res://scripts/object_instance.gd
 res://scripts/player.gd
 res://scripts/TEST.gd
 res://scripts/wall_maker.gd
+res://editor/bush2_tileset.tres

@@ -42,8 +42,13 @@ func _ready():
 		tilemap_walls_i.modulate = colors[(i*nb_colors)/nb_layers]
 		
 		#Alternate between bush and branch
-		if i != 0:
-			tilemap_bushes_i.tile_set = load("res://editor/bush_tileset.tres")
+		#(branch in the first 20%, then alternate between bush1 and bush2)
+		@warning_ignore("integer_division") #Warning ignore not working?
+		if (i*nb_colors)/nb_layers != 0:
+			if i%3 == 1:
+				tilemap_bushes_i.tile_set = load("res://editor/bush1_tileset.tres")
+			elif i%3 == 2:
+				tilemap_bushes_i.tile_set = load("res://editor/bush2_tileset.tres")
 		else:
 			tilemap_bushes_i.tile_set = load("res://editor/branch_tileset.tres")
 		
