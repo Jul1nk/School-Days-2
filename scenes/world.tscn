@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://cye17wpdukni4"]
+[gd_scene load_steps=12 format=3 uid="uid://cye17wpdukni4"]
 
 [ext_resource type="PackedScene" uid="uid://uklat60xqlk6" path="res://scenes/player.tscn" id="1_jay8r"]
 [ext_resource type="TileSet" uid="uid://ur3wjutcoubb" path="res://editor/floor_tileset.tres" id="2_okhfk"]
 [ext_resource type="Script" path="res://scripts/wall_maker.gd" id="3_tw3sl"]
 [ext_resource type="TileSet" uid="uid://cp21qd1jh162v" path="res://editor/wall_tileset.tres" id="4_2a8hr"]
+[ext_resource type="Texture2D" uid="uid://ck8cwv1joibkn" path="res://assets/vfx/table.png" id="5_0pv43"]
 [ext_resource type="Texture2D" uid="uid://b8f4i4snlhpq1" path="res://assets/vfx/desk.png" id="5_20okk"]
 [ext_resource type="Texture2D" uid="uid://bujp2g6hjue5i" path="res://assets/vfx/door.png" id="5_m0rr6"]
+[ext_resource type="Texture2D" uid="uid://bjrlp8cemf880" path="res://assets/vfx/chair.png" id="6_rov8f"]
 [ext_resource type="PackedScene" uid="uid://jxp872moy3fp" path="res://scenes/object_instance.tscn" id="10_400ue"]
 [ext_resource type="Material" uid="uid://daitmkm6lwgq0" path="res://editor/fog_material.tres" id="11_x4wxn"]
 [ext_resource type="Texture2D" uid="uid://cg3jj2s47ofxj" path="res://assets/vfx/wall_tile.png" id="12_j1rlm"]
@@ -51,6 +53,20 @@ shadow_top = true
 solid = true
 sprite_texture = ExtResource("5_m0rr6")
 
+[node name="table" parent="CanvasLayer_Entities" instance=ExtResource("10_400ue")]
+position = Vector2(-160, -352)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("5_0pv43")
+
+[node name="chair" parent="CanvasLayer_Entities" instance=ExtResource("10_400ue")]
+position = Vector2(-145, -324)
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("6_rov8f")
+
 [node name="CanvasLayer_Floor" type="CanvasLayer" parent="."]
 layer = 0
 follow_viewport_enabled = true
@@ -70,7 +86,7 @@ layer_0/tile_data = PackedInt32Array(0, 2, 0, 65536, 131074, 0, 131072, 65538, 0
 script = ExtResource("3_tw3sl")
 nb_layers = 20
 layer_distance = 1
-colors = Array[Color]([Color(0.870588, 0.623529, 0.278431, 1), Color(0.992157, 0.819608, 0.47451, 1), Color(0.239216, 0.2, 0.2, 1), Color(0.996078, 0.882353, 0.721569, 1), Color(0.996078, 0.882353, 0.721569, 1)])
+colors = Array[Color]([Color(0.423529, 0.505882, 0.631373, 1), Color(0.423529, 0.505882, 0.631373, 1), Color(0.25098, 0.321569, 0.45098, 1), Color(0.835294, 0.839216, 0.858824, 1), Color(0.835294, 0.839216, 0.858824, 1)])
 
 [node name="Input" type="Node2D" parent="Wall_Maker"]
 

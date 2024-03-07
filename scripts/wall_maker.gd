@@ -21,6 +21,9 @@ func _ready():
 	var current_distance = 1.0
 	var nb_colors = colors.size()
 	
+	tilemap_walls.modulate = Color.WHITE
+	tilemap_walls.modulate = Color.WHITE
+	
 		#Creation of the layers
 	for i in range(nb_layers):
 		#New layer
