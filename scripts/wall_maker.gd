@@ -6,11 +6,10 @@ extends Node2D
 @export var colors: Array[Color]
 
 @onready var input = $Input
+@onready var canvas_layer = $Input/CanvasLayer
 @onready var tilemap_walls = $Input/CanvasLayer/TileMap_Walls
 @onready var tilemap_bushes = $Input/CanvasLayer/TileMap_Bushes
-@onready var canvas_modulate = $Input/CanvasModulate
 
-@onready var output = $Output
 
 #How to make walls with the Wall Maker:
 #Place your walls with the white tiles of the Tilemap (Input/CanvasLayer/Tilemap)
@@ -18,11 +17,17 @@ extends Node2D
 
 
 func _ready():
+	#Output creation
+	var output = Node2D.new()
+	add_child(output)
+	
+	#Tilemaps children
+	for tilemap in canvas_layer.get_children():
+		tilemap.modulate = Color.WHITE
+	
+	#Variables setup
 	var current_distance = 1.0
 	var nb_colors = colors.size()
-	
-	tilemap_walls.modulate = Color.WHITE
-	tilemap_walls.modulate = Color.WHITE
 	
 		#Creation of the layers
 	for i in range(nb_layers):
@@ -30,12 +35,15 @@ func _ready():
 		var canvas_i = CanvasLayer.new()
 		var tilemap_walls_i = tilemap_walls.duplicate()
 		var tilemap_bushes_i = tilemap_bushes.duplicate()
-		var canvas_mod_i = canvas_modulate.duplicate()
+		var canvas_mod_i = CanvasModulate.new()
 		
 		#CanvasLayer setup
 		canvas_i.follow_viewport_enabled = true
 		canvas_i.follow_viewport_scale = current_distance
 		current_distance += layer_distance *0.01
+		
+		#CanvasModulate setup
+		canvas_mod_i.color = Color.BLACK
 		
 		#Wall color
 		@warning_ignore("integer_division") #Annoying but avoids error
