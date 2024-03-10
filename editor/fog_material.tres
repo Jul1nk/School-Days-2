@@ -47,6 +47,6 @@ noise = SubResource("FastNoiseLite_0subw")
 [resource]
 shader = SubResource("Shader_n7l1i")
 shader_parameter/epsilon = 0.03
-shader_parameter/fog_tiling = Vector2(16, 16)
+shader_parameter/fog_tiling = Vector2(4, 4)
 shader_parameter/fog_offset_speed = Vector2(0.01, 0.01)
 shader_parameter/noise = SubResource("NoiseTexture2D_q08kx")
