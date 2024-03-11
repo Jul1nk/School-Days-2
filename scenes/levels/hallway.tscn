@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://r02esigt7qpy"]
+[gd_scene load_steps=10 format=3 uid="uid://r02esigt7qpy"]
 
 [ext_resource type="PackedScene" uid="uid://c8u0xn04yibus" path="res://scenes/door.tscn" id="1_57idd"]
+[ext_resource type="PackedScene" uid="uid://jxp872moy3fp" path="res://scenes/object_instance.tscn" id="2_rwebd"]
 [ext_resource type="TileSet" uid="uid://ur3wjutcoubb" path="res://editor/floor_tileset.tres" id="3_65s2d"]
+[ext_resource type="Texture2D" uid="uid://dg8gwudj4jhft" path="res://assets/vfx/wall decoration/poster6.png" id="3_dvmtb"]
+[ext_resource type="Texture2D" uid="uid://do07k6tlg0ej2" path="res://assets/vfx/wall decoration/poster5.png" id="4_lmk74"]
 [ext_resource type="Script" path="res://scripts/wall_maker.gd" id="4_xlrab"]
 [ext_resource type="TileSet" uid="uid://cp21qd1jh162v" path="res://editor/wall_tileset.tres" id="5_jnwhn"]
+[ext_resource type="Texture2D" uid="uid://buic3nq46rir5" path="res://assets/vfx/wall decoration/poster4.png" id="5_wjjf3"]
 [ext_resource type="TileSet" uid="uid://dpjo3d3qckywo" path="res://editor/bush2_tileset.tres" id="6_esfvi"]
 
 [node name="Hallway" type="Node2D"]
@@ -12,65 +16,170 @@
 layer = 5
 follow_viewport_enabled = true
 
-[node name="door_classroom1" parent="CanvasLayer_Entities" instance=ExtResource("1_57idd")]
+[node name="Doors" type="Node2D" parent="CanvasLayer_Entities"]
+
+[node name="door_classroom1" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(64, -220)
 
-[node name="door_classroom2_0" parent="CanvasLayer_Entities" instance=ExtResource("1_57idd")]
+[node name="door_classroom2_0" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(28, -352)
 rotation = 1.5708
 next_level = 1
 
-[node name="door_classroom2_1" parent="CanvasLayer_Entities" instance=ExtResource("1_57idd")]
+[node name="door_classroom2_1" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(28, -544)
 rotation = 1.5708
 next_level = 1
 spawn_point = 1
 
-[node name="door_toilets_girls" parent="CanvasLayer_Entities" instance=ExtResource("1_57idd")]
+[node name="door_toilets_girls" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(28, -736)
 rotation = 1.5708
 next_level = 4
 
-[node name="door_toilets_boys" parent="CanvasLayer_Entities" instance=ExtResource("1_57idd")]
+[node name="door_toilets_boys" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(28, -928)
 rotation = 1.5708
 next_level = 4
 
-[node name="door_yard_0" parent="CanvasLayer_Entities" instance=ExtResource("1_57idd")]
+[node name="door_yard_0" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(96, -1060)
-rotation = 3.14159
+rotation = -3.14159
 next_level = 5
 
-[node name="door_classroom3_0" parent="CanvasLayer_Entities" instance=ExtResource("1_57idd")]
+[node name="door_classroom3_0" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(132, -736)
 rotation = -1.5708
 next_level = 2
 
-[node name="door_classroom3_1" parent="CanvasLayer_Entities" instance=ExtResource("1_57idd")]
+[node name="door_classroom3_1" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(132, -928)
 rotation = -1.5708
 next_level = 2
 spawn_point = 1
 
-[node name="door_classroom3_2" parent="CanvasLayer_Entities" instance=ExtResource("1_57idd")]
+[node name="door_classroom3_2" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(572, -960)
 rotation = 1.5708
 next_level = 2
 spawn_point = 2
 
-[node name="door_office_0" parent="CanvasLayer_Entities" instance=ExtResource("1_57idd")]
+[node name="door_office_0" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(416, -476)
 next_level = 7
 
-[node name="door_office_1" parent="CanvasLayer_Entities" instance=ExtResource("1_57idd")]
+[node name="door_office_1" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(768, -476)
 next_level = 7
 spawn_point = 1
 
-[node name="door_library" parent="CanvasLayer_Entities" instance=ExtResource("1_57idd")]
+[node name="door_library" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(800, -1124)
-rotation = 3.14159
+rotation = -3.14159
 next_level = 6
+
+[node name="Posters" type="Node2D" parent="CanvasLayer_Entities"]
+
+[node name="poster" parent="CanvasLayer_Entities/Posters" instance=ExtResource("2_rwebd")]
+position = Vector2(657, -1120)
+scale = Vector2(0.5, 0.5)
+nb_frames = 24
+layer_distance = 1.0
+sprite_texture = ExtResource("3_dvmtb")
+
+[node name="poster4" parent="CanvasLayer_Entities/Posters" instance=ExtResource("2_rwebd")]
+position = Vector2(253, -576)
+scale = Vector2(0.5, 0.5)
+nb_frames = 24
+layer_distance = 1.0
+sprite_texture = ExtResource("3_dvmtb")
+
+[node name="poster7" parent="CanvasLayer_Entities/Posters" instance=ExtResource("2_rwebd")]
+position = Vector2(838, -832)
+scale = Vector2(0.5, 0.5)
+nb_frames = 24
+layer_distance = 1.0
+sprite_texture = ExtResource("3_dvmtb")
+
+[node name="poster2" parent="CanvasLayer_Entities/Posters" instance=ExtResource("2_rwebd")]
+position = Vector2(992, -718)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+nb_frames = 24
+layer_distance = 1.0
+sprite_texture = ExtResource("4_lmk74")
+
+[node name="poster3" parent="CanvasLayer_Entities/Posters" instance=ExtResource("2_rwebd")]
+position = Vector2(992, -1039)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+nb_frames = 24
+layer_distance = 1.0
+sprite_texture = ExtResource("5_wjjf3")
+
+[node name="poster8" parent="CanvasLayer_Entities/Posters" instance=ExtResource("2_rwebd")]
+position = Vector2(688, -874)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+nb_frames = 24
+layer_distance = 1.0
+sprite_texture = ExtResource("4_lmk74")
+
+[node name="poster5" parent="CanvasLayer_Entities/Posters" instance=ExtResource("2_rwebd")]
+position = Vector2(992, -902)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+nb_frames = 24
+layer_distance = 1.0
+sprite_texture = ExtResource("4_lmk74")
+
+[node name="poster9" parent="CanvasLayer_Entities/Posters" instance=ExtResource("2_rwebd")]
+position = Vector2(816, -617)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+nb_frames = 24
+layer_distance = 1.0
+sprite_texture = ExtResource("3_dvmtb")
+
+[node name="poster13" parent="CanvasLayer_Entities/Posters" instance=ExtResource("2_rwebd")]
+position = Vector2(576, -704)
+rotation = -1.5708
+scale = Vector2(0.5, 0.5)
+nb_frames = 24
+layer_distance = 1.0
+sprite_texture = ExtResource("5_wjjf3")
+
+[node name="poster14" parent="CanvasLayer_Entities/Posters" instance=ExtResource("2_rwebd")]
+position = Vector2(32, -651)
+rotation = -1.5708
+scale = Vector2(0.5, 0.5)
+nb_frames = 24
+layer_distance = 1.0
+sprite_texture = ExtResource("4_lmk74")
+
+[node name="poster10" parent="CanvasLayer_Entities/Posters" instance=ExtResource("2_rwebd")]
+position = Vector2(128, -866)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+nb_frames = 24
+layer_distance = 1.0
+sprite_texture = ExtResource("5_wjjf3")
+
+[node name="poster11" parent="CanvasLayer_Entities/Posters" instance=ExtResource("2_rwebd")]
+position = Vector2(128, -384)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+nb_frames = 24
+layer_distance = 1.0
+sprite_texture = ExtResource("5_wjjf3")
+
+[node name="poster12" parent="CanvasLayer_Entities/Posters" instance=ExtResource("2_rwebd")]
+position = Vector2(128, -1023)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+nb_frames = 24
+layer_distance = 1.0
+sprite_texture = ExtResource("3_dvmtb")
 
 [node name="CanvasLayer_Floor" type="CanvasLayer" parent="."]
 layer = 0
