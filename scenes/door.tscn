@@ -8,8 +8,8 @@ size = Vector2(32, 20)
 
 [node name="door" type="Node2D"]
 script = ExtResource("1_y6dwp")
-nb_frames = 10
-layer_distance = 2.5
+nb_frames = 20
+layer_distance = 1.0
 shadow_top = true
 solid = true
 sprite_texture = ExtResource("2_0horh")
