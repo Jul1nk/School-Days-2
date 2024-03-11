@@ -9,5 +9,4 @@ res://scenes/player.tscn
 res://scenes/world_test.tscn
 res://scenes/pause_menu.tscn
 res://scenes/object_instance.tscn
-res://scripts/wall_maker.gd
-res://scripts/player.gd
+res://editor/grass_tileset.tres
