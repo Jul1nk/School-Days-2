@@ -39,3 +39,18 @@ func _physics_process(_delta):
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 
 	move_and_slide()
+
+
+
+func pause():
+	set_process_mode(Node.PROCESS_MODE_ALWAYS)
+
+func depause():
+	set_process_mode(Node.PROCESS_MODE_INHERIT)
+
+func tp_cam_to_pos():
+	$Camera2D.position_smoothing_enabled = false
+	await get_tree().create_timer(0.01).timeout
+	$Camera2D.position_smoothing_enabled = true
+
+

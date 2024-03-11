@@ -1,0 +1,115 @@
+[gd_scene load_steps=9 format=3 uid="uid://jpi2vltxy7ff"]
+
+[ext_resource type="Script" path="res://scripts/game_world.gd" id="1_ymw2k"]
+[ext_resource type="Texture2D" uid="uid://cg3jj2s47ofxj" path="res://assets/vfx/tiles/wall_tile.png" id="2_ji1l6"]
+[ext_resource type="Material" uid="uid://daitmkm6lwgq0" path="res://editor/fog_material.tres" id="3_4he7n"]
+[ext_resource type="PackedScene" uid="uid://uklat60xqlk6" path="res://scenes/player.tscn" id="4_jgs0n"]
+
+[sub_resource type="Animation" id="Animation_gxwvw"]
+resource_name = "exit_level"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer_Transition/CanvasLayer/Control/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_f5j0t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer_Transition/CanvasLayer/Control/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_e50y3"]
+resource_name = "enter_level"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer_Transition/CanvasLayer/Control/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bkiuc"]
+_data = {
+"RESET": SubResource("Animation_f5j0t"),
+"enter_level": SubResource("Animation_e50y3"),
+"exit_level": SubResource("Animation_gxwvw")
+}
+
+[node name="game_world" type="Node2D"]
+script = ExtResource("1_ymw2k")
+
+[node name="Black" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(354, -628)
+scale = Vector2(140, 140)
+texture = ExtResource("2_ji1l6")
+
+[node name="Shader_CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+follow_viewport_enabled = true
+follow_viewport_scale = 1.2
+
+[node name="Fog" type="Sprite2D" parent="Shader_CanvasLayer"]
+material = ExtResource("3_4he7n")
+position = Vector2(280, -527)
+scale = Vector2(140, 140)
+texture = ExtResource("2_ji1l6")
+
+[node name="AnimationPlayer_Transition" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bkiuc")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="AnimationPlayer_Transition"]
+layer = 11
+
+[node name="Control" type="Control" parent="AnimationPlayer_Transition/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="AnimationPlayer_Transition/CanvasLayer/Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer_Player" type="CanvasLayer" parent="."]
+layer = 5
+follow_viewport_enabled = true
+
+[node name="Player" parent="CanvasLayer_Player" instance=ExtResource("4_jgs0n")]
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer_Player/Player"]
+position_smoothing_enabled = true
