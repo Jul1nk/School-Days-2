@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://uklat60xqlk6"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_3m2ps"]
-[ext_resource type="Texture2D" uid="uid://026h7fuafqv2" path="res://assets/vfx/floor_tiles.png" id="2_if4hq"]
-[ext_resource type="Texture2D" uid="uid://g4onmuu4kou7" path="res://assets/vfx/light_torch.png" id="3_5u46s"]
-[ext_resource type="Texture2D" uid="uid://tpc7qv2wg741" path="res://assets/vfx/player_spritesheet.png" id="3_24s5u"]
-[ext_resource type="Texture2D" uid="uid://dqutpfbnmup38" path="res://assets/vfx/light_circle.png" id="3_rnhsu"]
+[ext_resource type="Texture2D" uid="uid://tpc7qv2wg741" path="res://assets/vfx/characters/player_spritesheet.png" id="2_gnb3v"]
+[ext_resource type="Texture2D" uid="uid://026h7fuafqv2" path="res://assets/vfx/tiles/floor_tiles.png" id="2_if4hq"]
+[ext_resource type="Texture2D" uid="uid://g4onmuu4kou7" path="res://assets/vfx/misc/light_torch.png" id="3_5u46s"]
+[ext_resource type="Texture2D" uid="uid://dqutpfbnmup38" path="res://assets/vfx/misc/light_circle.png" id="3_rnhsu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_do65j"]
 radius = 9.0
@@ -21,7 +21,7 @@ follow_viewport_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="sprite/CanvasLayer6"]
 texture_filter = 1
-texture = ExtResource("3_24s5u")
+texture = ExtResource("2_gnb3v")
 hframes = 4
 vframes = 4
 frame = 5
@@ -32,7 +32,7 @@ follow_viewport_scale = 1.02
 
 [node name="Sprite2D" type="Sprite2D" parent="sprite/CanvasLayer5"]
 texture_filter = 1
-texture = ExtResource("3_24s5u")
+texture = ExtResource("2_gnb3v")
 hframes = 4
 vframes = 4
 frame = 4
@@ -43,7 +43,7 @@ follow_viewport_scale = 1.04
 
 [node name="Sprite2D" type="Sprite2D" parent="sprite/CanvasLayer4"]
 texture_filter = 1
-texture = ExtResource("3_24s5u")
+texture = ExtResource("2_gnb3v")
 hframes = 4
 vframes = 4
 frame = 3
@@ -54,7 +54,7 @@ follow_viewport_scale = 1.06
 
 [node name="Sprite2D" type="Sprite2D" parent="sprite/CanvasLayer3"]
 texture_filter = 1
-texture = ExtResource("3_24s5u")
+texture = ExtResource("2_gnb3v")
 hframes = 4
 vframes = 4
 frame = 2
@@ -65,7 +65,7 @@ follow_viewport_scale = 1.08
 
 [node name="Sprite2D" type="Sprite2D" parent="sprite/CanvasLayer2"]
 texture_filter = 1
-texture = ExtResource("3_24s5u")
+texture = ExtResource("2_gnb3v")
 hframes = 4
 vframes = 4
 frame = 1
@@ -77,7 +77,7 @@ follow_viewport_scale = 1.1
 
 [node name="Sprite2D" type="Sprite2D" parent="sprite/CanvasLayer"]
 texture_filter = 1
-texture = ExtResource("3_24s5u")
+texture = ExtResource("2_gnb3v")
 hframes = 4
 vframes = 4
 

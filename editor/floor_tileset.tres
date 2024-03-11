@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" load_steps=5 format=3 uid="uid://ur3wjutcoubb"]
 
-[ext_resource type="Texture2D" uid="uid://b6tpklpql1ajj" path="res://assets/vfx/floor_class_tiles.png" id="1_nm60q"]
-[ext_resource type="Texture2D" uid="uid://026h7fuafqv2" path="res://assets/vfx/floor_tiles.png" id="1_vqyp8"]
+[ext_resource type="Texture2D" uid="uid://b6tpklpql1ajj" path="res://assets/vfx/tiles/floor_class_tiles.png" id="1_nm60q"]
+[ext_resource type="Texture2D" uid="uid://026h7fuafqv2" path="res://assets/vfx/tiles/floor_tiles.png" id="1_vqyp8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w8ola"]
 texture = ExtResource("1_nm60q")
