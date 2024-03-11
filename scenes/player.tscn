@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://uklat60xqlk6"]
+[gd_scene load_steps=7 format=3 uid="uid://uklat60xqlk6"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_3m2ps"]
 [ext_resource type="Texture2D" uid="uid://026h7fuafqv2" path="res://assets/vfx/floor_tiles.png" id="2_if4hq"]
+[ext_resource type="Texture2D" uid="uid://g4onmuu4kou7" path="res://assets/vfx/light_torch.png" id="3_5u46s"]
 [ext_resource type="Texture2D" uid="uid://tpc7qv2wg741" path="res://assets/vfx/player_spritesheet.png" id="3_24s5u"]
-[ext_resource type="Texture2D" uid="uid://br20kqjeipdha" path="res://assets/vfx/light2.png" id="3_xk8rs"]
+[ext_resource type="Texture2D" uid="uid://dqutpfbnmup38" path="res://assets/vfx/light_circle.png" id="3_rnhsu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_do65j"]
 radius = 9.0
@@ -88,7 +89,13 @@ z_index = 7
 blend_mode = 2
 range_layer_max = 5
 shadow_enabled = true
-texture = ExtResource("3_xk8rs")
+texture = ExtResource("3_5u46s")
+
+[node name="Flashlight2" type="PointLight2D" parent="rotatage"]
+z_index = 7
+range_layer_max = 5
+shadow_enabled = true
+texture = ExtResource("3_rnhsu")
 
 [node name="player_col" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_do65j")
