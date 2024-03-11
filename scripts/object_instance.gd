@@ -1,5 +1,4 @@
-extends Node2D
-
+class_name ObjectInstance extends Node2D
 
 @export var nb_frames: int = 6
 @export var layer_distance: float = 2.0

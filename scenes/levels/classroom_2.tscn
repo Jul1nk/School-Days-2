@@ -1,0 +1,500 @@
+[gd_scene load_steps=19 format=3 uid="uid://bjqehabcxfsk7"]
+
+[ext_resource type="PackedScene" uid="uid://jxp872moy3fp" path="res://scenes/object_instance.tscn" id="1_tsmap"]
+[ext_resource type="Texture2D" uid="uid://bujp2g6hjue5i" path="res://assets/vfx/furniture/door.png" id="2_nhdpa"]
+[ext_resource type="Texture2D" uid="uid://ck8cwv1joibkn" path="res://assets/vfx/furniture/table.png" id="3_vigks"]
+[ext_resource type="Texture2D" uid="uid://bjrlp8cemf880" path="res://assets/vfx/furniture/chair.png" id="4_ufcu1"]
+[ext_resource type="Texture2D" uid="uid://ba2cmg7mnf6n5" path="res://assets/vfx/furniture/chair_fallen.png" id="5_idtmk"]
+[ext_resource type="Texture2D" uid="uid://b8f4i4snlhpq1" path="res://assets/vfx/furniture/desk.png" id="6_md4fc"]
+[ext_resource type="Texture2D" uid="uid://c1mia8jce5s0g" path="res://assets/vfx/wall decoration/chalkboard.png" id="7_432ux"]
+[ext_resource type="Texture2D" uid="uid://3emslrqau24q" path="res://assets/vfx/furniture/locker.png" id="8_bfn21"]
+[ext_resource type="Texture2D" uid="uid://c33xhh0cxbd83" path="res://assets/vfx/wall decoration/clock.png" id="9_1skgu"]
+[ext_resource type="Texture2D" uid="uid://dg8gwudj4jhft" path="res://assets/vfx/wall decoration/poster6.png" id="10_j3uo3"]
+[ext_resource type="Texture2D" uid="uid://do07k6tlg0ej2" path="res://assets/vfx/wall decoration/poster5.png" id="11_dqfks"]
+[ext_resource type="Texture2D" uid="uid://buic3nq46rir5" path="res://assets/vfx/wall decoration/poster4.png" id="12_fe6m8"]
+[ext_resource type="Texture2D" uid="uid://dndu0wkyibmvd" path="res://assets/vfx/wall decoration/poster3.png" id="13_nc26b"]
+[ext_resource type="Texture2D" uid="uid://xb2e0kl0sdti" path="res://assets/vfx/wall decoration/window.png" id="14_8ow8x"]
+[ext_resource type="TileSet" uid="uid://ur3wjutcoubb" path="res://editor/floor_tileset.tres" id="15_gnyxt"]
+[ext_resource type="Script" path="res://scripts/wall_maker.gd" id="16_b36jm"]
+[ext_resource type="TileSet" uid="uid://cp21qd1jh162v" path="res://editor/wall_tileset.tres" id="17_5ieb5"]
+[ext_resource type="TileSet" uid="uid://dpjo3d3qckywo" path="res://editor/bush2_tileset.tres" id="18_8hfbj"]
+
+[node name="Classroom2" type="Node2D"]
+
+[node name="CanvasLayer_Entities" type="CanvasLayer" parent="."]
+layer = 5
+follow_viewport_enabled = true
+
+[node name="door" parent="CanvasLayer_Entities" instance=ExtResource("1_tsmap")]
+position = Vector2(-28, -320)
+rotation = -1.5708
+nb_frames = 10
+layer_distance = 2.5
+shadow_top = true
+solid = true
+sprite_texture = ExtResource("2_nhdpa")
+
+[node name="door2" parent="CanvasLayer_Entities" instance=ExtResource("1_tsmap")]
+position = Vector2(-28, -512)
+rotation = -1.5708
+nb_frames = 10
+layer_distance = 2.5
+shadow_top = true
+solid = true
+sprite_texture = ExtResource("2_nhdpa")
+
+[node name="Classroom 2" type="Node2D" parent="CanvasLayer_Entities"]
+
+[node name="Tables" type="Node2D" parent="CanvasLayer_Entities/Classroom 2"]
+
+[node name="table" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-332, -547)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("3_vigks")
+
+[node name="chair" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-317, -522)
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("4_ufcu1")
+
+[node name="table2" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-264, -548)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("3_vigks")
+
+[node name="chair2" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-249, -522)
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("4_ufcu1")
+
+[node name="table3" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-196, -548)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("3_vigks")
+
+[node name="chair3" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-189, -518)
+rotation = 1.0472
+nb_frames = 5
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("5_idtmk")
+
+[node name="table4" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-128, -548)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("3_vigks")
+
+[node name="chair4" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-113, -520)
+rotation = -0.261799
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("4_ufcu1")
+
+[node name="table5" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-315, -458)
+rotation = -0.523598
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("3_vigks")
+
+[node name="chair5" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-334, -440)
+rotation = 0.785397
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("4_ufcu1")
+
+[node name="table6" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-256, -477)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("3_vigks")
+
+[node name="chair6" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-248, -449)
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("4_ufcu1")
+
+[node name="table7" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-199, -473)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("3_vigks")
+
+[node name="chair7" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-183, -436)
+rotation = -0.261799
+nb_frames = 5
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("5_idtmk")
+
+[node name="table8" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-128, -480)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("3_vigks")
+
+[node name="chair8" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-113, -452)
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("4_ufcu1")
+
+[node name="table9" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-332, -408)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("3_vigks")
+
+[node name="chair9" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-317, -377)
+nb_frames = 5
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("5_idtmk")
+
+[node name="table11" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-196, -408)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("3_vigks")
+
+[node name="chair11" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-183, -375)
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("4_ufcu1")
+
+[node name="table12" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-128, -408)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("3_vigks")
+
+[node name="chair12" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-113, -380)
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("4_ufcu1")
+
+[node name="table13" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-332, -340)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("3_vigks")
+
+[node name="chair13" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-317, -312)
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("4_ufcu1")
+
+[node name="table14" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-264, -340)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("3_vigks")
+
+[node name="chair14" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-255, -312)
+rotation = -0.261799
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("4_ufcu1")
+
+[node name="table15" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-205, -341)
+rotation = -0.261799
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("3_vigks")
+
+[node name="chair15" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-181, -312)
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("4_ufcu1")
+
+[node name="table16" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-128, -338)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("3_vigks")
+
+[node name="chair16" parent="CanvasLayer_Entities/Classroom 2/Tables" instance=ExtResource("1_tsmap")]
+position = Vector2(-115, -294)
+rotation = 0.261799
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("4_ufcu1")
+
+[node name="Desk" type="Node2D" parent="CanvasLayer_Entities/Classroom 2"]
+
+[node name="desk" parent="CanvasLayer_Entities/Classroom 2/Desk" instance=ExtResource("1_tsmap")]
+position = Vector2(-320, -608)
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("6_md4fc")
+
+[node name="chair" parent="CanvasLayer_Entities/Classroom 2/Desk" instance=ExtResource("1_tsmap")]
+position = Vector2(-254, -603)
+rotation = 3.14159
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("4_ufcu1")
+
+[node name="board" parent="CanvasLayer_Entities/Classroom 2" instance=ExtResource("1_tsmap")]
+position = Vector2(-271, -640)
+nb_frames = 16
+layer_distance = 1.0
+sprite_texture = ExtResource("7_432ux")
+
+[node name="Lockers" type="Node2D" parent="CanvasLayer_Entities/Classroom 2"]
+
+[node name="locker" parent="CanvasLayer_Entities/Classroom 2/Lockers" instance=ExtResource("1_tsmap")]
+position = Vector2(-328, -224)
+rotation = 3.14159
+nb_frames = 10
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("8_bfn21")
+
+[node name="locker2" parent="CanvasLayer_Entities/Classroom 2/Lockers" instance=ExtResource("1_tsmap")]
+position = Vector2(-304, -224)
+rotation = 3.14159
+nb_frames = 10
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("8_bfn21")
+
+[node name="locker3" parent="CanvasLayer_Entities/Classroom 2/Lockers" instance=ExtResource("1_tsmap")]
+position = Vector2(-280, -224)
+rotation = 3.14159
+nb_frames = 10
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("8_bfn21")
+
+[node name="locker4" parent="CanvasLayer_Entities/Classroom 2/Lockers" instance=ExtResource("1_tsmap")]
+position = Vector2(-256, -224)
+rotation = 3.14159
+nb_frames = 10
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("8_bfn21")
+
+[node name="locker5" parent="CanvasLayer_Entities/Classroom 2/Lockers" instance=ExtResource("1_tsmap")]
+position = Vector2(-232, -224)
+rotation = 3.14159
+nb_frames = 10
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("8_bfn21")
+
+[node name="locker6" parent="CanvasLayer_Entities/Classroom 2/Lockers" instance=ExtResource("1_tsmap")]
+position = Vector2(-208, -224)
+rotation = 3.14159
+nb_frames = 10
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("8_bfn21")
+
+[node name="locker7" parent="CanvasLayer_Entities/Classroom 2/Lockers" instance=ExtResource("1_tsmap")]
+position = Vector2(-184, -224)
+rotation = 3.14159
+nb_frames = 10
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("8_bfn21")
+
+[node name="locker8" parent="CanvasLayer_Entities/Classroom 2/Lockers" instance=ExtResource("1_tsmap")]
+position = Vector2(-160, -224)
+rotation = 3.14159
+nb_frames = 10
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("8_bfn21")
+
+[node name="locker9" parent="CanvasLayer_Entities/Classroom 2/Lockers" instance=ExtResource("1_tsmap")]
+position = Vector2(-136, -224)
+rotation = 3.14159
+nb_frames = 10
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("8_bfn21")
+
+[node name="clock" parent="CanvasLayer_Entities/Classroom 2" instance=ExtResource("1_tsmap")]
+position = Vector2(-160, -640)
+nb_frames = 16
+layer_distance = 1.0
+sprite_texture = ExtResource("9_1skgu")
+
+[node name="Posters" type="Node2D" parent="CanvasLayer_Entities/Classroom 2"]
+
+[node name="poster" parent="CanvasLayer_Entities/Classroom 2/Posters" instance=ExtResource("1_tsmap")]
+position = Vector2(-32, -264)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+nb_frames = 24
+layer_distance = 1.0
+sprite_texture = ExtResource("10_j3uo3")
+
+[node name="poster2" parent="CanvasLayer_Entities/Classroom 2/Posters" instance=ExtResource("1_tsmap")]
+position = Vector2(-32, -428)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+nb_frames = 24
+layer_distance = 1.0
+sprite_texture = ExtResource("11_dqfks")
+
+[node name="poster3" parent="CanvasLayer_Entities/Classroom 2/Posters" instance=ExtResource("1_tsmap")]
+position = Vector2(-32, -613)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+nb_frames = 24
+layer_distance = 1.0
+sprite_texture = ExtResource("12_fe6m8")
+
+[node name="poster4" parent="CanvasLayer_Entities/Classroom 2/Posters" instance=ExtResource("1_tsmap")]
+position = Vector2(-32, -489)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+nb_frames = 24
+layer_distance = 1.0
+sprite_texture = ExtResource("10_j3uo3")
+
+[node name="poster5" parent="CanvasLayer_Entities/Classroom 2/Posters" instance=ExtResource("1_tsmap")]
+position = Vector2(-32, -295)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+nb_frames = 24
+layer_distance = 1.0
+sprite_texture = ExtResource("12_fe6m8")
+
+[node name="poster6" parent="CanvasLayer_Entities/Classroom 2/Posters" instance=ExtResource("1_tsmap")]
+position = Vector2(-76, -224)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+nb_frames = 24
+layer_distance = 1.0
+sprite_texture = ExtResource("13_nc26b")
+
+[node name="Windows" type="Node2D" parent="CanvasLayer_Entities/Classroom 2"]
+
+[node name="window" parent="CanvasLayer_Entities/Classroom 2/Windows" instance=ExtResource("1_tsmap")]
+position = Vector2(-352, -298)
+rotation = -1.5708
+nb_frames = 16
+layer_distance = 1.0
+sprite_texture = ExtResource("14_8ow8x")
+
+[node name="window2" parent="CanvasLayer_Entities/Classroom 2/Windows" instance=ExtResource("1_tsmap")]
+position = Vector2(-352, -362)
+rotation = -1.5708
+nb_frames = 16
+layer_distance = 1.0
+sprite_texture = ExtResource("14_8ow8x")
+
+[node name="window3" parent="CanvasLayer_Entities/Classroom 2/Windows" instance=ExtResource("1_tsmap")]
+position = Vector2(-352, -426)
+rotation = -1.5708
+nb_frames = 16
+layer_distance = 1.0
+sprite_texture = ExtResource("14_8ow8x")
+
+[node name="window4" parent="CanvasLayer_Entities/Classroom 2/Windows" instance=ExtResource("1_tsmap")]
+position = Vector2(-352, -490)
+rotation = -1.5708
+nb_frames = 16
+layer_distance = 1.0
+sprite_texture = ExtResource("14_8ow8x")
+
+[node name="window5" parent="CanvasLayer_Entities/Classroom 2/Windows" instance=ExtResource("1_tsmap")]
+position = Vector2(-352, -554)
+rotation = -1.5708
+nb_frames = 16
+layer_distance = 1.0
+sprite_texture = ExtResource("14_8ow8x")
+
+[node name="CanvasLayer_Floor" type="CanvasLayer" parent="."]
+layer = 0
+follow_viewport_enabled = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer_Floor"]
+position = Vector2(257, 36)
+color = Color(0, 0, 0, 1)
+
+[node name="TileMap_Floor" type="TileMap" parent="CanvasLayer_Floor"]
+texture_filter = 1
+tile_set = ExtResource("15_gnyxt")
+rendering_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(-1114123, 0, 0, -1048587, 131072, 0, -983051, 196608, 0, -917515, 65536, 0, -851979, 0, 0, -786443, 0, 0, -720907, 0, 0, -655371, 196608, 0, -589835, 65536, 0, -524299, 0, 0, -458763, 0, 0, -1245195, 65536, 0, -1179659, 0, 0, -1245194, 131072, 0, -1179658, 65536, 0, -1114122, 65536, 0, -1048586, 196608, 0, -983050, 131072, 0, -917514, 131072, 0, -851978, 65536, 0, -786442, 131072, 0, -720906, 0, 0, -655370, 196608, 0, -589834, 0, 0, -524298, 65536, 0, -458762, 0, 0, -1245193, 196608, 0, -1179657, 0, 0, -1114121, 131072, 0, -1048585, 65536, 0, -983049, 0, 0, -917513, 65536, 0, -851977, 196608, 0, -786441, 196608, 0, -720905, 65536, 0, -655369, 65536, 0, -589833, 0, 0, -524297, 131072, 0, -458761, 65536, 0, -1245192, 0, 0, -1179656, 131072, 0, -1114120, 131072, 0, -1048584, 0, 0, -983048, 0, 0, -917512, 0, 0, -851976, 65536, 0, -786440, 65536, 0, -720904, 196608, 0, -655368, 196608, 0, -589832, 0, 0, -524296, 65536, 0, -458760, 65536, 0, -1245191, 0, 0, -1179655, 65536, 0, -1114119, 131072, 0, -1048583, 196608, 0, -983047, 65536, 0, -917511, 196608, 0, -851975, 196608, 0, -786439, 196608, 0, -720903, 131072, 0, -655367, 0, 0, -589831, 0, 0, -524295, 0, 0, -458759, 65536, 0, -1245190, 0, 0, -1179654, 131072, 0, -1114118, 0, 0, -1048582, 131072, 0, -983046, 131072, 0, -917510, 0, 0, -851974, 131072, 0, -786438, 196608, 0, -720902, 65536, 0, -655366, 0, 0, -589830, 131072, 0, -524294, 65536, 0, -458758, 0, 0, -1245189, 131072, 0, -1179653, 131072, 0, -1114117, 131072, 0, -1048581, 0, 0, -983045, 0, 0, -917509, 131072, 0, -851973, 131072, 0, -786437, 131072, 0, -720901, 65536, 0, -655365, 65536, 0, -589829, 196608, 0, -524293, 196608, 0, -458757, 0, 0, -1245188, 196608, 0, -1179652, 0, 0, -1114116, 0, 0, -1048580, 131072, 0, -983044, 0, 0, -917508, 131072, 0, -851972, 0, 0, -786436, 0, 0, -720900, 0, 0, -655364, 196608, 0, -589828, 131072, 0, -524292, 0, 0, -458756, 131072, 0, -1245187, 196608, 0, -1179651, 0, 0, -1114115, 131072, 0, -1048579, 65536, 0, -983043, 196608, 0, -917507, 65536, 0, -851971, 196608, 0, -786435, 0, 0, -720899, 65536, 0, -655363, 131072, 0, -589827, 0, 0, -524291, 0, 0, -458755, 196608, 0, -1245186, 65536, 0, -1179650, 65536, 0, -1114114, 196608, 0, -1048578, 131072, 0, -983042, 0, 0, -917506, 65536, 0, -851970, 131072, 0, -786434, 131072, 0, -720898, 65536, 0, -655362, 196608, 0, -589826, 196608, 0, -524290, 0, 0, -458754, 65536, 0, -1048577, 0, 0, -655361, 0, 0)
+
+[node name="Wall_Maker_Classrooms" type="Node2D" parent="."]
+script = ExtResource("16_b36jm")
+nb_layers = 20
+layer_distance = 1
+colors = Array[Color]([Color(0.992157, 0.819608, 0.47451, 1), Color(0.239216, 0.2, 0.2, 1), Color(0.996078, 0.882353, 0.721569, 1), Color(0.996078, 0.882353, 0.721569, 1), Color(0.996078, 0.882353, 0.721569, 1), Color(0.996078, 0.882353, 0.721569, 1), Color(0.996078, 0.882353, 0.721569, 1), Color(0.996078, 0.882353, 0.721569, 1), Color(0.996078, 0.882353, 0.721569, 1), Color(0.996078, 0.882353, 0.721569, 1)])
+
+[node name="Input" type="Node2D" parent="Wall_Maker_Classrooms"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Wall_Maker_Classrooms/Input"]
+layer = 2
+
+[node name="TileMap_Walls" type="TileMap" parent="Wall_Maker_Classrooms/Input/CanvasLayer"]
+modulate = Color(1, 1, 0, 1)
+tile_set = ExtResource("17_5ieb5")
+format = 2
+layer_0/tile_data = PackedInt32Array(-2621461, 1, 0, -2621460, 1, 0, -2621459, 1, 0, -2621458, 1, 0, -2621457, 1, 0, -2621456, 1, 0, -2621455, 1, 0, -2621454, 1, 0, -2621453, 1, 0, -2621452, 1, 0, -2621451, 1, 0, -2621450, 1, 0, -2621449, 1, 0, -2621448, 1, 0, -2621447, 1, 0, -2621446, 1, 0, -2621445, 1, 0, -2621444, 1, 0, -2621443, 1, 0, -2621442, 1, 0, -2621463, 1, 0, -2555927, 1, 0, -2490391, 1, 0, -2424855, 1, 0, -2359319, 1, 0, -2293783, 1, 0, -2228247, 1, 0, -2162711, 1, 0, -2097175, 1, 0, -2031639, 1, 0, -1966103, 1, 0, -1900567, 1, 0, -1835031, 1, 0, -1769495, 1, 0, -1703959, 1, 0, -1638423, 1, 0, -1572887, 1, 0, -1507351, 1, 0, -1441815, 1, 0, -1376279, 1, 0, -1310743, 1, 0, -1245207, 1, 0, -1179671, 1, 0, -1114135, 1, 0, -1048599, 1, 0, -983063, 1, 0, -917527, 1, 0, -2621462, 1, 0, -2555906, 1, 0, -2490370, 1, 0, -2424834, 1, 0, -2359298, 1, 0, -2293762, 1, 0, -2228226, 1, 0, -2031618, 1, 0, -1966082, 1, 0, -1900546, 1, 0, -1835010, 1, 0, -1769474, 1, 0, -1703938, 1, 0, -1638402, 1, 0, -1572866, 1, 0, -1507330, 1, 0, -1441794, 1, 0, -1245186, 1, 0, -1179650, 1, 0, -1114114, 1, 0, -1048578, 1, 0, -983042, 1, 0, -917506, 1, 0, -1245185, 1, 0, -1441793, 1, 0, -2031617, 1, 0, -2228225, 1, 0, -2293760, 1, 0, -851991, 1, 0, -851990, 1, 0, -851989, 1, 0, -851988, 1, 0, -851987, 1, 0, -851986, 1, 0, -851985, 1, 0, -851984, 1, 0, -851983, 1, 0, -851982, 1, 0, -851981, 1, 0, -851980, 1, 0, -851979, 1, 0, -851978, 1, 0, -851977, 1, 0, -851976, 1, 0, -851975, 1, 0, -851974, 1, 0, -851973, 1, 0, -851972, 1, 0, -851971, 1, 0, -851970, 1, 0, -1507328, 1, 0, -1441792, 1, 0, -1376256, 1, 0, -1310720, 1, 0, -2228224, 1, 0, -2162688, 1, 0, -2097152, 1, 0)
+
+[node name="TileMap_Bushes" type="TileMap" parent="Wall_Maker_Classrooms/Input/CanvasLayer"]
+texture_filter = 1
+tile_set = ExtResource("18_8hfbj")
+format = 2
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="SpawnPoints"]
+position = Vector2(-44, -528)
+
+[node name="1" type="Node2D" parent="SpawnPoints"]
+position = Vector2(-44, -336)

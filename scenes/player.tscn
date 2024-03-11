@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://uklat60xqlk6"]
+[gd_scene load_steps=8 format=3 uid="uid://uklat60xqlk6"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_3m2ps"]
 [ext_resource type="Texture2D" uid="uid://tpc7qv2wg741" path="res://assets/vfx/characters/player_spritesheet.png" id="2_gnb3v"]
@@ -9,7 +9,10 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_do65j"]
 radius = 9.0
 
-[node name="player" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lk4w"]
+size = Vector2(22, 22)
+
+[node name="player" type="CharacterBody2D" groups=["Player"]]
 texture_filter = 1
 motion_mode = 1
 script = ExtResource("1_3m2ps")
@@ -104,3 +107,8 @@ shape = SubResource("CircleShape2D_do65j")
 visible = false
 scale = Vector2(0.125, 0.5)
 texture = ExtResource("2_if4hq")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_1lk4w")
