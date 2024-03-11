@@ -9,6 +9,9 @@ class_name ObjectInstance extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	_instantiate_object()
+
+func _instantiate_object():
 		#Creation of a polygon if object is solid or is casting a shadow
 	var polygon: PackedVector2Array = []
 	#Size of the polygon

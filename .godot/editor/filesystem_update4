@@ -1,4 +1,4 @@
-res://scenes/door.tscn
+res://scenes/world.tscn
 res://editor/floor_tileset.tres
 res://editor/wall_tileset.tres
 res://editor/bush2_tileset.tres
@@ -6,8 +6,6 @@ res://editor/fog_material.tres
 res://editor/grass_tileset.tres
 res://editor/bush1_tileset.tres
 res://editor/fog_shader.gdshader
-res://scenes/levels/hallway.tscn
-res://scenes/world.tscn
 res://scenes/player.tscn
 res://scenes/world_test.tscn
 res://scenes/pause_menu.tscn
@@ -15,4 +13,15 @@ res://scenes/object_instance.tscn
 res://scenes/levels/classroom_1.tscn
 res://scenes/levels/classroom_2.tscn
 res://scenes/levels/game_world.tscn
+res://scenes/levels/hallway.tscn
+res://scenes/door.tscn
 res://scripts/door.gd
+res://scripts/Global.gd
+res://scripts/object_instance.gd
+res://scripts/game_world.gd
+res://scenes/levels/classroom_3.tscn
+res://scenes/levels/yard.tscn
+res://scenes/levels/library.tscn
+res://scenes/levels/office_1.tscn
+res://scenes/levels/office.tscn
+res://scenes/levels/toilets.tscn

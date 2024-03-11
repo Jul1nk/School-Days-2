@@ -1,7 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://bjqehabcxfsk7"]
 
 [ext_resource type="PackedScene" uid="uid://jxp872moy3fp" path="res://scenes/object_instance.tscn" id="1_tsmap"]
-[ext_resource type="Texture2D" uid="uid://bujp2g6hjue5i" path="res://assets/vfx/furniture/door.png" id="2_nhdpa"]
 [ext_resource type="Texture2D" uid="uid://ck8cwv1joibkn" path="res://assets/vfx/furniture/table.png" id="3_vigks"]
 [ext_resource type="Texture2D" uid="uid://bjrlp8cemf880" path="res://assets/vfx/furniture/chair.png" id="4_ufcu1"]
 [ext_resource type="Texture2D" uid="uid://ba2cmg7mnf6n5" path="res://assets/vfx/furniture/chair_fallen.png" id="5_idtmk"]
@@ -13,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://do07k6tlg0ej2" path="res://assets/vfx/wall decoration/poster5.png" id="11_dqfks"]
 [ext_resource type="Texture2D" uid="uid://buic3nq46rir5" path="res://assets/vfx/wall decoration/poster4.png" id="12_fe6m8"]
 [ext_resource type="Texture2D" uid="uid://dndu0wkyibmvd" path="res://assets/vfx/wall decoration/poster3.png" id="13_nc26b"]
+[ext_resource type="PackedScene" uid="uid://c8u0xn04yibus" path="res://scenes/door.tscn" id="14_3a68f"]
 [ext_resource type="Texture2D" uid="uid://xb2e0kl0sdti" path="res://assets/vfx/wall decoration/window.png" id="14_8ow8x"]
 [ext_resource type="TileSet" uid="uid://ur3wjutcoubb" path="res://editor/floor_tileset.tres" id="15_gnyxt"]
 [ext_resource type="Script" path="res://scripts/wall_maker.gd" id="16_b36jm"]
@@ -24,24 +24,6 @@
 [node name="CanvasLayer_Entities" type="CanvasLayer" parent="."]
 layer = 5
 follow_viewport_enabled = true
-
-[node name="door" parent="CanvasLayer_Entities" instance=ExtResource("1_tsmap")]
-position = Vector2(-28, -320)
-rotation = -1.5708
-nb_frames = 10
-layer_distance = 2.5
-shadow_top = true
-solid = true
-sprite_texture = ExtResource("2_nhdpa")
-
-[node name="door2" parent="CanvasLayer_Entities" instance=ExtResource("1_tsmap")]
-position = Vector2(-28, -512)
-rotation = -1.5708
-nb_frames = 10
-layer_distance = 2.5
-shadow_top = true
-solid = true
-sprite_texture = ExtResource("2_nhdpa")
 
 [node name="Classroom 2" type="Node2D" parent="CanvasLayer_Entities"]
 
@@ -454,6 +436,18 @@ nb_frames = 16
 layer_distance = 1.0
 sprite_texture = ExtResource("14_8ow8x")
 
+[node name="door_hallway_1" parent="CanvasLayer_Entities" instance=ExtResource("14_3a68f")]
+position = Vector2(-28, -320)
+rotation = -1.5708
+next_level = 3
+spawn_point = 1
+
+[node name="door_hallway_2" parent="CanvasLayer_Entities" instance=ExtResource("14_3a68f")]
+position = Vector2(-28, -512)
+rotation = -1.5708
+next_level = 3
+spawn_point = 2
+
 [node name="CanvasLayer_Floor" type="CanvasLayer" parent="."]
 layer = 0
 follow_viewport_enabled = true
@@ -494,7 +488,7 @@ format = 2
 [node name="SpawnPoints" type="Node2D" parent="."]
 
 [node name="0" type="Node2D" parent="SpawnPoints"]
-position = Vector2(-44, -528)
+position = Vector2(-44, -336)
 
 [node name="1" type="Node2D" parent="SpawnPoints"]
-position = Vector2(-44, -336)
+position = Vector2(-44, -528)

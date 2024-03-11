@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://dbfqd8746imoq"]
+
+[ext_resource type="PackedScene" uid="uid://jxp872moy3fp" path="res://scenes/object_instance.tscn" id="1_ma2k5"]
+[ext_resource type="Texture2D" uid="uid://xq3wt7di4735" path="res://assets/vfx/furniture/toilets.png" id="2_x2440"]
+[ext_resource type="TileSet" uid="uid://ur3wjutcoubb" path="res://editor/floor_tileset.tres" id="3_3wjcb"]
+[ext_resource type="PackedScene" uid="uid://c8u0xn04yibus" path="res://scenes/door.tscn" id="3_tx4ce"]
+[ext_resource type="Script" path="res://scripts/wall_maker.gd" id="4_4twvv"]
+[ext_resource type="TileSet" uid="uid://cp21qd1jh162v" path="res://editor/wall_tileset.tres" id="5_107cm"]
+[ext_resource type="TileSet" uid="uid://dpjo3d3qckywo" path="res://editor/bush2_tileset.tres" id="6_uo2eu"]
+
+[node name="toilets" type="Node2D"]
+
+[node name="CanvasLayer_Entities" type="CanvasLayer" parent="."]
+layer = 5
+follow_viewport_enabled = true
+
+[node name="toilet" parent="CanvasLayer_Entities" instance=ExtResource("1_ma2k5")]
+position = Vector2(-227, -878)
+nb_frames = 7
+solid = true
+sprite_texture = ExtResource("2_x2440")
+
+[node name="door_hallway_4" parent="CanvasLayer_Entities" instance=ExtResource("3_tx4ce")]
+position = Vector2(-27, -896)
+rotation = -1.5708
+next_level = 3
+spawn_point = 4
+
+[node name="CanvasLayer_Floor" type="CanvasLayer" parent="."]
+layer = 0
+follow_viewport_enabled = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer_Floor"]
+position = Vector2(257, 36)
+color = Color(0, 0, 0, 1)
+
+[node name="TileMap_Floor" type="TileMap" parent="CanvasLayer_Floor"]
+texture_filter = 1
+tile_set = ExtResource("3_3wjcb")
+rendering_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(-1900553, 131074, 2, -1835017, 131074, 1, -1769481, 131074, 1, -1703945, 65538, 2, -1900552, 65538, 2, -1835016, 196610, 2, -1769480, 65538, 2, -1703944, 131074, 2, -1900551, 65538, 1, -1835015, 131074, 1, -1769479, 131074, 1, -1703943, 131074, 1, -1900550, 65538, 1, -1835014, 131074, 1, -1769478, 65538, 1, -1703942, 131074, 1, -1900549, 2, 2, -1835013, 65538, 1, -1769477, 65538, 2, -1703941, 65538, 2, -1900548, 65538, 2, -1835012, 131074, 1, -1769476, 65538, 2, -1703940, 65538, 2, -1900547, 196610, 1, -1835011, 131074, 2, -1769475, 131074, 1, -1703939, 131074, 1, -1900546, 65538, 2, -1835010, 196610, 1, -1769474, 131074, 1, -1703938, 65538, 1, -1835009, 131074, 1)
+
+[node name="Wall_Maker_Hallway" type="Node2D" parent="."]
+script = ExtResource("4_4twvv")
+nb_layers = 20
+layer_distance = 1
+colors = Array[Color]([Color(0.0784314, 0.137255, 0.227451, 1), Color(0.25098, 0.321569, 0.45098, 1), Color(0.423529, 0.505882, 0.631373, 1), Color(0.423529, 0.505882, 0.631373, 1), Color(0.423529, 0.505882, 0.631373, 1), Color(0.835294, 0.839216, 0.858824, 1), Color(0.835294, 0.839216, 0.858824, 1), Color(0.835294, 0.839216, 0.858824, 1), Color(0.835294, 0.839216, 0.858824, 1), Color(0.835294, 0.839216, 0.858824, 1)])
+
+[node name="Input" type="Node2D" parent="Wall_Maker_Hallway"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Wall_Maker_Hallway/Input"]
+layer = 2
+
+[node name="TileMap_Walls" type="TileMap" parent="Wall_Maker_Hallway/Input/CanvasLayer"]
+modulate = Color(1, 1, 0, 1)
+tile_set = ExtResource("5_107cm")
+format = 2
+layer_0/tile_data = PackedInt32Array(-3604482, 1, 0, -3604481, 1, 0, -3538946, 1, 0, -3473410, 1, 0, -3407874, 1, 0, -3342338, 1, 0, -3342355, 1, 0, -3342354, 1, 0, -3342353, 1, 0, -3342352, 1, 0, -3342351, 1, 0, -3342350, 1, 0, -3342349, 1, 0, -3342348, 1, 0, -3342347, 1, 0, -3342346, 1, 0, -3342345, 1, 0, -3342344, 1, 0, -3342343, 1, 0, -3342342, 1, 0, -3342341, 1, 0, -3342340, 1, 0, -3342339, 1, 0, -3932179, 1, 0, -3866643, 1, 0, -3801107, 1, 0, -3735571, 1, 0, -3670035, 1, 0, -3604499, 1, 0, -3538963, 1, 0, -3473427, 1, 0, -3407891, 1, 0, -3932178, 1, 0, -3932177, 1, 0, -3932176, 1, 0, -3932175, 1, 0, -3932174, 1, 0, -3932173, 1, 0, -3932172, 1, 0, -3932171, 1, 0, -3932170, 1, 0, -3932169, 1, 0, -3932168, 1, 0, -3932167, 1, 0, -3932166, 1, 0, -3932165, 1, 0, -3932164, 1, 0, -3932163, 1, 0, -3932162, 1, 0, -3866626, 1, 0, -3801090, 1, 0, -3801089, 1, 0, -3866624, 1, 0, -3801088, 1, 0, -3735552, 1, 0, -3670016, 1, 0)
+
+[node name="TileMap_Bushes" type="TileMap" parent="Wall_Maker_Hallway/Input/CanvasLayer"]
+texture_filter = 1
+tile_set = ExtResource("6_uo2eu")
+format = 2
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="SpawnPoints"]
+position = Vector2(-44, -912)

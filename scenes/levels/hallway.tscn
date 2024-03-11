@@ -12,9 +12,65 @@
 layer = 5
 follow_viewport_enabled = true
 
-[node name="door" parent="CanvasLayer_Entities" instance=ExtResource("1_57idd")]
+[node name="door_classroom1" parent="CanvasLayer_Entities" instance=ExtResource("1_57idd")]
 position = Vector2(64, -220)
-next_level = "res://scenes/levels/classroom_1.tscn"
+
+[node name="door_classroom2_0" parent="CanvasLayer_Entities" instance=ExtResource("1_57idd")]
+position = Vector2(28, -352)
+rotation = 1.5708
+next_level = 1
+
+[node name="door_classroom2_1" parent="CanvasLayer_Entities" instance=ExtResource("1_57idd")]
+position = Vector2(28, -544)
+rotation = 1.5708
+next_level = 1
+spawn_point = 1
+
+[node name="door_toilets_girls" parent="CanvasLayer_Entities" instance=ExtResource("1_57idd")]
+position = Vector2(28, -736)
+rotation = 1.5708
+next_level = 4
+
+[node name="door_toilets_boys" parent="CanvasLayer_Entities" instance=ExtResource("1_57idd")]
+position = Vector2(28, -928)
+rotation = 1.5708
+next_level = 4
+
+[node name="door_yard_0" parent="CanvasLayer_Entities" instance=ExtResource("1_57idd")]
+position = Vector2(96, -1060)
+rotation = 3.14159
+next_level = 5
+
+[node name="door_classroom3_0" parent="CanvasLayer_Entities" instance=ExtResource("1_57idd")]
+position = Vector2(132, -736)
+rotation = -1.5708
+next_level = 2
+
+[node name="door_classroom3_1" parent="CanvasLayer_Entities" instance=ExtResource("1_57idd")]
+position = Vector2(132, -928)
+rotation = -1.5708
+next_level = 2
+spawn_point = 1
+
+[node name="door_classroom3_2" parent="CanvasLayer_Entities" instance=ExtResource("1_57idd")]
+position = Vector2(572, -960)
+rotation = 1.5708
+next_level = 2
+spawn_point = 2
+
+[node name="door_office_0" parent="CanvasLayer_Entities" instance=ExtResource("1_57idd")]
+position = Vector2(416, -476)
+next_level = 7
+
+[node name="door_office_1" parent="CanvasLayer_Entities" instance=ExtResource("1_57idd")]
+position = Vector2(768, -476)
+next_level = 7
+spawn_point = 1
+
+[node name="door_library" parent="CanvasLayer_Entities" instance=ExtResource("1_57idd")]
+position = Vector2(800, -1124)
+rotation = 3.14159
+next_level = 6
 
 [node name="CanvasLayer_Floor" type="CanvasLayer" parent="."]
 layer = 0
@@ -78,3 +134,36 @@ format = 2
 
 [node name="0" type="Node2D" parent="SpawnPoints"]
 position = Vector2(80, -236)
+
+[node name="1" type="Node2D" parent="SpawnPoints"]
+position = Vector2(44, -336)
+
+[node name="2" type="Node2D" parent="SpawnPoints"]
+position = Vector2(44, -528)
+
+[node name="3" type="Node2D" parent="SpawnPoints"]
+position = Vector2(44, -720)
+
+[node name="4" type="Node2D" parent="SpawnPoints"]
+position = Vector2(44, -912)
+
+[node name="5" type="Node2D" parent="SpawnPoints"]
+position = Vector2(80, -1044)
+
+[node name="6" type="Node2D" parent="SpawnPoints"]
+position = Vector2(116, -944)
+
+[node name="7" type="Node2D" parent="SpawnPoints"]
+position = Vector2(116, -752)
+
+[node name="8" type="Node2D" parent="SpawnPoints"]
+position = Vector2(432, -492)
+
+[node name="9" type="Node2D" parent="SpawnPoints"]
+position = Vector2(784, -492)
+
+[node name="10" type="Node2D" parent="SpawnPoints"]
+position = Vector2(588, -944)
+
+[node name="11" type="Node2D" parent="SpawnPoints"]
+position = Vector2(784, -1108)
