@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cye17wpdukni4"]
+[gd_scene load_steps=17 format=3 uid="uid://cye17wpdukni4"]
 
 [ext_resource type="PackedScene" uid="uid://uklat60xqlk6" path="res://scenes/player.tscn" id="1_jay8r"]
 [ext_resource type="TileSet" uid="uid://ur3wjutcoubb" path="res://editor/floor_tileset.tres" id="2_okhfk"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bujp2g6hjue5i" path="res://assets/vfx/door.png" id="5_m0rr6"]
 [ext_resource type="Texture2D" uid="uid://bjrlp8cemf880" path="res://assets/vfx/chair.png" id="6_rov8f"]
 [ext_resource type="Texture2D" uid="uid://c1mia8jce5s0g" path="res://assets/vfx/chalkboard.png" id="7_45jy0"]
+[ext_resource type="Texture2D" uid="uid://3emslrqau24q" path="res://assets/vfx/locker.png" id="9_3iunk"]
+[ext_resource type="Texture2D" uid="uid://xq3wt7di4735" path="res://assets/vfx/toilets.png" id="10_2jxq1"]
 [ext_resource type="PackedScene" uid="uid://jxp872moy3fp" path="res://scenes/object_instance.tscn" id="10_400ue"]
 [ext_resource type="TileSet" uid="uid://dpjo3d3qckywo" path="res://editor/bush2_tileset.tres" id="10_lmvhd"]
 [ext_resource type="Material" uid="uid://daitmkm6lwgq0" path="res://editor/fog_material.tres" id="11_x4wxn"]
@@ -76,6 +78,18 @@ position = Vector2(-192, -640)
 nb_frames = 16
 layer_distance = 1.0
 sprite_texture = ExtResource("7_45jy0")
+
+[node name="object_instance" parent="CanvasLayer_Entities" instance=ExtResource("10_400ue")]
+position = Vector2(678, -1536)
+nb_frames = 10
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("9_3iunk")
+
+[node name="object_instance2" parent="CanvasLayer_Entities" instance=ExtResource("10_400ue")]
+position = Vector2(689, -1387)
+nb_frames = 7
+sprite_texture = ExtResource("10_2jxq1")
 
 [node name="CanvasLayer_Floor" type="CanvasLayer" parent="."]
 layer = 0

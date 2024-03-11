@@ -3,10 +3,10 @@ res://editor/floor_tileset.tres
 res://editor/wall_tileset.tres
 res://editor/bush2_tileset.tres
 res://editor/fog_material.tres
+res://editor/grass_tileset.tres
 res://editor/bush1_tileset.tres
 res://editor/fog_shader.gdshader
 res://scenes/player.tscn
 res://scenes/world_test.tscn
 res://scenes/pause_menu.tscn
 res://scenes/object_instance.tscn
-res://editor/grass_tileset.tres
