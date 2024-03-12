@@ -1,12 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://dbfqd8746imoq"]
+[gd_scene load_steps=14 format=3 uid="uid://dbfqd8746imoq"]
 
 [ext_resource type="PackedScene" uid="uid://jxp872moy3fp" path="res://scenes/object_instance.tscn" id="1_ma2k5"]
 [ext_resource type="Texture2D" uid="uid://xq3wt7di4735" path="res://assets/vfx/furniture/toilets.png" id="2_x2440"]
 [ext_resource type="TileSet" uid="uid://ur3wjutcoubb" path="res://editor/floor_tileset.tres" id="3_3wjcb"]
 [ext_resource type="PackedScene" uid="uid://c8u0xn04yibus" path="res://scenes/door.tscn" id="3_tx4ce"]
 [ext_resource type="Script" path="res://scripts/wall_maker.gd" id="4_4twvv"]
+[ext_resource type="Texture2D" uid="uid://b808pqi5m8tdc" path="res://assets/vfx/furniture/toilet_door.png" id="4_8p4py"]
 [ext_resource type="TileSet" uid="uid://cp21qd1jh162v" path="res://editor/wall_tileset.tres" id="5_107cm"]
+[ext_resource type="Texture2D" uid="uid://xb2e0kl0sdti" path="res://assets/vfx/wall decoration/window.png" id="5_eu7u0"]
+[ext_resource type="Texture2D" uid="uid://c6ui2cmvokld6" path="res://assets/vfx/furniture/sink.png" id="6_fbvf7"]
 [ext_resource type="TileSet" uid="uid://dpjo3d3qckywo" path="res://editor/bush2_tileset.tres" id="6_uo2eu"]
+[ext_resource type="Texture2D" uid="uid://d4iipdqvfce2y" path="res://assets/vfx/wall decoration/mirror.png" id="7_q7f6s"]
+[ext_resource type="PackedScene" uid="uid://c6vipl3r2ocnm" path="res://scenes/item.tscn" id="8_bil5l"]
+[ext_resource type="Texture2D" uid="uid://yt24wya1sop2" path="res://assets/vfx/items/key.png" id="9_gsnrf"]
 
 [node name="toilets" type="Node2D"]
 
@@ -14,17 +20,159 @@
 layer = 5
 follow_viewport_enabled = true
 
-[node name="toilet" parent="CanvasLayer_Entities" instance=ExtResource("1_ma2k5")]
-position = Vector2(-227, -878)
-nb_frames = 7
-solid = true
-sprite_texture = ExtResource("2_x2440")
-
 [node name="door_hallway_4" parent="CanvasLayer_Entities" instance=ExtResource("3_tx4ce")]
 position = Vector2(-27, -896)
 rotation = -1.5708
 next_level = 3
 spawn_point = 4
+locked = false
+
+[node name="Toilets" type="Node2D" parent="CanvasLayer_Entities"]
+
+[node name="toilet" parent="CanvasLayer_Entities/Toilets" instance=ExtResource("1_ma2k5")]
+position = Vector2(-280, -860)
+nb_frames = 7
+solid = true
+sprite_texture = ExtResource("2_x2440")
+
+[node name="toilet_door2" parent="CanvasLayer_Entities/Toilets" instance=ExtResource("1_ma2k5")]
+position = Vector2(-240, -880)
+nb_frames = 20
+layer_distance = 1.0
+shadow_top = true
+solid = true
+sprite_texture = ExtResource("4_8p4py")
+
+[node name="toilet_door3" parent="CanvasLayer_Entities/Toilets" instance=ExtResource("1_ma2k5")]
+position = Vector2(-192, -880)
+nb_frames = 20
+layer_distance = 1.0
+shadow_top = true
+solid = true
+sprite_texture = ExtResource("4_8p4py")
+
+[node name="toilet_door4" parent="CanvasLayer_Entities/Toilets" instance=ExtResource("1_ma2k5")]
+position = Vector2(-144, -880)
+nb_frames = 20
+layer_distance = 1.0
+shadow_top = true
+solid = true
+sprite_texture = ExtResource("4_8p4py")
+
+[node name="toilet_door5" parent="CanvasLayer_Entities/Toilets" instance=ExtResource("1_ma2k5")]
+position = Vector2(-240, -832)
+rotation = -1.5708
+nb_frames = 20
+layer_distance = 1.0
+shadow_top = true
+solid = true
+sprite_texture = ExtResource("4_8p4py")
+
+[node name="toilet_door8" parent="CanvasLayer_Entities/Toilets" instance=ExtResource("1_ma2k5")]
+position = Vector2(-96, -832)
+rotation = -1.5708
+nb_frames = 20
+layer_distance = 1.0
+shadow_top = true
+solid = true
+sprite_texture = ExtResource("4_8p4py")
+
+[node name="window" parent="CanvasLayer_Entities" instance=ExtResource("1_ma2k5")]
+position = Vector2(-288, -896)
+rotation = -1.5708
+nb_frames = 16
+layer_distance = 1.0
+sprite_texture = ExtResource("5_eu7u0")
+
+[node name="sinks" type="Node2D" parent="CanvasLayer_Entities"]
+
+[node name="sink" parent="CanvasLayer_Entities/sinks" instance=ExtResource("1_ma2k5")]
+position = Vector2(-264, -960)
+nb_frames = 8
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("6_fbvf7")
+
+[node name="sink2" parent="CanvasLayer_Entities/sinks" instance=ExtResource("1_ma2k5")]
+position = Vector2(-232, -960)
+nb_frames = 8
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("6_fbvf7")
+
+[node name="sink3" parent="CanvasLayer_Entities/sinks" instance=ExtResource("1_ma2k5")]
+position = Vector2(-200, -960)
+nb_frames = 8
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("6_fbvf7")
+
+[node name="sink4" parent="CanvasLayer_Entities/sinks" instance=ExtResource("1_ma2k5")]
+position = Vector2(-168, -960)
+nb_frames = 8
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("6_fbvf7")
+
+[node name="sink5" parent="CanvasLayer_Entities/sinks" instance=ExtResource("1_ma2k5")]
+position = Vector2(-136, -960)
+nb_frames = 8
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("6_fbvf7")
+
+[node name="sink6" parent="CanvasLayer_Entities/sinks" instance=ExtResource("1_ma2k5")]
+position = Vector2(-104, -960)
+nb_frames = 8
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("6_fbvf7")
+
+[node name="Mirrors" type="Node2D" parent="CanvasLayer_Entities"]
+
+[node name="object_instance" parent="CanvasLayer_Entities/Mirrors" instance=ExtResource("1_ma2k5")]
+position = Vector2(-268, -960)
+nb_frames = 16
+layer_distance = 1.0
+sprite_texture = ExtResource("7_q7f6s")
+
+[node name="object_instance2" parent="CanvasLayer_Entities/Mirrors" instance=ExtResource("1_ma2k5")]
+position = Vector2(-236, -960)
+nb_frames = 16
+layer_distance = 1.0
+sprite_texture = ExtResource("7_q7f6s")
+
+[node name="object_instance3" parent="CanvasLayer_Entities/Mirrors" instance=ExtResource("1_ma2k5")]
+position = Vector2(-204, -960)
+nb_frames = 16
+layer_distance = 1.0
+sprite_texture = ExtResource("7_q7f6s")
+
+[node name="object_instance4" parent="CanvasLayer_Entities/Mirrors" instance=ExtResource("1_ma2k5")]
+position = Vector2(-172, -960)
+nb_frames = 16
+layer_distance = 1.0
+sprite_texture = ExtResource("7_q7f6s")
+
+[node name="object_instance5" parent="CanvasLayer_Entities/Mirrors" instance=ExtResource("1_ma2k5")]
+position = Vector2(-140, -960)
+nb_frames = 16
+layer_distance = 1.0
+sprite_texture = ExtResource("7_q7f6s")
+
+[node name="object_instance6" parent="CanvasLayer_Entities/Mirrors" instance=ExtResource("1_ma2k5")]
+position = Vector2(-108, -960)
+nb_frames = 16
+layer_distance = 1.0
+sprite_texture = ExtResource("7_q7f6s")
+
+[node name="key" parent="CanvasLayer_Entities" instance=ExtResource("8_bil5l")]
+position = Vector2(-273, -849)
+rotation = -0.261799
+item_id = 5
+dialog = "Picked up Office Key"
+layer_distance = 1.0
+sprite_texture = ExtResource("9_gsnrf")
 
 [node name="CanvasLayer_Floor" type="CanvasLayer" parent="."]
 layer = 0

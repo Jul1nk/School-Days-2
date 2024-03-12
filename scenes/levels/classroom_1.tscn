@@ -277,14 +277,8 @@ layer_distance = 1.5
 solid = true
 sprite_texture = ExtResource("8_r1hpa")
 
-[node name="item" parent="CanvasLayer_Entities/Classroom 1/Desk" instance=ExtResource("15_otu6p")]
-position = Vector2(-130, -122)
-item_id = 2
-layer_distance = 1.5
-sprite_texture = ExtResource("16_7alam")
-
 [node name="chair" parent="CanvasLayer_Entities/Classroom 1/Desk" instance=ExtResource("2_oiqma")]
-position = Vector2(-101, -141)
+position = Vector2(-107, -136)
 rotation = 3.14159
 nb_frames = 7
 layer_distance = 1.0
@@ -462,6 +456,12 @@ rotation = -1.5708
 nb_frames = 16
 layer_distance = 1.0
 sprite_texture = ExtResource("16_glbyr")
+
+[node name="key" parent="CanvasLayer_Entities" instance=ExtResource("15_otu6p")]
+position = Vector2(-130, -122)
+item_id = 2
+layer_distance = 1.5
+sprite_texture = ExtResource("16_7alam")
 
 [node name="door_hallway_0" parent="CanvasLayer_Entities" instance=ExtResource("15_jit1v")]
 position = Vector2(96, -164)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d0k4tenbpwx7c"]
+[gd_scene load_steps=18 format=3 uid="uid://d0k4tenbpwx7c"]
 
 [ext_resource type="PackedScene" uid="uid://c8u0xn04yibus" path="res://scenes/door.tscn" id="1_7hyee"]
 [ext_resource type="TileSet" uid="uid://ur3wjutcoubb" path="res://editor/floor_tileset.tres" id="1_65irb"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://dndu0wkyibmvd" path="res://assets/vfx/wall decoration/poster3.png" id="8_q7twy"]
 [ext_resource type="Texture2D" uid="uid://b8f4i4snlhpq1" path="res://assets/vfx/furniture/desk.png" id="9_02205"]
 [ext_resource type="Texture2D" uid="uid://ba2cmg7mnf6n5" path="res://assets/vfx/furniture/chair_fallen.png" id="10_f5ich"]
+[ext_resource type="Texture2D" uid="uid://5u2rr5u6h6qv" path="res://assets/vfx/furniture/pillar.png" id="12_eq31h"]
+[ext_resource type="Texture2D" uid="uid://tyu3u6ny6alf" path="res://assets/vfx/furniture/pillar_with_statuette.png" id="12_touqh"]
 
 [node name="Library" type="Node2D"]
 
@@ -295,6 +297,20 @@ nb_frames = 5
 layer_distance = 1.0
 solid = true
 sprite_texture = ExtResource("10_f5ich")
+
+[node name="pillar" parent="CanvasLayer_Entities" instance=ExtResource("2_gf52a")]
+position = Vector2(757, -1510)
+nb_frames = 16
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("12_touqh")
+
+[node name="pillar2" parent="CanvasLayer_Entities" instance=ExtResource("2_gf52a")]
+position = Vector2(835, -1510)
+nb_frames = 12
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("12_eq31h")
 
 [node name="CanvasLayer_Floor" type="CanvasLayer" parent="."]
 layer = 0

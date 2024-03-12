@@ -18,3 +18,5 @@ res://scenes/levels/library.tscn
 res://scenes/levels/office.tscn
 res://scenes/levels/toilets.tscn
 res://scenes/door.tscn
+res://scripts/interactible.gd
+res://scenes/interactible.tscn

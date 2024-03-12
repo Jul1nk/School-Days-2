@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bjqehabcxfsk7"]
+[gd_scene load_steps=21 format=3 uid="uid://bjqehabcxfsk7"]
 
 [ext_resource type="PackedScene" uid="uid://jxp872moy3fp" path="res://scenes/object_instance.tscn" id="1_tsmap"]
 [ext_resource type="Texture2D" uid="uid://ck8cwv1joibkn" path="res://assets/vfx/furniture/table.png" id="3_vigks"]
@@ -14,8 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://dndu0wkyibmvd" path="res://assets/vfx/wall decoration/poster3.png" id="13_nc26b"]
 [ext_resource type="PackedScene" uid="uid://c8u0xn04yibus" path="res://scenes/door.tscn" id="14_3a68f"]
 [ext_resource type="Texture2D" uid="uid://xb2e0kl0sdti" path="res://assets/vfx/wall decoration/window.png" id="14_8ow8x"]
+[ext_resource type="PackedScene" uid="uid://c6vipl3r2ocnm" path="res://scenes/item.tscn" id="15_2pflj"]
 [ext_resource type="TileSet" uid="uid://ur3wjutcoubb" path="res://editor/floor_tileset.tres" id="15_gnyxt"]
 [ext_resource type="Script" path="res://scripts/wall_maker.gd" id="16_b36jm"]
+[ext_resource type="Texture2D" uid="uid://d13ktkheg5rir" path="res://assets/vfx/items/statuette.png" id="16_ge413"]
 [ext_resource type="TileSet" uid="uid://cp21qd1jh162v" path="res://editor/wall_tileset.tres" id="17_5ieb5"]
 [ext_resource type="TileSet" uid="uid://dpjo3d3qckywo" path="res://editor/bush2_tileset.tres" id="18_8hfbj"]
 
@@ -441,12 +443,23 @@ position = Vector2(-28, -320)
 rotation = -1.5708
 next_level = 3
 spawn_point = 1
+locked = false
 
 [node name="door_hallway_2" parent="CanvasLayer_Entities" instance=ExtResource("14_3a68f")]
 position = Vector2(-28, -512)
 rotation = -1.5708
 next_level = 3
 spawn_point = 2
+locked = false
+
+[node name="statuette" parent="CanvasLayer_Entities" instance=ExtResource("15_2pflj")]
+position = Vector2(-260, -393)
+item_id = 7
+dialog = "Picked up Bird Statuette"
+nb_frames = 4
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("16_ge413")
 
 [node name="CanvasLayer_Floor" type="CanvasLayer" parent="."]
 layer = 0
