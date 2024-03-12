@@ -7,7 +7,7 @@ var current_level
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_change_level(Global.lvl_path_classroom1, 0)
+	_change_level(Global.lvl_path_office, 1)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
