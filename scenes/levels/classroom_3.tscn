@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c51fm2x0yhtu8"]
+[gd_scene load_steps=17 format=3 uid="uid://c51fm2x0yhtu8"]
 
 [ext_resource type="PackedScene" uid="uid://jxp872moy3fp" path="res://scenes/object_instance.tscn" id="1_25xiu"]
 [ext_resource type="Texture2D" uid="uid://ck8cwv1joibkn" path="res://assets/vfx/furniture/table.png" id="2_wgs6o"]
@@ -12,7 +12,9 @@
 [ext_resource type="TileSet" uid="uid://ur3wjutcoubb" path="res://editor/floor_tileset.tres" id="10_wphrq"]
 [ext_resource type="PackedScene" uid="uid://c8u0xn04yibus" path="res://scenes/door.tscn" id="10_xu0tb"]
 [ext_resource type="Script" path="res://scripts/wall_maker.gd" id="11_f010h"]
+[ext_resource type="PackedScene" uid="uid://c6vipl3r2ocnm" path="res://scenes/item.tscn" id="11_h881t"]
 [ext_resource type="TileSet" uid="uid://cp21qd1jh162v" path="res://editor/wall_tileset.tres" id="12_e13es"]
+[ext_resource type="Texture2D" uid="uid://yt24wya1sop2" path="res://assets/vfx/items/key.png" id="12_lde4a"]
 [ext_resource type="TileSet" uid="uid://dpjo3d3qckywo" path="res://editor/bush2_tileset.tres" id="13_yq4cf"]
 
 [node name="Classroom3" type="Node2D"]
@@ -26,7 +28,7 @@ follow_viewport_enabled = true
 [node name="Tables" type="Node2D" parent="CanvasLayer_Entities/Classroom 3"]
 
 [node name="table" parent="CanvasLayer_Entities/Classroom 3/Tables" instance=ExtResource("1_25xiu")]
-position = Vector2(430, -945)
+position = Vector2(390, -928)
 rotation = 1.5708
 nb_frames = 5
 layer_distance = 1.5
@@ -34,7 +36,7 @@ solid = true
 sprite_texture = ExtResource("2_wgs6o")
 
 [node name="chair" parent="CanvasLayer_Entities/Classroom 3/Tables" instance=ExtResource("1_25xiu")]
-position = Vector2(396, -928)
+position = Vector2(356, -911)
 rotation = 1.5708
 nb_frames = 7
 layer_distance = 1.0
@@ -90,7 +92,7 @@ solid = true
 sprite_texture = ExtResource("3_5wcy8")
 
 [node name="table5" parent="CanvasLayer_Entities/Classroom 3/Tables" instance=ExtResource("1_25xiu")]
-position = Vector2(362, -945)
+position = Vector2(356, -967)
 rotation = 1.5708
 nb_frames = 5
 layer_distance = 1.5
@@ -98,7 +100,7 @@ solid = true
 sprite_texture = ExtResource("2_wgs6o")
 
 [node name="chair5" parent="CanvasLayer_Entities/Classroom 3/Tables" instance=ExtResource("1_25xiu")]
-position = Vector2(336, -930)
+position = Vector2(330, -952)
 rotation = 1.309
 nb_frames = 7
 layer_distance = 1.0
@@ -106,23 +108,23 @@ solid = true
 sprite_texture = ExtResource("3_5wcy8")
 
 [node name="table6" parent="CanvasLayer_Entities/Classroom 3/Tables" instance=ExtResource("1_25xiu")]
-position = Vector2(362, -877)
-rotation = 1.5708
+position = Vector2(362, -873)
+rotation = 1.0472
 nb_frames = 5
 layer_distance = 1.5
 solid = true
 sprite_texture = ExtResource("2_wgs6o")
 
 [node name="chair6" parent="CanvasLayer_Entities/Classroom 3/Tables" instance=ExtResource("1_25xiu")]
-position = Vector2(331, -861)
-rotation = 1.5708
+position = Vector2(326, -815)
+rotation = -1.0472
 nb_frames = 7
 layer_distance = 1.0
 solid = true
 sprite_texture = ExtResource("3_5wcy8")
 
 [node name="table7" parent="CanvasLayer_Entities/Classroom 3/Tables" instance=ExtResource("1_25xiu")]
-position = Vector2(362, -809)
+position = Vector2(368, -796)
 rotation = 1.5708
 nb_frames = 5
 layer_distance = 1.5
@@ -130,7 +132,7 @@ solid = true
 sprite_texture = ExtResource("2_wgs6o")
 
 [node name="chair7" parent="CanvasLayer_Entities/Classroom 3/Tables" instance=ExtResource("1_25xiu")]
-position = Vector2(336, -801)
+position = Vector2(342, -788)
 rotation = 1.5708
 nb_frames = 7
 layer_distance = 1.0
@@ -139,7 +141,7 @@ sprite_texture = ExtResource("3_5wcy8")
 
 [node name="table8" parent="CanvasLayer_Entities/Classroom 3/Tables" instance=ExtResource("1_25xiu")]
 position = Vector2(362, -741)
-rotation = 1.5708
+rotation = 1.83259
 nb_frames = 5
 layer_distance = 1.5
 solid = true
@@ -154,16 +156,16 @@ solid = true
 sprite_texture = ExtResource("4_ndxne")
 
 [node name="table9" parent="CanvasLayer_Entities/Classroom 3/Tables" instance=ExtResource("1_25xiu")]
-position = Vector2(294, -945)
-rotation = 1.5708
+position = Vector2(303, -1008)
+rotation = 1.309
 nb_frames = 5
 layer_distance = 1.5
 solid = true
 sprite_texture = ExtResource("2_wgs6o")
 
 [node name="chair9" parent="CanvasLayer_Entities/Classroom 3/Tables" instance=ExtResource("1_25xiu")]
-position = Vector2(263, -929)
-rotation = 2.09439
+position = Vector2(272, -992)
+rotation = 1.83259
 nb_frames = 7
 layer_distance = 1.0
 solid = true
@@ -202,7 +204,7 @@ solid = true
 sprite_texture = ExtResource("3_5wcy8")
 
 [node name="table12" parent="CanvasLayer_Entities/Classroom 3/Tables" instance=ExtResource("1_25xiu")]
-position = Vector2(294, -741)
+position = Vector2(288, -713)
 rotation = 1.5708
 nb_frames = 5
 layer_distance = 1.5
@@ -210,7 +212,7 @@ solid = true
 sprite_texture = ExtResource("2_wgs6o")
 
 [node name="chair12" parent="CanvasLayer_Entities/Classroom 3/Tables" instance=ExtResource("1_25xiu")]
-position = Vector2(271, -727)
+position = Vector2(265, -699)
 rotation = 2.09439
 nb_frames = 7
 layer_distance = 1.0
@@ -390,6 +392,13 @@ rotation = -1.5708
 next_level = 3
 spawn_point = 10
 locked = false
+
+[node name="key" parent="CanvasLayer_Entities" instance=ExtResource("11_h881t")]
+position = Vector2(410, -649)
+item_id = 4
+dialog = "Picked up Library Key"
+layer_distance = 0.0
+sprite_texture = ExtResource("12_lde4a")
 
 [node name="CanvasLayer_Floor" type="CanvasLayer" parent="."]
 layer = 0
