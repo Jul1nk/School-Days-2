@@ -28,24 +28,28 @@ position = Vector2(448, -420)
 rotation = 3.14159
 next_level = 3
 spawn_point = 8
+item_needed = 5
 
 [node name="door_hallway_9" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_54env")]
 position = Vector2(800, -420)
 rotation = 3.14159
 next_level = 3
 spawn_point = 9
+item_needed = 6
 
 [node name="door_office_2" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_54env")]
 position = Vector2(540, -288)
 rotation = 1.5708
 next_level = 7
 spawn_point = 2
+locked = false
 
 [node name="door_office_3" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_54env")]
 position = Vector2(484, -256)
 rotation = -1.5708
 next_level = 7
 spawn_point = 3
+item_needed = 6
 
 [node name="Office1" type="Node2D" parent="CanvasLayer_Entities"]
 

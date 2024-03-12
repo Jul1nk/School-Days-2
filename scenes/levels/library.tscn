@@ -32,6 +32,7 @@ spawn_point = 1
 position = Vector2(768, -1180)
 next_level = 3
 spawn_point = 11
+locked = false
 
 [node name="Bookshelves" type="Node2D" parent="CanvasLayer_Entities"]
 

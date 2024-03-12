@@ -61,3 +61,5 @@ func tp_cam_to_pos():
 	$Camera2D.position_smoothing_enabled = true
 
 
+func _has_item(n=0):
+	if n == 0: return false

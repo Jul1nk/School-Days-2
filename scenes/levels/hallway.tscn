@@ -20,17 +20,20 @@ follow_viewport_enabled = true
 
 [node name="door_classroom1" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(64, -220)
+locked = false
 
 [node name="door_classroom2_0" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(28, -352)
 rotation = 1.5708
 next_level = 1
+item_needed = 3
 
 [node name="door_classroom2_1" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(28, -544)
 rotation = 1.5708
 next_level = 1
 spawn_point = 1
+item_needed = 3
 
 [node name="door_toilets_girls" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(28, -736)
@@ -41,42 +44,50 @@ next_level = 4
 position = Vector2(28, -928)
 rotation = 1.5708
 next_level = 4
+locked = false
 
 [node name="door_yard_0" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(96, -1060)
 rotation = -3.14159
 next_level = 5
+locked = false
 
 [node name="door_classroom3_0" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(132, -736)
 rotation = -1.5708
 next_level = 2
+locked = false
 
 [node name="door_classroom3_1" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(132, -928)
 rotation = -1.5708
 next_level = 2
 spawn_point = 1
+locked = false
 
 [node name="door_classroom3_2" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(572, -960)
 rotation = 1.5708
 next_level = 2
 spawn_point = 2
+locked = false
 
 [node name="door_office_0" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(416, -476)
 next_level = 7
+item_needed = 5
 
 [node name="door_office_1" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(768, -476)
 next_level = 7
 spawn_point = 1
+item_needed = 6
 
 [node name="door_library" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(800, -1124)
 rotation = -3.14159
 next_level = 6
+item_needed = 4
 
 [node name="Posters" type="Node2D" parent="CanvasLayer_Entities"]
 

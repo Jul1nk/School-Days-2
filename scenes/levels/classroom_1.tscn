@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://gt286pvvjol5"]
+[gd_scene load_steps=22 format=3 uid="uid://gt286pvvjol5"]
 
 [ext_resource type="PackedScene" uid="uid://jxp872moy3fp" path="res://scenes/object_instance.tscn" id="2_oiqma"]
 [ext_resource type="Texture2D" uid="uid://dn3uogldltv74" path="res://assets/vfx/furniture/strange_door.png" id="4_4cjqc"]
@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://buic3nq46rir5" path="res://assets/vfx/wall decoration/poster4.png" id="14_04bl0"]
 [ext_resource type="Texture2D" uid="uid://dndu0wkyibmvd" path="res://assets/vfx/wall decoration/poster3.png" id="15_ic3r8"]
 [ext_resource type="PackedScene" uid="uid://c8u0xn04yibus" path="res://scenes/door.tscn" id="15_jit1v"]
+[ext_resource type="PackedScene" uid="uid://c6vipl3r2ocnm" path="res://scenes/item.tscn" id="15_otu6p"]
+[ext_resource type="Texture2D" uid="uid://yt24wya1sop2" path="res://assets/vfx/items/key.png" id="16_7alam"]
 [ext_resource type="Texture2D" uid="uid://xb2e0kl0sdti" path="res://assets/vfx/wall decoration/window.png" id="16_glbyr"]
 [ext_resource type="TileSet" uid="uid://ur3wjutcoubb" path="res://editor/floor_tileset.tres" id="17_jlm5t"]
 [ext_resource type="Script" path="res://scripts/wall_maker.gd" id="18_k1l8q"]
@@ -275,8 +277,14 @@ layer_distance = 1.5
 solid = true
 sprite_texture = ExtResource("8_r1hpa")
 
+[node name="item" parent="CanvasLayer_Entities/Classroom 1/Desk" instance=ExtResource("15_otu6p")]
+position = Vector2(-130, -122)
+item_id = 2
+layer_distance = 1.5
+sprite_texture = ExtResource("16_7alam")
+
 [node name="chair" parent="CanvasLayer_Entities/Classroom 1/Desk" instance=ExtResource("2_oiqma")]
-position = Vector2(-94, -123)
+position = Vector2(-101, -141)
 rotation = 3.14159
 nb_frames = 7
 layer_distance = 1.0
@@ -455,10 +463,11 @@ nb_frames = 16
 layer_distance = 1.0
 sprite_texture = ExtResource("16_glbyr")
 
-[node name="door" parent="CanvasLayer_Entities" instance=ExtResource("15_jit1v")]
+[node name="door_hallway_0" parent="CanvasLayer_Entities" instance=ExtResource("15_jit1v")]
 position = Vector2(96, -164)
 rotation = 3.14159
 next_level = 3
+item_needed = 2
 
 [node name="CanvasLayer_Floor" type="CanvasLayer" parent="."]
 layer = 0

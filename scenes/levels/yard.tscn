@@ -17,12 +17,14 @@ follow_viewport_enabled = true
 position = Vector2(64, -1116)
 next_level = 3
 spawn_point = 5
+locked = false
 
 [node name="door_library_1" parent="CanvasLayer_Entities" instance=ExtResource("1_iapxh")]
 position = Vector2(580, -1344)
 rotation = -1.5708
 next_level = 6
 spawn_point = 1
+dialog_if_locked = "The door won't move..."
 
 [node name="CanvasLayer_Floor" type="CanvasLayer" parent="."]
 layer = 0
