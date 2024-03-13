@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d0k4tenbpwx7c"]
+[gd_scene load_steps=22 format=3 uid="uid://d0k4tenbpwx7c"]
 
 [ext_resource type="PackedScene" uid="uid://c8u0xn04yibus" path="res://scenes/door.tscn" id="1_7hyee"]
 [ext_resource type="TileSet" uid="uid://ur3wjutcoubb" path="res://editor/floor_tileset.tres" id="1_65irb"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://5u2rr5u6h6qv" path="res://assets/vfx/furniture/pillar.png" id="12_eq31h"]
 [ext_resource type="Texture2D" uid="uid://tyu3u6ny6alf" path="res://assets/vfx/furniture/pillar_with_statuette.png" id="12_touqh"]
 [ext_resource type="PackedScene" uid="uid://dvkqujajglqg0" path="res://scenes/interactible.tscn" id="13_7swce"]
+[ext_resource type="Texture2D" uid="uid://eiuxlak2qdru" path="res://assets/vfx/items/fallen_book.png" id="17_p6mve"]
 
 [node name="Library" type="Node2D"]
 
@@ -323,7 +324,7 @@ sprite_texture = ExtResource("12_touqh")
 position = Vector2(835, -1510)
 dialog = "A pillar of some sort, this one is empty."
 special_item = 7
-special_dialog = "I put the statuette on the pillar."
+special_dialog = "I put the statuette on the pillar. I heard something falling..."
 change_look = true
 special_nb_frames = 16
 special_layer_distance = 1.0
@@ -333,6 +334,17 @@ nb_frames = 12
 layer_distance = 1.0
 solid = true
 sprite_texture = ExtResource("12_eq31h")
+
+[node name="fallen_book" parent="CanvasLayer_Entities" instance=ExtResource("5_jkwsq")]
+position = Vector2(785, -1336)
+rotation = -0.261799
+is_fallen_book = true
+item_id = 10
+can_be_taken = false
+dialog = "The book fell off the bookshelf. \"4597\" is written in red."
+nb_frames = 3
+layer_distance = 1.0
+sprite_texture = ExtResource("17_p6mve")
 
 [node name="CanvasLayer_Floor" type="CanvasLayer" parent="."]
 layer = 0

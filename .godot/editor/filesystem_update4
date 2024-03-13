@@ -21,3 +21,6 @@ res://scenes/levels/classroom_1_intro_glitched.tscn
 res://scripts/Global.gd
 res://scenes/levels/glitch.gdshader
 res://scripts/player.gd
+res://scripts/item.gd
+res://scenes/item.tscn
+res://scripts/interactible.gd

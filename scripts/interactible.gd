@@ -24,6 +24,7 @@ var special_item2: int = 0
 var player_in = false
 var game_world
 
+signal statuette
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -46,6 +47,9 @@ func _process(_delta):
 				await game_world.dialog_finished
 				await get_tree().create_timer(0.01).timeout
 				player_in = true
+				
+				if special_item == 7:
+					emit_signal("statuette")
 				
 				dialog = special_dialog
 				special_item = special_item2
