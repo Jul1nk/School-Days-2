@@ -396,7 +396,7 @@ locked = false
 [node name="key" parent="CanvasLayer_Entities" instance=ExtResource("11_h881t")]
 position = Vector2(410, -649)
 item_id = 4
-dialog = "Picked up Library Key"
+dialog = "Picked up Library Key."
 layer_distance = 0.0
 sprite_texture = ExtResource("12_lde4a")
 

@@ -27,6 +27,8 @@ position = Vector2(28, -352)
 rotation = 1.5708
 next_level = 1
 item_needed = 3
+dialog_if_locked = "Ms. Oie classroom, it's locked..."
+dialog_if_unlocked = "It's open!"
 
 [node name="door_classroom2_1" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(28, -544)
@@ -34,11 +36,14 @@ rotation = 1.5708
 next_level = 1
 spawn_point = 1
 item_needed = 3
+dialog_if_locked = "Ms. Oie classroom, it's locked..."
+dialog_if_unlocked = "It's open!"
 
 [node name="door_toilets_girls" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(28, -736)
 rotation = 1.5708
 next_level = 4
+dialog_if_locked = "It's the girls bathroom, I can't go there."
 
 [node name="door_toilets_boys" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(28, -928)
@@ -76,18 +81,21 @@ locked = false
 position = Vector2(416, -476)
 next_level = 7
 item_needed = 5
+dialog_if_unlocked = "I've unlocked the door."
 
 [node name="door_office_1" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(768, -476)
 next_level = 7
 spawn_point = 1
 item_needed = 6
+dialog_if_unlocked = "It's now unlocked."
 
 [node name="door_library" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(800, -1124)
 rotation = -3.14159
 next_level = 6
 item_needed = 4
+dialog_if_unlocked = "The library is open."
 
 [node name="Posters" type="Node2D" parent="CanvasLayer_Entities"]
 

@@ -455,7 +455,7 @@ locked = false
 [node name="statuette" parent="CanvasLayer_Entities" instance=ExtResource("15_2pflj")]
 position = Vector2(-260, -393)
 item_id = 7
-dialog = "Picked up Bird Statuette"
+dialog = "Picked up Bird Statuette."
 nb_frames = 4
 layer_distance = 1.0
 solid = true

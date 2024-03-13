@@ -11,7 +11,7 @@ extends ObjectInstance
 "Key Office1", "Key Office2", "Statuette", "Key StrangeDoor", "Shovel")
 var item_needed: int = 0
 
-@export_multiline var dialog_if_locked = "It's locked"
+@export_multiline var dialog_if_locked = "It's locked..."
 @export_multiline var dialog_if_unlocked = "It's now unlocked"
 
 
@@ -40,10 +40,18 @@ func _process(_delta):
 			if locked:
 				if Global._player_has_item(item_needed):
 					print(dialog_if_unlocked)
+					game_world._dialog(dialog_if_unlocked)
+					player_in = false
+					await game_world.dialog_finished
 					locked = false
 					game_world._change_level(Global._int_to_level(next_level), spawn_point)
 				else:
 					print(dialog_if_locked)
+					player_in = false
+					game_world._dialog(dialog_if_locked)
+					await game_world.dialog_finished
+					await get_tree().create_timer(0.01).timeout
+					player_in = true
 			else:
 				game_world._change_level(Global._int_to_level(next_level), spawn_point)
 

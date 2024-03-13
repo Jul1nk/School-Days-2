@@ -32,6 +32,7 @@ position = Vector2(636, -1376)
 rotation = 1.5708
 next_level = 5
 spawn_point = 1
+dialog_if_locked = ""
 
 [node name="door_hallway_11" parent="CanvasLayer_Entities" instance=ExtResource("1_7hyee")]
 position = Vector2(768, -1180)
@@ -153,7 +154,7 @@ sprite_texture = ExtResource("4_alr5k")
 position = Vector2(664, -1397)
 rotation = 1.5708
 item_id = 3
-dialog = "Picked up Classroom Key."
+dialog = "Picked up Ms. Oie Classroom Key."
 layer_distance = 0.5
 sprite_texture = ExtResource("6_iv4f4")
 

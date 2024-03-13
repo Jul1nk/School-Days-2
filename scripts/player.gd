@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 100.0
+const SPEED = 90.0
 
 
 var mouse_pos = Vector2.ZERO

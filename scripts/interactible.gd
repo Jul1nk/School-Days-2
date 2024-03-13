@@ -17,11 +17,13 @@ var special_item: int = 0
 @onready var area_2d = $Area2D
 
 var player_in = false
-
+var game_world
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	game_world = get_tree().get_root().get_node("game_world")
+	
 	area_2d.connect("area_entered", player_entered)
 	area_2d.connect("area_exited", player_exited)
 	
@@ -34,6 +36,12 @@ func _process(_delta):
 		if Input.is_action_just_pressed("action"):
 			if Global._player_has_item(special_item):
 				print(special_dialog)
+				player_in = false
+				game_world._dialog(special_dialog)
+				await game_world.dialog_finished
+				await get_tree().create_timer(0.01).timeout
+				player_in = true
+				
 				if change_look:
 					nb_frames = special_nb_frames
 					layer_distance = special_layer_distance
@@ -46,6 +54,11 @@ func _process(_delta):
 					_instantiate_object()
 			else:
 				print(dialog)
+				player_in = false
+				game_world._dialog(dialog)
+				await game_world.dialog_finished
+				await get_tree().create_timer(0.01).timeout
+				player_in = true
 
 
 

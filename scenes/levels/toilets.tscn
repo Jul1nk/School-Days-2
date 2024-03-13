@@ -170,7 +170,8 @@ sprite_texture = ExtResource("7_q7f6s")
 position = Vector2(-273, -849)
 rotation = -0.261799
 item_id = 5
-dialog = "Picked up Office Key"
+dialog = "Picked up Office Key...
+Disgusting..."
 layer_distance = 1.0
 sprite_texture = ExtResource("9_gsnrf")
 

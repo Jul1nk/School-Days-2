@@ -42,6 +42,7 @@ rotation = 3.14159
 next_level = 3
 spawn_point = 9
 item_needed = 6
+dialog_if_unlocked = "It's now unlocked."
 
 [node name="door_office_2" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_54env")]
 position = Vector2(540, -288)
@@ -56,6 +57,8 @@ rotation = -1.5708
 next_level = 7
 spawn_point = 3
 item_needed = 6
+dialog_if_locked = "This door is locked."
+dialog_if_unlocked = "It's now unlocked."
 
 [node name="Office1" type="Node2D" parent="CanvasLayer_Entities"]
 
@@ -292,7 +295,7 @@ sprite_texture = ExtResource("10_yr1l0")
 position = Vector2(208, -289)
 rotation = 1.57079
 item_id = 9
-dialog = "Picked up Shovel"
+dialog = "Picked up Shovel."
 nb_frames = 2
 layer_distance = 1.0
 sprite_texture = ExtResource("13_0nhv0")
@@ -300,7 +303,7 @@ sprite_texture = ExtResource("13_0nhv0")
 [node name="strange_key" parent="CanvasLayer_Entities" instance=ExtResource("12_ne4mw")]
 position = Vector2(702, -290)
 item_id = 8
-dialog = "Picked up Strange Key"
+dialog = "Picked up Strange Key...?"
 nb_frames = 10
 layer_distance = 1.0
 sprite_texture = ExtResource("15_8qtmx")

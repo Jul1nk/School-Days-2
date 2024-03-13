@@ -1,9 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://jpi2vltxy7ff"]
+[gd_scene load_steps=16 format=3 uid="uid://jpi2vltxy7ff"]
 
 [ext_resource type="Script" path="res://scripts/game_world.gd" id="1_ymw2k"]
 [ext_resource type="Texture2D" uid="uid://cg3jj2s47ofxj" path="res://assets/vfx/tiles/wall_tile.png" id="2_ji1l6"]
 [ext_resource type="Material" uid="uid://daitmkm6lwgq0" path="res://editor/fog_material.tres" id="3_4he7n"]
 [ext_resource type="PackedScene" uid="uid://uklat60xqlk6" path="res://scenes/player.tscn" id="4_jgs0n"]
+[ext_resource type="Texture2D" uid="uid://dwle4fws8u3xn" path="res://assets/vfx/misc/map.png" id="5_1gdxp"]
+[ext_resource type="Texture2D" uid="uid://dmlthsrlptg7t" path="res://assets/vfx/misc/mouse_cursor.png" id="6_7734v"]
+[ext_resource type="FontFile" uid="uid://ch76lo54nvj0p" path="res://assets/vfx/misc/timesbd.ttf" id="7_fqh51"]
+[ext_resource type="FontFile" uid="uid://8i1f7ir8t0b" path="res://assets/vfx/misc/timesbi.ttf" id="8_pq28t"]
+[ext_resource type="FontFile" uid="uid://dk1p1tx2v4w7h" path="res://assets/vfx/misc/timesi.ttf" id="9_nl1ej"]
+[ext_resource type="FontFile" uid="uid://bnsebhkl4hyds" path="res://assets/vfx/misc/times.ttf" id="10_osiqi"]
 
 [sub_resource type="Animation" id="Animation_f5j0t"]
 length = 0.001
@@ -59,8 +65,24 @@ _data = {
 "exit_level": SubResource("Animation_gxwvw")
 }
 
+[sub_resource type="Theme" id="Theme_iqkgb"]
+RichTextLabel/colors/default_color = Color(0.945098, 0.964706, 0.941176, 1)
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+RichTextLabel/constants/shadow_offset_x = 0
+RichTextLabel/constants/shadow_offset_y = 2
+RichTextLabel/constants/shadow_outline_size = 4
+RichTextLabel/font_sizes/bold_font_size = 24
+RichTextLabel/font_sizes/bold_italics_font_size = 24
+RichTextLabel/font_sizes/italics_font_size = 24
+RichTextLabel/font_sizes/mono_font_size = 24
+RichTextLabel/font_sizes/normal_font_size = 24
+RichTextLabel/fonts/bold_font = ExtResource("7_fqh51")
+RichTextLabel/fonts/bold_italics_font = ExtResource("8_pq28t")
+RichTextLabel/fonts/italics_font = ExtResource("9_nl1ej")
+RichTextLabel/fonts/mono_font = ExtResource("10_osiqi")
+RichTextLabel/fonts/normal_font = ExtResource("10_osiqi")
+
 [node name="game_world" type="Node2D"]
-position = Vector2(-38, 5)
 script = ExtResource("1_ymw2k")
 
 [node name="Black" type="Sprite2D" parent="."]
@@ -114,3 +136,53 @@ follow_viewport_enabled = true
 
 [node name="Camera2D" type="Camera2D" parent="CanvasLayer_Player/Player"]
 position_smoothing_enabled = true
+
+[node name="CanvasLayer_Map" type="CanvasLayer" parent="."]
+layer = 8
+visible = false
+follow_viewport_enabled = true
+
+[node name="Map" type="Sprite2D" parent="CanvasLayer_Map"]
+z_index = 20
+texture_filter = 1
+texture = ExtResource("5_1gdxp")
+
+[node name="CanvasLayer_Mouse" type="CanvasLayer" parent="."]
+layer = 10
+follow_viewport_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer_Mouse"]
+texture_filter = 1
+texture = ExtResource("6_7734v")
+
+[node name="CanvasLayer_dialog" type="CanvasLayer" parent="."]
+layer = 9
+
+[node name="Control" type="Control" parent="CanvasLayer_dialog"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = 192.0
+offset_right = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dialog_RTLabel" type="RichTextLabel" parent="CanvasLayer_dialog/Control"]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_iqkgb")
+bbcode_enabled = true
+text = "[center] This is a test dialog! [center]"
+
+[node name="DialogTimer" type="Timer" parent="CanvasLayer_dialog"]
+wait_time = 0.05
+one_shot = true
