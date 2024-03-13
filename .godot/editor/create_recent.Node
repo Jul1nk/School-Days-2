@@ -1,14 +1,14 @@
+Timer
+AnimationPlayer
+RichTextLabel
 Sprite2D
 CanvasLayer
 ColorRect
 Camera2D
 PointLight2D
-Timer
 Control
-RichTextLabel
 Node2D
 CollisionShape2D
 Area2D
 Node
 CanvasModulate
-AnimationPlayer

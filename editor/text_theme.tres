@@ -1,0 +1,23 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bbrmpuciuvk1a"]
+
+[ext_resource type="FontFile" uid="uid://ch76lo54nvj0p" path="res://assets/vfx/misc/timesbd.ttf" id="1_dikx0"]
+[ext_resource type="FontFile" uid="uid://8i1f7ir8t0b" path="res://assets/vfx/misc/timesbi.ttf" id="2_daiox"]
+[ext_resource type="FontFile" uid="uid://dk1p1tx2v4w7h" path="res://assets/vfx/misc/timesi.ttf" id="3_ua0kd"]
+[ext_resource type="FontFile" uid="uid://bnsebhkl4hyds" path="res://assets/vfx/misc/times.ttf" id="4_blexv"]
+
+[resource]
+RichTextLabel/colors/default_color = Color(0.945098, 0.964706, 0.941176, 1)
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+RichTextLabel/constants/shadow_offset_x = 0
+RichTextLabel/constants/shadow_offset_y = 2
+RichTextLabel/constants/shadow_outline_size = 4
+RichTextLabel/font_sizes/bold_font_size = 24
+RichTextLabel/font_sizes/bold_italics_font_size = 24
+RichTextLabel/font_sizes/italics_font_size = 24
+RichTextLabel/font_sizes/mono_font_size = 24
+RichTextLabel/font_sizes/normal_font_size = 24
+RichTextLabel/fonts/bold_font = ExtResource("1_dikx0")
+RichTextLabel/fonts/bold_italics_font = ExtResource("2_daiox")
+RichTextLabel/fonts/italics_font = ExtResource("3_ua0kd")
+RichTextLabel/fonts/mono_font = ExtResource("4_blexv")
+RichTextLabel/fonts/normal_font = ExtResource("4_blexv")

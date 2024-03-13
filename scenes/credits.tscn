@@ -1,0 +1,102 @@
+[gd_scene load_steps=8 format=3 uid="uid://dnha5iptvy7nu"]
+
+[ext_resource type="Texture2D" uid="uid://cg3jj2s47ofxj" path="res://assets/vfx/tiles/wall_tile.png" id="1_hf76x"]
+[ext_resource type="Script" path="res://scripts/credits.gd" id="1_vg6u6"]
+[ext_resource type="Material" uid="uid://daitmkm6lwgq0" path="res://editor/fog_material.tres" id="2_j85kj"]
+[ext_resource type="Theme" uid="uid://bbrmpuciuvk1a" path="res://editor/text_theme.tres" id="3_jcgnb"]
+
+[sub_resource type="Animation" id="Animation_mvxgu"]
+resource_name = "credits"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer_dialog/Control/Dialog_RTLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["[center] School Days 2 [center]", "[center] A game by Jules Gatelier [center]"]
+}
+
+[sub_resource type="Animation" id="Animation_uyh17"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer_dialog/Control/Dialog_RTLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["[center] School Days 2 [center]"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_unwsw"]
+_data = {
+"RESET": SubResource("Animation_uyh17"),
+"credits": SubResource("Animation_mvxgu")
+}
+
+[node name="credits" type="Node2D"]
+script = ExtResource("1_vg6u6")
+
+[node name="Black" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(354, -628)
+scale = Vector2(200, 200)
+texture = ExtResource("1_hf76x")
+
+[node name="Shader_CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+follow_viewport_enabled = true
+follow_viewport_scale = 1.2
+
+[node name="Fog" type="Sprite2D" parent="Shader_CanvasLayer"]
+material = ExtResource("2_j85kj")
+position = Vector2(280, -527)
+scale = Vector2(140, 140)
+texture = ExtResource("1_hf76x")
+
+[node name="CanvasLayer_dialog" type="CanvasLayer" parent="."]
+layer = 9
+
+[node name="Control" type="Control" parent="CanvasLayer_dialog"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 112.0
+offset_right = -64.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dialog_RTLabel" type="RichTextLabel" parent="CanvasLayer_dialog/Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_jcgnb")
+bbcode_enabled = true
+text = "[center] School Days 2 [center]"
+scroll_active = false
+scroll_following = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_unwsw")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true

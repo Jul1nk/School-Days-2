@@ -26,3 +26,6 @@ res://scenes/item.tscn
 res://scripts/interactible.gd
 res://scenes/levels/end.tscn
 res://scripts/door.gd
+res://editor/bush1_tileset.tres
+res://scenes/credits.tscn
+res://scripts/credits.gd

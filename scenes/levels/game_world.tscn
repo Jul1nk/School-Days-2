@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://jpi2vltxy7ff"]
+[gd_scene load_steps=16 format=3 uid="uid://jpi2vltxy7ff"]
 
 [ext_resource type="Script" path="res://scripts/game_world.gd" id="1_ymw2k"]
 [ext_resource type="Texture2D" uid="uid://cg3jj2s47ofxj" path="res://assets/vfx/tiles/wall_tile.png" id="2_ji1l6"]
@@ -6,10 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://uklat60xqlk6" path="res://scenes/player.tscn" id="4_jgs0n"]
 [ext_resource type="Texture2D" uid="uid://dwle4fws8u3xn" path="res://assets/vfx/misc/map.png" id="5_1gdxp"]
 [ext_resource type="Texture2D" uid="uid://dmlthsrlptg7t" path="res://assets/vfx/misc/mouse_cursor.png" id="6_7734v"]
-[ext_resource type="FontFile" uid="uid://ch76lo54nvj0p" path="res://assets/vfx/misc/timesbd.ttf" id="7_fqh51"]
-[ext_resource type="FontFile" uid="uid://8i1f7ir8t0b" path="res://assets/vfx/misc/timesbi.ttf" id="8_pq28t"]
-[ext_resource type="FontFile" uid="uid://dk1p1tx2v4w7h" path="res://assets/vfx/misc/timesi.ttf" id="9_nl1ej"]
-[ext_resource type="FontFile" uid="uid://bnsebhkl4hyds" path="res://assets/vfx/misc/times.ttf" id="10_osiqi"]
+[ext_resource type="Theme" uid="uid://bbrmpuciuvk1a" path="res://editor/text_theme.tres" id="7_vk2p7"]
 [ext_resource type="Shader" path="res://scenes/levels/glitch.gdshader" id="11_lsatn"]
 
 [sub_resource type="Animation" id="Animation_f5j0t"]
@@ -113,23 +110,6 @@ _data = {
 "glitch_enter": SubResource("Animation_o1nir"),
 "glitch_exit": SubResource("Animation_63ltq")
 }
-
-[sub_resource type="Theme" id="Theme_iqkgb"]
-RichTextLabel/colors/default_color = Color(0.945098, 0.964706, 0.941176, 1)
-RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 0.392157)
-RichTextLabel/constants/shadow_offset_x = 0
-RichTextLabel/constants/shadow_offset_y = 2
-RichTextLabel/constants/shadow_outline_size = 4
-RichTextLabel/font_sizes/bold_font_size = 24
-RichTextLabel/font_sizes/bold_italics_font_size = 24
-RichTextLabel/font_sizes/italics_font_size = 24
-RichTextLabel/font_sizes/mono_font_size = 24
-RichTextLabel/font_sizes/normal_font_size = 24
-RichTextLabel/fonts/bold_font = ExtResource("7_fqh51")
-RichTextLabel/fonts/bold_italics_font = ExtResource("8_pq28t")
-RichTextLabel/fonts/italics_font = ExtResource("9_nl1ej")
-RichTextLabel/fonts/mono_font = ExtResource("10_osiqi")
-RichTextLabel/fonts/normal_font = ExtResource("10_osiqi")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1u1gt"]
 shader = ExtResource("11_lsatn")
@@ -246,7 +226,7 @@ anchor_bottom = 1.0
 offset_bottom = 3.05176e-05
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_iqkgb")
+theme = ExtResource("7_vk2p7")
 bbcode_enabled = true
 text = "[center] This is a test dialog! [center]"
 scroll_active = false
