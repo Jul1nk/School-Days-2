@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://uklat60xqlk6"]
+[gd_scene load_steps=9 format=3 uid="uid://uklat60xqlk6"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_3m2ps"]
 [ext_resource type="Texture2D" uid="uid://tpc7qv2wg741" path="res://assets/vfx/characters/player_spritesheet.png" id="2_gnb3v"]
 [ext_resource type="Texture2D" uid="uid://026h7fuafqv2" path="res://assets/vfx/tiles/floor_tiles.png" id="2_if4hq"]
 [ext_resource type="Texture2D" uid="uid://g4onmuu4kou7" path="res://assets/vfx/misc/light_torch.png" id="3_5u46s"]
 [ext_resource type="Texture2D" uid="uid://dqutpfbnmup38" path="res://assets/vfx/misc/light_circle.png" id="3_rnhsu"]
+[ext_resource type="Texture2D" uid="uid://cg3jj2s47ofxj" path="res://assets/vfx/tiles/wall_tile.png" id="5_70ia6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_do65j"]
 radius = 9.0
@@ -83,6 +84,12 @@ texture_filter = 1
 texture = ExtResource("2_gnb3v")
 hframes = 4
 vframes = 4
+
+[node name="IntroLight" type="PointLight2D" parent="."]
+visible = false
+blend_mode = 2
+texture = ExtResource("5_70ia6")
+texture_scale = 50.0
 
 [node name="rotatage" type="Node2D" parent="."]
 texture_filter = 1

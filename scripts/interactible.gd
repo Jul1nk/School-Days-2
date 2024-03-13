@@ -3,9 +3,14 @@ extends ObjectInstance
 @export_multiline var dialog = "WOW IT'S AN INTERACTIBLE OBJECT!!!"
 
 @export_enum("IMPOSSIBLE","Flashlight", "Key Classroom1", "Key Classroom2", "Key Library",
-"Key Office1", "Key Office2", "Statuette", "Key StrangeDoor", "Shovel")
+"Key Office1", "Key Office2", "Statuette", "Key StrangeDoor", "Shovel", "Code")
 var special_item: int = 0
 @export_multiline var special_dialog = "WOOOOOO SPECIAL ITEM DIALOG YAY BABY"
+
+@export_enum("IMPOSSIBLE","Flashlight", "Key Classroom1", "Key Classroom2", "Key Library",
+"Key Office1", "Key Office2", "Statuette", "Key StrangeDoor", "Shovel", "Code")
+var special_item2: int = 0
+@export_multiline var special_dialog2 = "WOOOOOO SPECIAL ITEM DIALOG2 YAY BABY"
 
 @export var change_look: bool = false
 @export var special_nb_frames: int = 6
@@ -41,6 +46,10 @@ func _process(_delta):
 				await game_world.dialog_finished
 				await get_tree().create_timer(0.01).timeout
 				player_in = true
+				
+				dialog = special_dialog
+				special_item = special_item2
+				special_dialog = special_dialog2
 				
 				if change_look:
 					nb_frames = special_nb_frames

@@ -1,0 +1,520 @@
+[gd_scene load_steps=22 format=3 uid="uid://bu8ejd2tfbf7x"]
+
+[ext_resource type="PackedScene" uid="uid://c8u0xn04yibus" path="res://scenes/door.tscn" id="1_jhn5w"]
+[ext_resource type="Texture2D" uid="uid://dn3uogldltv74" path="res://assets/vfx/furniture/strange_door.png" id="2_pw2l2"]
+[ext_resource type="PackedScene" uid="uid://jxp872moy3fp" path="res://scenes/object_instance.tscn" id="3_ti7rq"]
+[ext_resource type="Texture2D" uid="uid://ck8cwv1joibkn" path="res://assets/vfx/furniture/table.png" id="4_su0ch"]
+[ext_resource type="Texture2D" uid="uid://bjrlp8cemf880" path="res://assets/vfx/furniture/chair.png" id="5_75xuu"]
+[ext_resource type="Texture2D" uid="uid://ba2cmg7mnf6n5" path="res://assets/vfx/furniture/chair_fallen.png" id="6_2wcyl"]
+[ext_resource type="Texture2D" uid="uid://b8f4i4snlhpq1" path="res://assets/vfx/furniture/desk.png" id="7_1bokn"]
+[ext_resource type="PackedScene" uid="uid://c6vipl3r2ocnm" path="res://scenes/item.tscn" id="8_3b38h"]
+[ext_resource type="Texture2D" uid="uid://yt24wya1sop2" path="res://assets/vfx/items/key.png" id="9_dc0jm"]
+[ext_resource type="Texture2D" uid="uid://c1mia8jce5s0g" path="res://assets/vfx/wall decoration/chalkboard.png" id="10_qd7m6"]
+[ext_resource type="Texture2D" uid="uid://3emslrqau24q" path="res://assets/vfx/furniture/locker.png" id="11_morfa"]
+[ext_resource type="Texture2D" uid="uid://c33xhh0cxbd83" path="res://assets/vfx/wall decoration/clock.png" id="12_472lu"]
+[ext_resource type="Texture2D" uid="uid://dg8gwudj4jhft" path="res://assets/vfx/wall decoration/poster6.png" id="13_1svqn"]
+[ext_resource type="Texture2D" uid="uid://do07k6tlg0ej2" path="res://assets/vfx/wall decoration/poster5.png" id="14_wapdc"]
+[ext_resource type="Texture2D" uid="uid://buic3nq46rir5" path="res://assets/vfx/wall decoration/poster4.png" id="15_pta84"]
+[ext_resource type="Texture2D" uid="uid://dndu0wkyibmvd" path="res://assets/vfx/wall decoration/poster3.png" id="16_sddlk"]
+[ext_resource type="Texture2D" uid="uid://xb2e0kl0sdti" path="res://assets/vfx/wall decoration/window.png" id="17_mm1cy"]
+[ext_resource type="TileSet" uid="uid://ur3wjutcoubb" path="res://editor/floor_tileset.tres" id="18_gvnxp"]
+[ext_resource type="Script" path="res://scripts/wall_maker.gd" id="19_y3qgb"]
+[ext_resource type="TileSet" uid="uid://cp21qd1jh162v" path="res://editor/wall_tileset.tres" id="20_k72bl"]
+[ext_resource type="TileSet" uid="uid://dpjo3d3qckywo" path="res://editor/bush2_tileset.tres" id="21_l664p"]
+
+[node name="Classroom1 Intro" type="Node2D"]
+
+[node name="CanvasLayer_Entities" type="CanvasLayer" parent="."]
+layer = 5
+follow_viewport_enabled = true
+
+[node name="strange_door" parent="CanvasLayer_Entities" instance=ExtResource("1_jhn5w")]
+position = Vector2(64, 264)
+item_needed = 8
+dialog_if_locked = "A strange door... it wasn't there before. It's locked."
+dialog_if_unlocked = "The strange key opened the door..."
+nb_frames = 10
+layer_distance = 2.0
+sprite_texture = ExtResource("2_pw2l2")
+canvas_modulate = false
+
+[node name="Classroom 1" type="Node2D" parent="CanvasLayer_Entities"]
+
+[node name="Tables" type="Node2D" parent="CanvasLayer_Entities/Classroom 1"]
+
+[node name="table" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(-172, -68)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("4_su0ch")
+
+[node name="chair" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(-157, -42)
+rotation = 0.261799
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("5_75xuu")
+
+[node name="table2" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(-104, -68)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("4_su0ch")
+
+[node name="chair2" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(-89, -42)
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("5_75xuu")
+
+[node name="table3" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(-36, -68)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("4_su0ch")
+
+[node name="chair3" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(-21, -35)
+rotation = 0.523598
+nb_frames = 5
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("6_2wcyl")
+
+[node name="table4" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(32, -68)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("4_su0ch")
+
+[node name="chair4" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(47, -40)
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("5_75xuu")
+
+[node name="table5" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(-171, 1)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("4_su0ch")
+
+[node name="chair5" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(-157, 28)
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("5_75xuu")
+
+[node name="table6" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(-104, 3)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("4_su0ch")
+
+[node name="chair6" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(-88, 31)
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("5_75xuu")
+
+[node name="table7" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(-36, 0)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("4_su0ch")
+
+[node name="chair7" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(-21, 27)
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("5_75xuu")
+
+[node name="table8" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(32, 0)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("4_su0ch")
+
+[node name="chair8" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(47, 28)
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("5_75xuu")
+
+[node name="table9" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(-172, 72)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("4_su0ch")
+
+[node name="chair9" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(-157, 103)
+nb_frames = 5
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("6_2wcyl")
+
+[node name="table10" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(-105, 76)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("4_su0ch")
+
+[node name="chair10" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(-87, 99)
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("5_75xuu")
+
+[node name="table11" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(-36, 72)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("4_su0ch")
+
+[node name="chair11" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(-21, 100)
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("5_75xuu")
+
+[node name="table12" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(32, 72)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("4_su0ch")
+
+[node name="chair12" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(47, 100)
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("5_75xuu")
+
+[node name="table13" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(-172, 140)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("4_su0ch")
+
+[node name="chair13" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(-157, 168)
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("5_75xuu")
+
+[node name="table14" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(-104, 140)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("4_su0ch")
+
+[node name="chair14" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(-95, 168)
+rotation = -0.261799
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("5_75xuu")
+
+[node name="table15" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(-36, 140)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("4_su0ch")
+
+[node name="chair15" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(-21, 168)
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("5_75xuu")
+
+[node name="table16" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(32, 142)
+nb_frames = 5
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("4_su0ch")
+
+[node name="chair16" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
+position = Vector2(45, 186)
+rotation = 0.261799
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("5_75xuu")
+
+[node name="Desk" type="Node2D" parent="CanvasLayer_Entities/Classroom 1"]
+
+[node name="desk" parent="CanvasLayer_Entities/Classroom 1/Desk" instance=ExtResource("3_ti7rq")]
+position = Vector2(-160, -128)
+layer_distance = 1.5
+solid = true
+sprite_texture = ExtResource("7_1bokn")
+
+[node name="key" parent="CanvasLayer_Entities/Classroom 1/Desk" instance=ExtResource("8_3b38h")]
+position = Vector2(-140, -123)
+item_id = 2
+dialog = "Picked up Classroom Key."
+layer_distance = 1.5
+sprite_texture = ExtResource("9_dc0jm")
+
+[node name="chair" parent="CanvasLayer_Entities/Classroom 1/Desk" instance=ExtResource("3_ti7rq")]
+position = Vector2(-107, -136)
+rotation = 3.14159
+nb_frames = 7
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("5_75xuu")
+
+[node name="board" parent="CanvasLayer_Entities/Classroom 1" instance=ExtResource("3_ti7rq")]
+position = Vector2(-111, -160)
+nb_frames = 16
+layer_distance = 1.0
+sprite_texture = ExtResource("10_qd7m6")
+
+[node name="Lockers" type="Node2D" parent="CanvasLayer_Entities/Classroom 1"]
+
+[node name="locker" parent="CanvasLayer_Entities/Classroom 1/Lockers" instance=ExtResource("3_ti7rq")]
+position = Vector2(-168, 256)
+rotation = 3.14159
+nb_frames = 10
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("11_morfa")
+
+[node name="locker2" parent="CanvasLayer_Entities/Classroom 1/Lockers" instance=ExtResource("3_ti7rq")]
+position = Vector2(-144, 256)
+rotation = 3.14159
+nb_frames = 10
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("11_morfa")
+
+[node name="locker3" parent="CanvasLayer_Entities/Classroom 1/Lockers" instance=ExtResource("3_ti7rq")]
+position = Vector2(-120, 256)
+rotation = 3.14159
+nb_frames = 10
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("11_morfa")
+
+[node name="locker4" parent="CanvasLayer_Entities/Classroom 1/Lockers" instance=ExtResource("3_ti7rq")]
+position = Vector2(-96, 256)
+rotation = 3.14159
+nb_frames = 10
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("11_morfa")
+
+[node name="locker5" parent="CanvasLayer_Entities/Classroom 1/Lockers" instance=ExtResource("3_ti7rq")]
+position = Vector2(-72, 256)
+rotation = 3.14159
+nb_frames = 10
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("11_morfa")
+
+[node name="locker6" parent="CanvasLayer_Entities/Classroom 1/Lockers" instance=ExtResource("3_ti7rq")]
+position = Vector2(-48, 256)
+rotation = 3.14159
+nb_frames = 10
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("11_morfa")
+
+[node name="locker7" parent="CanvasLayer_Entities/Classroom 1/Lockers" instance=ExtResource("3_ti7rq")]
+position = Vector2(-24, 256)
+rotation = 3.14159
+nb_frames = 10
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("11_morfa")
+
+[node name="locker8" parent="CanvasLayer_Entities/Classroom 1/Lockers" instance=ExtResource("3_ti7rq")]
+position = Vector2(0, 256)
+rotation = 3.14159
+nb_frames = 10
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("11_morfa")
+
+[node name="locker9" parent="CanvasLayer_Entities/Classroom 1/Lockers" instance=ExtResource("3_ti7rq")]
+position = Vector2(24, 256)
+rotation = 3.14159
+nb_frames = 10
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("11_morfa")
+
+[node name="clock" parent="CanvasLayer_Entities/Classroom 1" instance=ExtResource("3_ti7rq")]
+position = Vector2(0, -160)
+nb_frames = 16
+layer_distance = 1.0
+sprite_texture = ExtResource("12_472lu")
+
+[node name="Posters" type="Node2D" parent="CanvasLayer_Entities/Classroom 1"]
+
+[node name="poster" parent="CanvasLayer_Entities/Classroom 1/Posters" instance=ExtResource("3_ti7rq")]
+position = Vector2(101, -160)
+scale = Vector2(0.5, 0.5)
+nb_frames = 24
+layer_distance = 1.0
+sprite_texture = ExtResource("13_1svqn")
+
+[node name="poster2" parent="CanvasLayer_Entities/Classroom 1/Posters" instance=ExtResource("3_ti7rq")]
+position = Vector2(128, -97)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+nb_frames = 24
+layer_distance = 1.0
+sprite_texture = ExtResource("14_wapdc")
+
+[node name="poster3" parent="CanvasLayer_Entities/Classroom 1/Posters" instance=ExtResource("3_ti7rq")]
+position = Vector2(128, -79)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+nb_frames = 24
+layer_distance = 1.0
+sprite_texture = ExtResource("15_pta84")
+
+[node name="poster4" parent="CanvasLayer_Entities/Classroom 1/Posters" instance=ExtResource("3_ti7rq")]
+position = Vector2(128, -9)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+nb_frames = 24
+layer_distance = 1.0
+sprite_texture = ExtResource("13_1svqn")
+
+[node name="poster5" parent="CanvasLayer_Entities/Classroom 1/Posters" instance=ExtResource("3_ti7rq")]
+position = Vector2(128, -1)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+nb_frames = 24
+layer_distance = 1.0
+sprite_texture = ExtResource("15_pta84")
+
+[node name="poster6" parent="CanvasLayer_Entities/Classroom 1/Posters" instance=ExtResource("3_ti7rq")]
+position = Vector2(128, 109)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+nb_frames = 24
+layer_distance = 1.0
+sprite_texture = ExtResource("16_sddlk")
+
+[node name="Windows" type="Node2D" parent="CanvasLayer_Entities/Classroom 1"]
+
+[node name="window" parent="CanvasLayer_Entities/Classroom 1/Windows" instance=ExtResource("3_ti7rq")]
+position = Vector2(-192, 182)
+rotation = -1.5708
+nb_frames = 16
+layer_distance = 1.0
+sprite_texture = ExtResource("17_mm1cy")
+
+[node name="window2" parent="CanvasLayer_Entities/Classroom 1/Windows" instance=ExtResource("3_ti7rq")]
+position = Vector2(-192, 118)
+rotation = -1.5708
+nb_frames = 16
+layer_distance = 1.0
+sprite_texture = ExtResource("17_mm1cy")
+
+[node name="window3" parent="CanvasLayer_Entities/Classroom 1/Windows" instance=ExtResource("3_ti7rq")]
+position = Vector2(-192, 54)
+rotation = -1.5708
+nb_frames = 16
+layer_distance = 1.0
+sprite_texture = ExtResource("17_mm1cy")
+
+[node name="window4" parent="CanvasLayer_Entities/Classroom 1/Windows" instance=ExtResource("3_ti7rq")]
+position = Vector2(-192, -10)
+rotation = -1.5708
+nb_frames = 16
+layer_distance = 1.0
+sprite_texture = ExtResource("17_mm1cy")
+
+[node name="window5" parent="CanvasLayer_Entities/Classroom 1/Windows" instance=ExtResource("3_ti7rq")]
+position = Vector2(-192, -74)
+rotation = -1.5708
+nb_frames = 16
+layer_distance = 1.0
+sprite_texture = ExtResource("17_mm1cy")
+
+[node name="door_hallway_0" parent="CanvasLayer_Entities" instance=ExtResource("1_jhn5w")]
+position = Vector2(96, -164)
+rotation = 3.14159
+next_level = 3
+item_needed = 2
+dialog_if_locked = "I'm locked inside."
+dialog_if_unlocked = "It's unlocked!"
+canvas_modulate = false
+
+[node name="CanvasLayer_Floor" type="CanvasLayer" parent="."]
+layer = 0
+follow_viewport_enabled = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer_Floor"]
+visible = false
+position = Vector2(257, 36)
+color = Color(0, 0, 0, 1)
+
+[node name="TileMap_Floor" type="TileMap" parent="CanvasLayer_Floor"]
+texture_filter = 1
+tile_set = ExtResource("18_gvnxp")
+rendering_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(-262150, 0, 0, -196614, 65536, 0, -131078, 196608, 0, -65542, 65536, 0, -262149, 131072, 0, -196613, 196608, 0, -131077, 0, 0, -65541, 196608, 0, -262148, 196608, 0, -196612, 65536, 0, -131076, 0, 0, -65540, 0, 0, -262147, 65536, 0, -196611, 0, 0, -131075, 196608, 0, -65539, 65536, 0, -262146, 196608, 0, -196610, 131072, 0, -131074, 65536, 0, -65538, 0, 0, -262145, 131072, 0, -196609, 0, 0, -131073, 0, 0, -65537, 0, 0, -327680, 131072, 0, -262144, 0, 0, -196608, 0, 0, -131072, 196608, 0, -327679, 0, 0, -262143, 0, 0, -196607, 131072, 0, -131071, 131072, 0, -393214, 65536, 0, -327678, 196608, 0, -262142, 65536, 0, -196606, 0, 0, -131070, 0, 0, -327677, 131072, 0, -262141, 196608, 0, -196605, 65536, 0, -131069, 0, 0, 524282, 65536, 0, 524283, 0, 0, 524284, 65536, 0, 524285, 0, 0, 524286, 0, 0, 524287, 196608, 0, 458752, 65536, 0, 458753, 0, 0, 458754, 131072, 0, 458755, 0, 0, -6, 131072, 0, 65530, 196608, 0, 131066, 0, 0, 196602, 0, 0, 262138, 65536, 0, 327674, 65536, 0, 393210, 65536, 0, 458746, 196608, 0, -5, 196608, 0, 65531, 65536, 0, 131067, 131072, 0, 196603, 196608, 0, 262139, 0, 0, 327675, 65536, 0, 393211, 0, 0, 458747, 65536, 0, -4, 0, 0, 65532, 0, 0, 131068, 65536, 0, 196604, 65536, 0, 262140, 0, 0, 327676, 65536, 0, 393212, 0, 0, 458748, 131072, 0, -3, 196608, 0, 65533, 65536, 0, 131069, 65536, 0, 196605, 0, 0, 262141, 196608, 0, 327677, 196608, 0, 393213, 0, 0, 458749, 131072, 0, -2, 0, 0, 65534, 65536, 0, 131070, 65536, 0, 196606, 65536, 0, 262142, 131072, 0, 327678, 0, 0, 393214, 65536, 0, 458750, 65536, 0, -1, 196608, 0, 65535, 196608, 0, 131071, 131072, 0, 196607, 0, 0, 262143, 65536, 0, 327679, 196608, 0, 393215, 65536, 0, 458751, 196608, 0, -65536, 0, 0, 0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 196608, 0, 262144, 131072, 0, 327680, 0, 0, 393216, 131072, 0, -65535, 65536, 0, 1, 65536, 0, 65537, 65536, 0, 131073, 0, 0, 196609, 65536, 0, 262145, 0, 0, 327681, 0, 0, 393217, 0, 0, -65534, 65536, 0, 2, 0, 0, 65538, 131072, 0, 131074, 196608, 0, 196610, 65536, 0, 262146, 131072, 0, 327682, 65536, 0, 393218, 131072, 0, -65533, 0, 0, 3, 65536, 0, 65539, 65536, 0, 131075, 196608, 0, 196611, 131072, 0, 262147, 0, 0, 327683, 0, 0, 393219, 65536, 0, 524290, 65536, 0)
+
+[node name="Wall_Maker_Classroom1" type="Node2D" parent="."]
+script = ExtResource("19_y3qgb")
+nb_layers = 20
+layer_distance = 1
+colors = Array[Color]([Color(0.992157, 0.819608, 0.47451, 1), Color(0.239216, 0.2, 0.2, 1), Color(0.996078, 0.882353, 0.721569, 1), Color(0.996078, 0.882353, 0.721569, 1), Color(0.996078, 0.882353, 0.721569, 1), Color(0.996078, 0.882353, 0.721569, 1), Color(0.996078, 0.882353, 0.721569, 1), Color(0.996078, 0.882353, 0.721569, 1), Color(0.996078, 0.882353, 0.721569, 1), Color(0.996078, 0.882353, 0.721569, 1)])
+canvas_modulate = false
+
+[node name="Input" type="Node2D" parent="Wall_Maker_Classroom1"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Wall_Maker_Classroom1/Input"]
+layer = 2
+
+[node name="TileMap_Walls" type="TileMap" parent="Wall_Maker_Classroom1/Input/CanvasLayer"]
+modulate = Color(1, 1, 0, 1)
+tile_set = ExtResource("20_k72bl")
+format = 2
+layer_0/tile_data = PackedInt32Array(-589837, 1, 0, -524301, 1, 0, -458765, 1, 0, -393229, 1, 0, -327693, 1, 0, -262157, 1, 0, -196621, 1, 0, -131085, 1, 0, -65549, 1, 0, -13, 1, 0, 65523, 1, 0, 131059, 1, 0, 196595, 1, 0, 262131, 1, 0, 327667, 1, 0, 393203, 1, 0, 458739, 1, 0, 524275, 1, 0, 589811, 1, 0, 655347, 1, 0, 720883, 1, 0, 786419, 1, 0, 851955, 1, 0, 917491, 1, 0, 983027, 1, 0, 1048563, 1, 0, 1114099, 1, 0, -720893, 1, 0, -720890, 1, 0, -655352, 1, 0, -589816, 1, 0, -524280, 1, 0, -458744, 1, 0, -393208, 1, 0, -327672, 1, 0, -262136, 1, 0, -196600, 1, 0, -131064, 1, 0, -65528, 1, 0, 8, 1, 0, 65544, 1, 0, 131080, 1, 0, 196616, 1, 0, 262152, 1, 0, 327688, 1, 0, 393224, 1, 0, 458760, 1, 0, 524296, 1, 0, 589832, 1, 0, 655368, 1, 0, 720904, 1, 0, 786440, 1, 0, 851976, 1, 0, 917512, 1, 0, 983048, 1, 0, 1048584, 1, 0, -655373, 1, 0, -655372, 1, 0, 1114100, 1, 0, -655371, 1, 0, 1114101, 1, 0, -655370, 1, 0, 1114102, 1, 0, -655369, 1, 0, 1114103, 1, 0, -655368, 1, 0, 1114104, 1, 0, -655367, 1, 0, 1114105, 1, 0, -655366, 1, 0, 1114106, 1, 0, -655365, 1, 0, 1114107, 1, 0, -655364, 1, 0, 1114108, 1, 0, -655363, 1, 0, 1114109, 1, 0, -655362, 1, 0, 1114110, 1, 0, -655361, 1, 0, 1114111, 1, 0, -720896, 1, 0, 1048576, 1, 0, -720895, 1, 0, 1048577, 1, 0, -720894, 1, 0, 1048578, 1, 0, -786429, 1, 0, 1048579, 1, 0, -786426, 1, 0, 1048582, 1, 0, -720889, 1, 0, 1048583, 1, 0, -720888, 1, 0, 1114115, 1, 0, 1114118, 1, 0, 1179651, 1, 0, 1179652, 1, 0, 1179653, 1, 0, 1179654, 1, 0, -851965, 1, 0, -851964, 1, 0, -851963, 1, 0, -851962, 1, 0)
+
+[node name="TileMap_Bushes" type="TileMap" parent="Wall_Maker_Classroom1/Input/CanvasLayer"]
+texture_filter = 1
+tile_set = ExtResource("21_l664p")
+format = 2
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="SpawnPoints"]
+position = Vector2(2, -104)
+rotation = 1.5708

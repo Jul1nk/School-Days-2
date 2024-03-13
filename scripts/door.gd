@@ -8,7 +8,7 @@ extends ObjectInstance
 
 @export var locked: bool = true
 @export_enum("IMPOSSIBLE","Flashlight", "Key Classroom1", "Key Classroom2", "Key Library",
-"Key Office1", "Key Office2", "Statuette", "Key StrangeDoor", "Shovel")
+"Key Office1", "Key Office2", "Statuette", "Key StrangeDoor", "Shovel", "Code")
 var item_needed: int = 0
 
 @export_multiline var dialog_if_locked = "It's locked..."

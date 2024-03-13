@@ -182,6 +182,8 @@ grow_vertical = 2
 theme = SubResource("Theme_iqkgb")
 bbcode_enabled = true
 text = "[center] This is a test dialog! [center]"
+scroll_active = false
+scroll_following = true
 
 [node name="DialogTimer" type="Timer" parent="CanvasLayer_dialog"]
 wait_time = 0.05

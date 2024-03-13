@@ -1,5 +1,6 @@
 extends Node
 
+var lvl_path_classroom1_intro: String = "res://scenes/levels/classroom_1_intro.tscn"
 var lvl_path_classroom1: String = "res://scenes/levels/classroom_1.tscn"
 var lvl_path_classroom2: String = "res://scenes/levels/classroom_2.tscn"
 var lvl_path_classroom3: String = "res://scenes/levels/classroom_3.tscn"
@@ -17,7 +18,8 @@ var item_key_office1: bool = false
 var item_key_office2: bool = false
 var item_statuette: bool = false
 var item_key_strangedoor: bool = false
-var item_shovel: bool = true
+var item_shovel: bool = false
+var item_code: bool = false
 
 
 func _int_to_level(n=0):
@@ -44,6 +46,7 @@ func _player_has_item(n=0):
 		7: return item_statuette
 		8: return item_key_strangedoor
 		9: return item_shovel
+		10: return item_code
 
 
 func _player_add_item(n=1):
@@ -57,3 +60,4 @@ func _player_add_item(n=1):
 		7: item_statuette = true
 		8: item_key_strangedoor = true
 		9: item_shovel = true
+		10: item_code = true

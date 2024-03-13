@@ -23,3 +23,7 @@ res://scripts/game_world.gd
 res://scripts/door.gd
 res://scripts/interactible.gd
 res://scripts/item.gd
+res://scripts/Global.gd
+res://scenes/levels/classroom_1_intro.tscn
+res://scripts/wall_maker.gd
+res://scripts/object_instance.gd

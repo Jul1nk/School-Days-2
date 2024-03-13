@@ -13,6 +13,7 @@ var is_paused = false
 @onready var rotatage = $rotatage
 @onready var sprite = $sprite
 @onready var flashlight = $rotatage/Flashlight
+@onready var intro_light = $IntroLight
 
 
 func _process(_delta):
@@ -63,3 +64,10 @@ func tp_cam_to_pos():
 
 func _has_item(n=0):
 	if n == 0: return false
+
+
+func _light_intro():
+	intro_light.visible = !intro_light.visible
+	rotatage.visible = !rotatage.visible
+
+

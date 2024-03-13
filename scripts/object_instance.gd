@@ -5,7 +5,7 @@ class_name ObjectInstance extends Node2D
 @export var shadow_top: bool = false
 @export var solid: bool = false
 @export var sprite_texture: Texture2D
-
+@export var canvas_modulate: bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -41,7 +41,8 @@ func _instantiate_object():
 		canvas_i.rotation = rotation
 		
 		#CanvasModulate setup
-		canvas_mod_i.color = Color.BLACK
+		if canvas_modulate:
+			canvas_mod_i.color = Color.BLACK
 		
 		#Sprite setup
 		sprite_i.texture = sprite_texture

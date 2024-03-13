@@ -20,7 +20,11 @@ signal dialog_finished
 func _ready():
 	dialog_timer.connect("timeout", _dialog_continue)
 	
-	_change_level(Global.lvl_path_classroom1, 0)
+	_change_level(Global.lvl_path_classroom1_intro, 0)
+	player.pause()
+	player._light_intro()
+	
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,6 +41,9 @@ func _process(_delta):
 			dialog_rt_label.visible_characters = 0
 			dialog_rt_label.visible = false
 			emit_signal("dialog_finished")
+	
+	if in_dialog:
+		return
 	
 	# Pause
 	if Input.is_action_just_pressed("pause"):

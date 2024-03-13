@@ -4,6 +4,7 @@ extends Node2D
 @export var nb_layers = 5
 @export var layer_distance = 5
 @export var colors: Array[Color]
+@export var canvas_modulate: bool = true
 
 @onready var input = $Input
 @onready var canvas_layer = $Input/CanvasLayer
@@ -43,7 +44,8 @@ func _ready():
 		current_distance += layer_distance *0.01
 		
 		#CanvasModulate setup
-		canvas_mod_i.color = Color.BLACK
+		if canvas_modulate:
+			canvas_mod_i.color = Color.BLACK
 		
 		#Wall color
 		@warning_ignore("integer_division") #Annoying but avoids error
