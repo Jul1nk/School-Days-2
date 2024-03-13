@@ -37,7 +37,6 @@ func _ready():
 func _process(_delta):
 	if player_in:
 		if Input.is_action_just_pressed("action"):
-			
 			if locked:
 				if Global._player_has_item(item_needed):
 					print(dialog_if_unlocked)

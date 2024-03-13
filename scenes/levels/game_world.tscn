@@ -60,6 +60,7 @@ _data = {
 }
 
 [node name="game_world" type="Node2D"]
+position = Vector2(-38, 5)
 script = ExtResource("1_ymw2k")
 
 [node name="Black" type="Sprite2D" parent="."]

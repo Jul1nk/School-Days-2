@@ -17,7 +17,7 @@ var item_key_office1: bool = false
 var item_key_office2: bool = false
 var item_statuette: bool = false
 var item_key_strangedoor: bool = false
-var item_shovel: bool = false
+var item_shovel: bool = true
 
 
 func _int_to_level(n=0):

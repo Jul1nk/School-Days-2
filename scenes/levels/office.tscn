@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dbixdm50d64p2"]
+[gd_scene load_steps=20 format=3 uid="uid://dbixdm50d64p2"]
 
 [ext_resource type="PackedScene" uid="uid://c8u0xn04yibus" path="res://scenes/door.tscn" id="1_54env"]
 [ext_resource type="TileSet" uid="uid://ur3wjutcoubb" path="res://editor/floor_tileset.tres" id="2_5d8ll"]
@@ -10,10 +10,15 @@
 [ext_resource type="TileSet" uid="uid://dpjo3d3qckywo" path="res://editor/bush2_tileset.tres" id="5_l1jwx"]
 [ext_resource type="Texture2D" uid="uid://ba2cmg7mnf6n5" path="res://assets/vfx/furniture/chair_fallen.png" id="5_ls0pn"]
 [ext_resource type="Texture2D" uid="uid://3emslrqau24q" path="res://assets/vfx/furniture/locker.png" id="5_mc7ed"]
+[ext_resource type="Texture2D" uid="uid://co738vsb4uaow" path="res://assets/vfx/furniture/locker_open.png" id="7_8dl3f"]
 [ext_resource type="Texture2D" uid="uid://dg8gwudj4jhft" path="res://assets/vfx/wall decoration/poster6.png" id="7_j8j4t"]
 [ext_resource type="Texture2D" uid="uid://do07k6tlg0ej2" path="res://assets/vfx/wall decoration/poster5.png" id="8_mq0be"]
 [ext_resource type="Texture2D" uid="uid://buic3nq46rir5" path="res://assets/vfx/wall decoration/poster4.png" id="9_pqhq5"]
 [ext_resource type="Texture2D" uid="uid://dndu0wkyibmvd" path="res://assets/vfx/wall decoration/poster3.png" id="10_yr1l0"]
+[ext_resource type="PackedScene" uid="uid://c6vipl3r2ocnm" path="res://scenes/item.tscn" id="12_ne4mw"]
+[ext_resource type="Texture2D" uid="uid://c7qabv684kr4s" path="res://assets/vfx/items/shovel.png" id="13_0nhv0"]
+[ext_resource type="Texture2D" uid="uid://d21s2t0gftt2t" path="res://assets/vfx/items/suitcase.png" id="14_m0jjm"]
+[ext_resource type="Texture2D" uid="uid://c768pyyk5o3im" path="res://assets/vfx/items/strange_key.png" id="15_8qtmx"]
 
 [node name="Office" type="Node2D"]
 
@@ -28,6 +33,7 @@ position = Vector2(448, -420)
 rotation = 3.14159
 next_level = 3
 spawn_point = 8
+locked = false
 item_needed = 5
 
 [node name="door_hallway_9" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_54env")]
@@ -108,7 +114,7 @@ rotation = -1.5708
 nb_frames = 10
 layer_distance = 1.0
 solid = true
-sprite_texture = ExtResource("5_mc7ed")
+sprite_texture = ExtResource("7_8dl3f")
 
 [node name="locker4" parent="CanvasLayer_Entities/Office1/Lockers" instance=ExtResource("2_j6j55")]
 position = Vector2(192, -256)
@@ -281,6 +287,31 @@ scale = Vector2(0.5, 0.5)
 nb_frames = 24
 layer_distance = 1.0
 sprite_texture = ExtResource("10_yr1l0")
+
+[node name="shovel" parent="CanvasLayer_Entities" instance=ExtResource("12_ne4mw")]
+position = Vector2(208, -289)
+rotation = 1.57079
+item_id = 9
+dialog = "Picked up Shovel"
+nb_frames = 2
+layer_distance = 1.0
+sprite_texture = ExtResource("13_0nhv0")
+
+[node name="strange_key" parent="CanvasLayer_Entities" instance=ExtResource("12_ne4mw")]
+position = Vector2(702, -290)
+item_id = 8
+dialog = "Picked up Strange Key"
+nb_frames = 10
+layer_distance = 1.0
+sprite_texture = ExtResource("15_8qtmx")
+
+[node name="case" parent="CanvasLayer_Entities" instance=ExtResource("2_j6j55")]
+position = Vector2(729, -289)
+rotation = 2.35619
+nb_frames = 16
+layer_distance = 1.0
+solid = true
+sprite_texture = ExtResource("14_m0jjm")
 
 [node name="CanvasLayer_Floor" type="CanvasLayer" parent="."]
 layer = 0

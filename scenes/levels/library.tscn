@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d0k4tenbpwx7c"]
+[gd_scene load_steps=21 format=3 uid="uid://d0k4tenbpwx7c"]
 
 [ext_resource type="PackedScene" uid="uid://c8u0xn04yibus" path="res://scenes/door.tscn" id="1_7hyee"]
 [ext_resource type="TileSet" uid="uid://ur3wjutcoubb" path="res://editor/floor_tileset.tres" id="1_65irb"]
@@ -10,6 +10,8 @@
 [ext_resource type="TileSet" uid="uid://dpjo3d3qckywo" path="res://editor/bush2_tileset.tres" id="4_cerq4"]
 [ext_resource type="Texture2D" uid="uid://dg32p2ihmyvqn" path="res://assets/vfx/furniture/bookshelf2.png" id="4_iuj4u"]
 [ext_resource type="Texture2D" uid="uid://dg8gwudj4jhft" path="res://assets/vfx/wall decoration/poster6.png" id="5_0yuoc"]
+[ext_resource type="PackedScene" uid="uid://c6vipl3r2ocnm" path="res://scenes/item.tscn" id="5_jkwsq"]
+[ext_resource type="Texture2D" uid="uid://yt24wya1sop2" path="res://assets/vfx/items/key.png" id="6_iv4f4"]
 [ext_resource type="Texture2D" uid="uid://do07k6tlg0ej2" path="res://assets/vfx/wall decoration/poster5.png" id="6_nia53"]
 [ext_resource type="Texture2D" uid="uid://buic3nq46rir5" path="res://assets/vfx/wall decoration/poster4.png" id="7_grpjj"]
 [ext_resource type="Texture2D" uid="uid://dndu0wkyibmvd" path="res://assets/vfx/wall decoration/poster3.png" id="8_q7twy"]
@@ -17,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://ba2cmg7mnf6n5" path="res://assets/vfx/furniture/chair_fallen.png" id="10_f5ich"]
 [ext_resource type="Texture2D" uid="uid://5u2rr5u6h6qv" path="res://assets/vfx/furniture/pillar.png" id="12_eq31h"]
 [ext_resource type="Texture2D" uid="uid://tyu3u6ny6alf" path="res://assets/vfx/furniture/pillar_with_statuette.png" id="12_touqh"]
+[ext_resource type="PackedScene" uid="uid://dvkqujajglqg0" path="res://scenes/interactible.tscn" id="13_7swce"]
 
 [node name="Library" type="Node2D"]
 
@@ -145,6 +148,14 @@ nb_frames = 5
 layer_distance = 1.0
 solid = true
 sprite_texture = ExtResource("4_alr5k")
+
+[node name="key" parent="CanvasLayer_Entities/Bookshelves" instance=ExtResource("5_jkwsq")]
+position = Vector2(664, -1397)
+rotation = 1.5708
+item_id = 3
+dialog = "Picked up Classroom Key."
+layer_distance = 0.5
+sprite_texture = ExtResource("6_iv4f4")
 
 [node name="bookshelf16" parent="CanvasLayer_Entities/Bookshelves" instance=ExtResource("2_gf52a")]
 position = Vector2(832, -1368)
@@ -298,15 +309,25 @@ layer_distance = 1.0
 solid = true
 sprite_texture = ExtResource("10_f5ich")
 
-[node name="pillar" parent="CanvasLayer_Entities" instance=ExtResource("2_gf52a")]
+[node name="pillar" parent="CanvasLayer_Entities" instance=ExtResource("13_7swce")]
 position = Vector2(757, -1510)
+dialog = "A pillar of some sort, it got a statuette on top."
+special_dialog = "I put the statuette on the pillar."
 nb_frames = 16
 layer_distance = 1.0
 solid = true
 sprite_texture = ExtResource("12_touqh")
 
-[node name="pillar2" parent="CanvasLayer_Entities" instance=ExtResource("2_gf52a")]
+[node name="pillar2" parent="CanvasLayer_Entities" instance=ExtResource("13_7swce")]
 position = Vector2(835, -1510)
+dialog = "A pillar of some sort, this one is empty."
+special_item = 7
+special_dialog = "I put the statuette on the pillar."
+change_look = true
+special_nb_frames = 16
+special_layer_distance = 1.0
+special_solid = true
+special_sprite_texture = ExtResource("12_touqh")
 nb_frames = 12
 layer_distance = 1.0
 solid = true
