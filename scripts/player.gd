@@ -41,7 +41,7 @@ func _physics_process(_delta):
 	# Basic 2D movement
 	var mvt_direction = Vector2(Input.get_axis("left", "right"),Input.get_axis("up", "down"))
 	if mvt_direction:
-		velocity = mvt_direction * SPEED
+		velocity = mvt_direction.normalized() * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)

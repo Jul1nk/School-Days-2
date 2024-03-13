@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://dbfqd8746imoq"]
+[gd_scene load_steps=15 format=3 uid="uid://dbfqd8746imoq"]
 
 [ext_resource type="PackedScene" uid="uid://jxp872moy3fp" path="res://scenes/object_instance.tscn" id="1_ma2k5"]
+[ext_resource type="Texture2D" uid="uid://dytjsekos324e" path="res://assets/vfx/furniture/door_toilets.png" id="2_vgqj6"]
 [ext_resource type="Texture2D" uid="uid://xq3wt7di4735" path="res://assets/vfx/furniture/toilets.png" id="2_x2440"]
 [ext_resource type="TileSet" uid="uid://ur3wjutcoubb" path="res://editor/floor_tileset.tres" id="3_3wjcb"]
 [ext_resource type="PackedScene" uid="uid://c8u0xn04yibus" path="res://scenes/door.tscn" id="3_tx4ce"]
@@ -26,6 +27,7 @@ rotation = -1.5708
 next_level = 3
 spawn_point = 4
 locked = false
+sprite_texture = ExtResource("2_vgqj6")
 
 [node name="Toilets" type="Node2D" parent="CanvasLayer_Entities"]
 
@@ -37,6 +39,15 @@ sprite_texture = ExtResource("2_x2440")
 
 [node name="toilet_door2" parent="CanvasLayer_Entities/Toilets" instance=ExtResource("1_ma2k5")]
 position = Vector2(-240, -880)
+nb_frames = 20
+layer_distance = 1.0
+shadow_top = true
+solid = true
+sprite_texture = ExtResource("4_8p4py")
+
+[node name="toilet_door6" parent="CanvasLayer_Entities/Toilets" instance=ExtResource("1_ma2k5")]
+position = Vector2(-240, -880)
+rotation = -2.09439
 nb_frames = 20
 layer_distance = 1.0
 shadow_top = true

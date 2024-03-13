@@ -50,10 +50,13 @@ func _process(_delta):
 				
 				if special_item == 7:
 					emit_signal("statuette")
+				if special_item == 10:
+					Global._player_add_item(6)
 				
-				dialog = special_dialog
-				special_item = special_item2
-				special_dialog = special_dialog2
+				if special_item != 0:
+					dialog = special_dialog
+					special_item = special_item2
+					special_dialog = special_dialog2
 				
 				if change_look:
 					nb_frames = special_nb_frames

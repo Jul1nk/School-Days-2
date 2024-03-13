@@ -16,12 +16,12 @@ var item_flashlight: bool = true
 var item_key_classroom1: bool = false
 var item_key_classroom2: bool = false
 var item_key_library: bool = false
-var item_key_office1: bool = false
+var item_key_office1: bool = true
 var item_key_office2: bool = false
 var item_statuette: bool = false
 var item_key_strangedoor: bool = false
-var item_shovel: bool = false
-var item_code: bool = false
+var item_shovel: bool = true
+var item_code: bool = true
 
 
 func _int_to_level(n=0):

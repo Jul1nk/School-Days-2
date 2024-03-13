@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://r02esigt7qpy"]
+[gd_scene load_steps=11 format=3 uid="uid://r02esigt7qpy"]
 
 [ext_resource type="PackedScene" uid="uid://c8u0xn04yibus" path="res://scenes/door.tscn" id="1_57idd"]
+[ext_resource type="Texture2D" uid="uid://dytjsekos324e" path="res://assets/vfx/furniture/door_toilets.png" id="2_gjghm"]
 [ext_resource type="PackedScene" uid="uid://jxp872moy3fp" path="res://scenes/object_instance.tscn" id="2_rwebd"]
 [ext_resource type="TileSet" uid="uid://ur3wjutcoubb" path="res://editor/floor_tileset.tres" id="3_65s2d"]
 [ext_resource type="Texture2D" uid="uid://dg8gwudj4jhft" path="res://assets/vfx/wall decoration/poster6.png" id="3_dvmtb"]
@@ -44,12 +45,14 @@ position = Vector2(28, -736)
 rotation = 1.5708
 next_level = 4
 dialog_if_locked = "It's the girls bathroom, I can't go there."
+sprite_texture = ExtResource("2_gjghm")
 
 [node name="door_toilets_boys" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(28, -928)
 rotation = 1.5708
 next_level = 4
 locked = false
+sprite_texture = ExtResource("2_gjghm")
 
 [node name="door_yard_0" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
 position = Vector2(96, -1060)
@@ -95,6 +98,18 @@ position = Vector2(800, -1124)
 rotation = -3.14159
 next_level = 6
 item_needed = 4
+dialog_if_unlocked = "The library is open."
+
+[node name="door_entrance1" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
+position = Vector2(996, -768)
+rotation = -1.5708
+dialog_if_locked = "The school entrance... it's locked... I want to get out!"
+dialog_if_unlocked = "The library is open."
+
+[node name="door_entrance2" parent="CanvasLayer_Entities/Doors" instance=ExtResource("1_57idd")]
+position = Vector2(1000, -832)
+rotation = 1.5708
+dialog_if_locked = "The school entrance... it's locked... I want to get out!"
 dialog_if_unlocked = "The library is open."
 
 [node name="Posters" type="Node2D" parent="CanvasLayer_Entities"]
