@@ -1,9 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://bu8ejd2tfbf7x"]
+[gd_scene load_steps=26 format=3 uid="uid://bu8ejd2tfbf7x"]
 
 [ext_resource type="PackedScene" uid="uid://c8u0xn04yibus" path="res://scenes/door.tscn" id="1_jhn5w"]
 [ext_resource type="Texture2D" uid="uid://dn3uogldltv74" path="res://assets/vfx/furniture/strange_door.png" id="2_pw2l2"]
 [ext_resource type="PackedScene" uid="uid://jxp872moy3fp" path="res://scenes/object_instance.tscn" id="3_ti7rq"]
 [ext_resource type="Texture2D" uid="uid://ck8cwv1joibkn" path="res://assets/vfx/furniture/table.png" id="4_su0ch"]
+[ext_resource type="Texture2D" uid="uid://cn857eoyyjhci" path="res://assets/vfx/furniture/table_student.png" id="4_xnxhj"]
 [ext_resource type="Texture2D" uid="uid://bjrlp8cemf880" path="res://assets/vfx/furniture/chair.png" id="5_75xuu"]
 [ext_resource type="Texture2D" uid="uid://b8f4i4snlhpq1" path="res://assets/vfx/furniture/desk.png" id="7_1bokn"]
 [ext_resource type="PackedScene" uid="uid://c6vipl3r2ocnm" path="res://scenes/item.tscn" id="8_3b38h"]
@@ -47,10 +48,9 @@ canvas_modulate = false
 
 [node name="table" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
 position = Vector2(-172, -68)
-nb_frames = 5
 layer_distance = 1.5
 solid = true
-sprite_texture = ExtResource("4_su0ch")
+sprite_texture = ExtResource("4_xnxhj")
 canvas_modulate = false
 
 [node name="chair" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
@@ -63,10 +63,9 @@ canvas_modulate = false
 
 [node name="table2" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
 position = Vector2(-104, -68)
-nb_frames = 5
 layer_distance = 1.5
 solid = true
-sprite_texture = ExtResource("4_su0ch")
+sprite_texture = ExtResource("4_xnxhj")
 canvas_modulate = false
 
 [node name="chair2" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
@@ -79,10 +78,9 @@ canvas_modulate = false
 
 [node name="table3" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
 position = Vector2(-36, -68)
-nb_frames = 5
 layer_distance = 1.5
 solid = true
-sprite_texture = ExtResource("4_su0ch")
+sprite_texture = ExtResource("4_xnxhj")
 canvas_modulate = false
 
 [node name="chair3" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
@@ -127,14 +125,13 @@ canvas_modulate = false
 
 [node name="table6" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
 position = Vector2(-104, 3)
-nb_frames = 5
 layer_distance = 1.5
 solid = true
-sprite_texture = ExtResource("4_su0ch")
+sprite_texture = ExtResource("4_xnxhj")
 canvas_modulate = false
 
 [node name="chair6" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
-position = Vector2(-88, 31)
+position = Vector2(-88, 32)
 nb_frames = 7
 layer_distance = 1.0
 solid = true
@@ -143,14 +140,13 @@ canvas_modulate = false
 
 [node name="table7" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
 position = Vector2(-36, 0)
-nb_frames = 5
 layer_distance = 1.5
 solid = true
-sprite_texture = ExtResource("4_su0ch")
+sprite_texture = ExtResource("4_xnxhj")
 canvas_modulate = false
 
 [node name="chair7" parent="CanvasLayer_Entities/Classroom 1/Tables" instance=ExtResource("3_ti7rq")]
-position = Vector2(-21, 27)
+position = Vector2(-21, 30)
 nb_frames = 7
 layer_distance = 1.0
 solid = true
@@ -548,8 +544,24 @@ layer_distance = 1.0
 sprite_texture = ExtResource("18_70eg0")
 canvas_modulate = false
 
+[node name="student4" parent="CanvasLayer_Entities" instance=ExtResource("3_ti7rq")]
+position = Vector2(4, 18)
+rotation = 1.5708
+nb_frames = 8
+layer_distance = 1.0
+sprite_texture = ExtResource("18_70eg0")
+canvas_modulate = false
+
 [node name="student2" parent="CanvasLayer_Entities" instance=ExtResource("3_ti7rq")]
 position = Vector2(3, -46)
+rotation = 1.5708
+nb_frames = 8
+layer_distance = 1.0
+sprite_texture = ExtResource("18_vi2af")
+canvas_modulate = false
+
+[node name="student3" parent="CanvasLayer_Entities" instance=ExtResource("3_ti7rq")]
+position = Vector2(-64, 19)
 rotation = 1.5708
 nb_frames = 8
 layer_distance = 1.0
