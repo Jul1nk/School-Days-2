@@ -16,3 +16,8 @@ res://scenes/levels/office.tscn
 res://scenes/levels/toilets.tscn
 res://scenes/levels/classroom_1_intro.tscn
 res://scenes/player.tscn
+res://scripts/object_instance.gd
+res://scenes/levels/classroom_1_intro_glitched.tscn
+res://scripts/Global.gd
+res://scenes/levels/glitch.gdshader
+res://scripts/player.gd

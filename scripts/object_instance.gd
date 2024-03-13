@@ -41,8 +41,9 @@ func _instantiate_object():
 		canvas_i.rotation = rotation
 		
 		#CanvasModulate setup
-		if canvas_modulate:
-			canvas_mod_i.color = Color.BLACK
+		canvas_mod_i.color = Color.BLACK
+		if !canvas_modulate:
+			canvas_mod_i.visible = false
 		
 		#Sprite setup
 		sprite_i.texture = sprite_texture

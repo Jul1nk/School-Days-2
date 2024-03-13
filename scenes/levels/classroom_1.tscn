@@ -514,3 +514,7 @@ format = 2
 [node name="0" type="Node2D" parent="SpawnPoints"]
 position = Vector2(80, -148)
 rotation = 1.5708
+
+[node name="1" type="Node2D" parent="SpawnPoints"]
+position = Vector2(-65, -35)
+rotation = 1.5708

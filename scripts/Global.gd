@@ -1,5 +1,5 @@
 extends Node
-
+var lvl_path_classroom1_intro_glitched: String = "res://scenes/levels/classroom_1_intro_glitched.tscn"
 var lvl_path_classroom1_intro: String = "res://scenes/levels/classroom_1_intro.tscn"
 var lvl_path_classroom1: String = "res://scenes/levels/classroom_1.tscn"
 var lvl_path_classroom2: String = "res://scenes/levels/classroom_2.tscn"

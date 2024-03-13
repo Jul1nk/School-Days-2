@@ -49,6 +49,12 @@ func _physics_process(_delta):
 	move_and_slide()
 
 
+func _hide():
+	is_paused = !is_paused
+	for child in sprite.get_children():
+		child.visible = !child.visible
+	rotatage.visible = !rotatage.visible
+	$Camera2D.enabled = !$Camera2D.enabled
 
 func pause():
 	is_paused = true
@@ -65,9 +71,5 @@ func tp_cam_to_pos():
 func _has_item(n=0):
 	if n == 0: return false
 
-
-func _light_intro():
-	intro_light.visible = !intro_light.visible
-	rotatage.visible = !rotatage.visible
 
 

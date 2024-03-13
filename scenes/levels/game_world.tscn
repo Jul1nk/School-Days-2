@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://jpi2vltxy7ff"]
+[gd_scene load_steps=20 format=3 uid="uid://jpi2vltxy7ff"]
 
 [ext_resource type="Script" path="res://scripts/game_world.gd" id="1_ymw2k"]
 [ext_resource type="Texture2D" uid="uid://cg3jj2s47ofxj" path="res://assets/vfx/tiles/wall_tile.png" id="2_ji1l6"]
@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://8i1f7ir8t0b" path="res://assets/vfx/misc/timesbi.ttf" id="8_pq28t"]
 [ext_resource type="FontFile" uid="uid://dk1p1tx2v4w7h" path="res://assets/vfx/misc/timesi.ttf" id="9_nl1ej"]
 [ext_resource type="FontFile" uid="uid://bnsebhkl4hyds" path="res://assets/vfx/misc/times.ttf" id="10_osiqi"]
+[ext_resource type="Shader" path="res://scenes/levels/glitch.gdshader" id="11_lsatn"]
 
 [sub_resource type="Animation" id="Animation_f5j0t"]
 length = 0.001
@@ -24,6 +25,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Sprite2D:material:shader_parameter/fade")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_e50y3"]
@@ -58,11 +71,47 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_o1nir"]
+resource_name = "glitch"
+length = 0.05
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Sprite2D:material:shader_parameter/fade")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.01]
+}
+
+[sub_resource type="Animation" id="Animation_63ltq"]
+resource_name = "glitch_exit"
+length = 0.05
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Sprite2D:material:shader_parameter/fade")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.01, 0.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bkiuc"]
 _data = {
 "RESET": SubResource("Animation_f5j0t"),
 "enter_level": SubResource("Animation_e50y3"),
-"exit_level": SubResource("Animation_gxwvw")
+"exit_level": SubResource("Animation_gxwvw"),
+"glitch_enter": SubResource("Animation_o1nir"),
+"glitch_exit": SubResource("Animation_63ltq")
 }
 
 [sub_resource type="Theme" id="Theme_iqkgb"]
@@ -81,6 +130,15 @@ RichTextLabel/fonts/bold_italics_font = ExtResource("8_pq28t")
 RichTextLabel/fonts/italics_font = ExtResource("9_nl1ej")
 RichTextLabel/fonts/mono_font = ExtResource("10_osiqi")
 RichTextLabel/fonts/normal_font = ExtResource("10_osiqi")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1u1gt"]
+shader = ExtResource("11_lsatn")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_block_size = 30.5
+shader_parameter/fade = 0.0
+shader_parameter/direction_r = Vector2(1, 0)
+shader_parameter/direction_g = Vector2(0.4, 1)
+shader_parameter/direction_b = Vector2(-0.7, -0.3)
 
 [node name="game_world" type="Node2D"]
 script = ExtResource("1_ymw2k")
@@ -157,6 +215,7 @@ texture = ExtResource("6_7734v")
 
 [node name="CanvasLayer_dialog" type="CanvasLayer" parent="."]
 layer = 9
+visible = false
 
 [node name="Control" type="Control" parent="CanvasLayer_dialog"]
 layout_mode = 3
@@ -169,8 +228,16 @@ offset_right = -80.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer_dialog/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.392157)
+
 [node name="Dialog_RTLabel" type="RichTextLabel" parent="CanvasLayer_dialog/Control"]
-visible = false
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -188,3 +255,12 @@ scroll_following = true
 [node name="DialogTimer" type="Timer" parent="CanvasLayer_dialog"]
 wait_time = 0.05
 one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 11
+follow_viewport_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_1u1gt")
+scale = Vector2(64, 64)
+texture = ExtResource("2_ji1l6")
