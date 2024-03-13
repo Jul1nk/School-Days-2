@@ -21,10 +21,12 @@ func _ready():
 	dialog_timer.connect("timeout", _dialog_continue)
 	
 	_change_level(Global.lvl_path_classroom1_intro, 0)
-	player.pause()
-	player._light_intro()
+	player.queue_free()
 	
-	
+	#player.pause()
+	#player._light_intro()
+	#player.get_node("player_col").disabled = true
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -79,7 +81,8 @@ func _dialog_continue():
 
 func _change_level(level: String = Global.lvl_path_classroom1, spawn_point: int = 0):
 	var new_level = load(level).instantiate()
-	player.pause()
+	if level != Global.lvl_path_classroom1_intro:
+		player.pause()
 	
 	animplay_transition.play("exit_level")
 	await animplay_transition.animation_finished
@@ -90,9 +93,11 @@ func _change_level(level: String = Global.lvl_path_classroom1, spawn_point: int 
 	current_level = new_level
 	
 	var spawn = current_level.get_node("SpawnPoints").get_children()[spawn_point]
-	player.position = spawn.position
-	player.tp_cam_to_pos()
+	if level != Global.lvl_path_classroom1_intro:
+		player.position = spawn.position
+		player.tp_cam_to_pos()
 	
 	animplay_transition.play("enter_level")
 	await animplay_transition.animation_finished
-	player.depause()
+	if level != Global.lvl_path_classroom1_intro:
+		player.depause()

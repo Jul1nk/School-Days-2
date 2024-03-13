@@ -344,8 +344,6 @@ nb_frames = 16
 layer_distance = 1.0
 sprite_texture = ExtResource("8_586qp")
 
-[node name="Posters" type="Node2D" parent="CanvasLayer_Entities/Classroom 3"]
-
 [node name="Windows" type="Node2D" parent="CanvasLayer_Entities/Classroom 3"]
 
 [node name="window" parent="CanvasLayer_Entities/Classroom 3/Windows" instance=ExtResource("1_25xiu")]

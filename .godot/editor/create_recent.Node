@@ -1,3 +1,4 @@
+Camera2D
 PointLight2D
 Timer
 Control
@@ -12,4 +13,3 @@ ColorRect
 CanvasModulate
 AnimationPlayer
 StaticBody2D
-CollisionPolygon2D

@@ -87,6 +87,7 @@ vframes = 4
 
 [node name="IntroLight" type="PointLight2D" parent="."]
 visible = false
+color = Color(0.996078, 0.882353, 0.721569, 1)
 blend_mode = 2
 texture = ExtResource("5_70ia6")
 texture_scale = 50.0

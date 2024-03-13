@@ -226,7 +226,7 @@ position = Vector2(640, -1471)
 rotation = -1.5708
 scale = Vector2(0.5, 0.5)
 nb_frames = 24
-layer_distance = 1.0
+layer_distance = 0.5
 sprite_texture = ExtResource("5_0yuoc")
 
 [node name="poster2" parent="CanvasLayer_Entities/Posters" instance=ExtResource("2_gf52a")]
@@ -234,7 +234,7 @@ position = Vector2(960, -1473)
 rotation = 1.5708
 scale = Vector2(0.5, 0.5)
 nb_frames = 24
-layer_distance = 1.0
+layer_distance = 0.5
 sprite_texture = ExtResource("6_nia53")
 
 [node name="poster9" parent="CanvasLayer_Entities/Posters" instance=ExtResource("2_gf52a")]
@@ -242,7 +242,7 @@ position = Vector2(640, -1411)
 rotation = -1.5708
 scale = Vector2(0.5, 0.5)
 nb_frames = 24
-layer_distance = 1.0
+layer_distance = 0.5
 sprite_texture = ExtResource("6_nia53")
 
 [node name="poster3" parent="CanvasLayer_Entities/Posters" instance=ExtResource("2_gf52a")]
@@ -250,7 +250,7 @@ position = Vector2(960, -1455)
 rotation = 1.5708
 scale = Vector2(0.5, 0.5)
 nb_frames = 24
-layer_distance = 1.0
+layer_distance = 0.5
 sprite_texture = ExtResource("7_grpjj")
 
 [node name="poster8" parent="CanvasLayer_Entities/Posters" instance=ExtResource("2_gf52a")]
@@ -258,7 +258,7 @@ position = Vector2(640, -1245)
 rotation = -1.5708
 scale = Vector2(0.5, 0.5)
 nb_frames = 24
-layer_distance = 1.0
+layer_distance = 0.5
 sprite_texture = ExtResource("7_grpjj")
 
 [node name="poster4" parent="CanvasLayer_Entities/Posters" instance=ExtResource("2_gf52a")]
@@ -266,7 +266,7 @@ position = Vector2(960, -1385)
 rotation = 1.5708
 scale = Vector2(0.5, 0.5)
 nb_frames = 24
-layer_distance = 1.0
+layer_distance = 0.5
 sprite_texture = ExtResource("5_0yuoc")
 
 [node name="poster5" parent="CanvasLayer_Entities/Posters" instance=ExtResource("2_gf52a")]
@@ -274,7 +274,7 @@ position = Vector2(960, -1377)
 rotation = 1.5708
 scale = Vector2(0.5, 0.5)
 nb_frames = 24
-layer_distance = 1.0
+layer_distance = 0.5
 sprite_texture = ExtResource("7_grpjj")
 
 [node name="poster7" parent="CanvasLayer_Entities/Posters" instance=ExtResource("2_gf52a")]
@@ -282,7 +282,7 @@ position = Vector2(640, -1210)
 rotation = -1.5708
 scale = Vector2(0.5, 0.5)
 nb_frames = 24
-layer_distance = 1.0
+layer_distance = 0.5
 sprite_texture = ExtResource("5_0yuoc")
 
 [node name="poster6" parent="CanvasLayer_Entities/Posters" instance=ExtResource("2_gf52a")]
@@ -290,7 +290,7 @@ position = Vector2(960, -1267)
 rotation = 1.5708
 scale = Vector2(0.5, 0.5)
 nb_frames = 24
-layer_distance = 1.0
+layer_distance = 0.5
 sprite_texture = ExtResource("8_q7twy")
 
 [node name="Desk" type="Node2D" parent="CanvasLayer_Entities"]
