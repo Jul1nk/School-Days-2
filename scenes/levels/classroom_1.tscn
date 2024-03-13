@@ -30,6 +30,7 @@ follow_viewport_enabled = true
 
 [node name="strange_door" parent="CanvasLayer_Entities" instance=ExtResource("15_jit1v")]
 position = Vector2(64, 264)
+next_level = 8
 item_needed = 8
 dialog_if_locked = "A strange door... it wasn't there before. It's locked."
 dialog_if_unlocked = "The strange key opened the door..."

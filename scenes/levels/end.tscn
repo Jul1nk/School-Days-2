@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=3 uid="uid://dovinb6f6jffg"]
+
+[ext_resource type="PackedScene" uid="uid://c8u0xn04yibus" path="res://scenes/door.tscn" id="1_n7xy4"]
+[ext_resource type="Texture2D" uid="uid://dn3uogldltv74" path="res://assets/vfx/furniture/strange_door.png" id="2_bystw"]
+[ext_resource type="PackedScene" uid="uid://jxp872moy3fp" path="res://scenes/object_instance.tscn" id="3_yiebi"]
+[ext_resource type="Texture2D" uid="uid://ek4doe1bss8x" path="res://assets/vfx/characters/mr hibou.png" id="8_de5ht"]
+[ext_resource type="TileSet" uid="uid://ur3wjutcoubb" path="res://editor/floor_tileset.tres" id="18_0vsr8"]
+[ext_resource type="Script" path="res://scripts/wall_maker.gd" id="19_o13vn"]
+[ext_resource type="TileSet" uid="uid://cp21qd1jh162v" path="res://editor/wall_tileset.tres" id="20_fccw8"]
+[ext_resource type="TileSet" uid="uid://dpjo3d3qckywo" path="res://editor/bush2_tileset.tres" id="21_vhjc2"]
+
+[node name="End" type="Node2D"]
+
+[node name="object_instance" parent="." instance=ExtResource("3_yiebi")]
+position = Vector2(96, 416)
+rotation = 1.5708
+nb_frames = 15
+layer_distance = 1.0
+sprite_texture = ExtResource("8_de5ht")
+
+[node name="CanvasLayer_Entities" type="CanvasLayer" parent="."]
+layer = 5
+follow_viewport_enabled = true
+
+[node name="strange_door" parent="CanvasLayer_Entities" instance=ExtResource("1_n7xy4")]
+position = Vector2(96, 348)
+rotation = 3.14159
+dialog_if_locked = "A strange door... it wasn't there before. It's locked."
+dialog_if_unlocked = "The strange key opened the door..."
+nb_frames = 10
+layer_distance = 2.0
+sprite_texture = ExtResource("2_bystw")
+
+[node name="CanvasLayer_Floor" type="CanvasLayer" parent="."]
+layer = 0
+follow_viewport_enabled = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer_Floor"]
+position = Vector2(257, 36)
+color = Color(0, 0, 0, 1)
+
+[node name="TileMap_Floor" type="TileMap" parent="CanvasLayer_Floor"]
+texture_filter = 1
+tile_set = ExtResource("18_0vsr8")
+rendering_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(655362, 196608, 2, 720898, 131072, 2, 720897, 196608, 2, 720899, 131072, 2, 786435, 196608, 2, 786434, 196608, 2, 786433, 196608, 2, 851970, 131072, 2, 851971, 131072, 2, 851969, 131072, 2, 917505, 196608, 2, 917506, 196608, 2, 917507, 196608, 2, 983043, 131072, 2, 983042, 131072, 2, 983041, 131072, 2, 1048577, 131072, 2, 1114113, 196608, 2, 1048578, 131072, 2, 1114114, 196608, 2, 1048579, 196608, 2, 1114115, 196608, 2)
+
+[node name="Wall_Maker_Classroom1" type="Node2D" parent="."]
+script = ExtResource("19_o13vn")
+nb_layers = 20
+layer_distance = 1
+colors = Array[Color]([Color(0.239216, 0.2, 0.2, 1)])
+
+[node name="Input" type="Node2D" parent="Wall_Maker_Classroom1"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Wall_Maker_Classroom1/Input"]
+layer = 2
+
+[node name="TileMap_Walls" type="TileMap" parent="Wall_Maker_Classroom1/Input/CanvasLayer"]
+modulate = Color(1, 1, 0, 1)
+tile_set = ExtResource("20_fccw8")
+format = 2
+layer_0/tile_data = PackedInt32Array(1310723, 1, 0, 1376259, 1, 0, 1245187, 1, 0, 1245188, 1, 0, 1245189, 1, 0, 1245190, 1, 0, 1310726, 1, 0, 1376262, 1, 0, 1376263, 1, 0, 1376264, 1, 0, 1441800, 1, 0, 1507336, 1, 0, 1572872, 1, 0, 1376257, 1, 0, 1376258, 1, 0, 1441793, 1, 0, 1507329, 1, 0, 1572865, 1, 0, 1638401, 1, 0, 1703937, 1, 0, 1769473, 1, 0, 1835009, 1, 0, 1900545, 1, 0, 1966081, 1, 0, 2031617, 1, 0, 1638408, 1, 0, 1703944, 1, 0, 1769480, 1, 0, 1835016, 1, 0, 1900552, 1, 0, 1966088, 1, 0, 2031624, 1, 0, 2097153, 1, 0, 2162689, 1, 0, 2228225, 1, 0, 2293761, 1, 0, 2359297, 1, 0, 2097160, 1, 0, 2162696, 1, 0, 2228232, 1, 0, 2293768, 1, 0, 2359304, 1, 0, 2359298, 1, 0, 2359299, 1, 0, 2359300, 1, 0, 2359301, 1, 0, 2359302, 1, 0, 2359303, 1, 0)
+
+[node name="TileMap_Bushes" type="TileMap" parent="Wall_Maker_Classroom1/Input/CanvasLayer"]
+texture_filter = 1
+tile_set = ExtResource("21_vhjc2")
+format = 2
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="SpawnPoints"]
+position = Vector2(80, 368)
+rotation = 1.5708

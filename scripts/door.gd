@@ -3,7 +3,7 @@ extends ObjectInstance
 
 
 @export_enum("Classroom1", "Classroom2", "Classroom3", "Hallway", "Toilets",
-"Yard", "Library", "Office") var next_level: int = 0
+"Yard", "Library", "Office", "End") var next_level: int = 0
 @export var spawn_point: int = 0
 
 @export var locked: bool = true

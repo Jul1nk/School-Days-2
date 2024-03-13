@@ -1,4 +1,5 @@
 extends Node
+
 var lvl_path_classroom1_intro_glitched: String = "res://scenes/levels/classroom_1_intro_glitched.tscn"
 var lvl_path_classroom1_intro: String = "res://scenes/levels/classroom_1_intro.tscn"
 var lvl_path_classroom1: String = "res://scenes/levels/classroom_1.tscn"
@@ -9,6 +10,7 @@ var lvl_path_toilets: String = "res://scenes/levels/toilets.tscn"
 var lvl_path_yard: String = "res://scenes/levels/yard.tscn"
 var lvl_path_library: String = "res://scenes/levels/library.tscn"
 var lvl_path_office: String = "res://scenes/levels/office.tscn"
+var lvl_path_end: String = "res://scenes/levels/end.tscn"
 
 var item_flashlight: bool = true
 var item_key_classroom1: bool = false
@@ -32,6 +34,7 @@ func _int_to_level(n=0):
 		5: return lvl_path_yard
 		6: return lvl_path_library
 		7: return lvl_path_office
+		8: return lvl_path_end
 
 
 func _player_has_item(n=0):

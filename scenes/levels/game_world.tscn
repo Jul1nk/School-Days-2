@@ -146,7 +146,7 @@ script = ExtResource("1_ymw2k")
 [node name="Black" type="Sprite2D" parent="."]
 modulate = Color(0.0784314, 0.137255, 0.227451, 1)
 position = Vector2(354, -628)
-scale = Vector2(140, 140)
+scale = Vector2(200, 200)
 texture = ExtResource("2_ji1l6")
 
 [node name="Shader_CanvasLayer" type="CanvasLayer" parent="."]

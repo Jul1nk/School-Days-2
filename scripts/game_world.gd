@@ -33,13 +33,13 @@ var dialog_intro = [
 	"Mr.Hibou: Mary isn't here...",
 	"(Tweek: I want to go back to bed...)",
 	"GLITCH",
-	"Mr.Hibou?: You won't make it out alive, Tweek.",
+	"Mr.Hibou: You won't make it out alive, Tweek.",
 	"DEGLITCH",
 	"(Tweek: What was that?!)",
 	"Mr.Hibou: Tweek, are you okay?",
 	"Tweek: ...",
 	"GLITCH",
-	"Mr.Hibou?: I SAID: ARE YOU OKAY TWEEK?",
+	"Mr.Hibou: I SAID: ARE YOU OKAY TWEEK?",
 	"Tweek: NO! NO NO!",
 	"GLITCH FINISH"
 	]
@@ -49,17 +49,17 @@ var dialog_intro = [
 func _ready():
 	dialog_timer.connect("timeout", _dialog_continue)
 	
-	_change_level(Global.lvl_path_library, 0)
-	#player.queue_free()
-	#player._hide()
-	#
-	#await animplay_transition.animation_finished
-	#await animplay_transition.animation_finished
-	#
-	#if current_level_path == Global.lvl_path_classroom1_intro or current_level_path == Global.lvl_path_classroom1_intro_glitched:
-		#for i in range(dialog_intro.size()):
-			#_dialog(dialog_intro[i])
-			#await dialog_finished
+	_change_level(Global.lvl_path_classroom1_intro, 0)
+	
+	player._hide()
+	
+	await animplay_transition.animation_finished
+	await animplay_transition.animation_finished
+	
+	if current_level_path == Global.lvl_path_classroom1_intro or current_level_path == Global.lvl_path_classroom1_intro_glitched:
+		for i in range(dialog_intro.size()):
+			_dialog(dialog_intro[i])
+			await dialog_finished
 
 
 
@@ -167,3 +167,8 @@ func _change_level(level: String = Global.lvl_path_classroom1, spawn_point: int 
 	await animplay_transition.animation_finished
 	if level != Global.lvl_path_classroom1_intro and level != Global.lvl_path_classroom1_intro_glitched:
 		player.depause()
+	
+	if current_level_path == Global.lvl_path_end:
+		_dialog("Mr.Hibou: Hi Tweek...")
+		await dialog_finished
+		get_tree().quit()

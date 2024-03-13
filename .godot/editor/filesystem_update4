@@ -24,3 +24,5 @@ res://scripts/player.gd
 res://scripts/item.gd
 res://scenes/item.tscn
 res://scripts/interactible.gd
+res://scenes/levels/end.tscn
+res://scripts/door.gd
