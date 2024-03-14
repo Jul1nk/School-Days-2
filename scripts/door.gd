@@ -11,6 +11,9 @@ extends ObjectInstance
 "Key Office1", "Key Office2", "Statuette", "Key StrangeDoor", "Shovel", "Code")
 var item_needed: int = 0
 
+@export_enum("NOTHING", "Classroom1", "Classroom2", "Office1", "Office2", "Library")
+var room_opening: int = 0
+
 @export_multiline var dialog_if_locked = "It's locked..."
 @export_multiline var dialog_if_unlocked = "It's now unlocked"
 
@@ -30,6 +33,9 @@ func _ready():
 	area_2d.connect("area_entered", player_entered)
 	area_2d.connect("area_exited", player_exited)
 	
+	if Global._is_door_open(room_opening):
+		locked = false
+	
 	_instantiate_object()
 
 
@@ -39,6 +45,7 @@ func _process(_delta):
 		if Input.is_action_just_pressed("action"):
 			if locked:
 				if Global._player_has_item(item_needed):
+					Global._open_door(room_opening)
 					print(dialog_if_unlocked)
 					game_world._dialog(dialog_if_unlocked)
 					player_in = false

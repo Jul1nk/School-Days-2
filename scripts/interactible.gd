@@ -33,6 +33,17 @@ func _ready():
 	area_2d.connect("area_entered", player_entered)
 	area_2d.connect("area_exited", player_exited)
 	
+	if ((Global.statuette_put == true and special_item == 7)
+	or (Global.pile_dug == true and special_item == 9)):
+		dialog = special_dialog
+		special_item = special_item2
+		special_dialog = special_dialog2
+		nb_frames = special_nb_frames
+		layer_distance = special_layer_distance
+		shadow_top = special_shadow_top
+		solid = special_solid
+		sprite_texture = special_sprite_texture
+	
 	_instantiate_object()
 
 
@@ -50,8 +61,13 @@ func _process(_delta):
 				
 				if special_item == 7:
 					emit_signal("statuette")
+					Global.statuette_put = true
+					#queue_free()
+				if special_item == 9:
+					Global.pile_dug = true
 				if special_item == 10:
 					Global._player_add_item(6)
+					#queue_free()
 				
 				if special_item != 0:
 					dialog = special_dialog

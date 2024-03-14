@@ -28,7 +28,7 @@ func _ready():
 	
 	_instantiate_object()
 	
-	if is_fallen_book:
+	if is_fallen_book and !Global.statuette_put:
 		get_parent().get_node("pillar2").connect("statuette", _spawn)
 		
 		for child in get_children():

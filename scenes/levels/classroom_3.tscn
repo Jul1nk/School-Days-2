@@ -51,6 +51,13 @@ layer_distance = 1.5
 solid = true
 sprite_texture = ExtResource("2_wgs6o")
 
+[node name="key" parent="CanvasLayer_Entities/Classroom 3/Tables" instance=ExtResource("11_h881t")]
+position = Vector2(419, -866)
+item_id = 4
+dialog = "Picked up Library Key."
+layer_distance = 0.0
+sprite_texture = ExtResource("12_lde4a")
+
 [node name="chair2" parent="CanvasLayer_Entities/Classroom 3/Tables" instance=ExtResource("1_25xiu")]
 position = Vector2(396, -862)
 rotation = 1.5708
@@ -390,13 +397,6 @@ rotation = -1.5708
 next_level = 3
 spawn_point = 10
 locked = false
-
-[node name="key" parent="CanvasLayer_Entities" instance=ExtResource("11_h881t")]
-position = Vector2(410, -649)
-item_id = 4
-dialog = "Picked up Library Key."
-layer_distance = 0.0
-sprite_texture = ExtResource("12_lde4a")
 
 [node name="CanvasLayer_Floor" type="CanvasLayer" parent="."]
 layer = 0

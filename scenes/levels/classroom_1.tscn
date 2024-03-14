@@ -470,6 +470,7 @@ position = Vector2(96, -164)
 rotation = 3.14159
 next_level = 3
 item_needed = 2
+room_opening = 1
 dialog_if_locked = "I'm locked inside."
 dialog_if_unlocked = "It's unlocked!"
 

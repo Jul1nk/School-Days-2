@@ -29,3 +29,4 @@ res://scripts/door.gd
 res://editor/bush1_tileset.tres
 res://scenes/credits.tscn
 res://scripts/credits.gd
+res://scenes/interactible.tscn

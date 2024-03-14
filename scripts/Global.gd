@@ -16,13 +16,22 @@ var item_flashlight: bool = true
 var item_key_classroom1: bool = false
 var item_key_classroom2: bool = false
 var item_key_library: bool = false
-var item_key_office1: bool = true
+var item_key_office1: bool = false
 var item_key_office2: bool = false
 var item_statuette: bool = false
 var item_key_strangedoor: bool = false
-var item_shovel: bool = true
-var item_code: bool = true
+var item_shovel: bool = false
+var item_code: bool = false
 
+
+var statuette_put: bool = false
+var pile_dug: bool = false
+
+var door_classroom1_open: bool = false
+var door_classroom2_open: bool = false
+var door_office1_open: bool = false
+var door_office2_open: bool = false
+var door_library_open: bool = false
 
 func _int_to_level(n=0):
 	match n:
@@ -64,3 +73,23 @@ func _player_add_item(n=1):
 		8: item_key_strangedoor = true
 		9: item_shovel = true
 		10: item_code = true
+
+
+func _open_door(n):
+	match(n):
+		0: return
+		1: door_classroom1_open = true
+		2: door_classroom2_open = true
+		3: door_office1_open = true
+		4: door_office2_open = true
+		5: door_library_open = true
+
+func _is_door_open(n):
+	match(n):
+		1: return door_classroom1_open
+		2: return door_classroom2_open
+		3: return door_office1_open
+		4: return door_office2_open
+		5: return door_library_open
+	return false
+
