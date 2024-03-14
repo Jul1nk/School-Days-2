@@ -1,5 +1,8 @@
 extends ObjectInstance
 
+@export var sound: bool = false
+@export var sound_stream: AudioStream
+
 @export_multiline var dialog = "WOW IT'S AN INTERACTIBLE OBJECT!!!"
 
 @export_enum("IMPOSSIBLE","Flashlight", "Key Classroom1", "Key Classroom2", "Key Library",
@@ -23,6 +26,7 @@ var special_item2: int = 0
 
 var player_in = false
 var game_world
+var audio
 
 signal statuette
 
@@ -32,6 +36,11 @@ func _ready():
 	
 	area_2d.connect("area_entered", player_entered)
 	area_2d.connect("area_exited", player_exited)
+	
+	if sound:
+		audio = AudioStreamPlayer.new()
+		audio.stream = sound_stream
+		add_child(audio)
 	
 	if ((Global.statuette_put == true and special_item == 7)
 	or (Global.pile_dug == true and special_item == 9)):
@@ -61,6 +70,7 @@ func _process(_delta):
 				
 				if special_item == 7:
 					emit_signal("statuette")
+					audio.play()
 					Global.statuette_put = true
 					#queue_free()
 				if special_item == 9:

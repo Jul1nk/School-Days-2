@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6vipl3r2ocnm"]
+[gd_scene load_steps=4 format=3 uid="uid://c6vipl3r2ocnm"]
 
 [ext_resource type="Script" path="res://scripts/item.gd" id="1_ohpb8"]
+[ext_resource type="AudioStream" uid="uid://1jbwvtlebpbo" path="res://assets/sfx/sounds/key.wav" id="2_6i7nf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m85ha"]
 
@@ -11,3 +12,6 @@ script = ExtResource("1_ohpb8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_m85ha")
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_6i7nf")

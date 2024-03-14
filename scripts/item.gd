@@ -56,6 +56,15 @@ func _process(_delta):
 			await get_tree().create_timer(0.01).timeout
 			player_in = true
 			
+			if (2 <= item_id and item_id <= 6) or item_id == 8:
+				$SFX.stream = load("res://assets/sfx/sounds/key.wav")
+				$SFX.play()
+				await $SFX.finished
+			if item_id == 7:
+				$SFX.stream = load("res://assets/sfx/sounds/statuette_pick.wav")
+				$SFX.play()
+				await $SFX.finished
+			
 			Global._player_add_item(item_id)
 			if can_be_taken:
 				queue_free()

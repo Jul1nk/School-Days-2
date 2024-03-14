@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://d0k4tenbpwx7c"]
+[gd_scene load_steps=26 format=3 uid="uid://d0k4tenbpwx7c"]
 
 [ext_resource type="PackedScene" uid="uid://c8u0xn04yibus" path="res://scenes/door.tscn" id="1_7hyee"]
 [ext_resource type="TileSet" uid="uid://ur3wjutcoubb" path="res://editor/floor_tileset.tres" id="1_65irb"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://5u2rr5u6h6qv" path="res://assets/vfx/furniture/pillar.png" id="12_eq31h"]
 [ext_resource type="Texture2D" uid="uid://tyu3u6ny6alf" path="res://assets/vfx/furniture/pillar_with_statuette.png" id="12_touqh"]
 [ext_resource type="PackedScene" uid="uid://dvkqujajglqg0" path="res://scenes/interactible.tscn" id="13_7swce"]
+[ext_resource type="AudioStream" uid="uid://cf3krt4oksr5b" path="res://assets/sfx/sounds/statuette_put.wav" id="16_vbasj"]
 [ext_resource type="Texture2D" uid="uid://eiuxlak2qdru" path="res://assets/vfx/items/fallen_book.png" id="17_p6mve"]
 [ext_resource type="Texture2D" uid="uid://bkc76mh7qvcfu" path="res://assets/vfx/misc/mouse_cursor_invis.png" id="18_ynu7n"]
 [ext_resource type="Script" path="res://scripts/interactible.gd" id="19_7vl4t"]
@@ -327,6 +328,8 @@ sprite_texture = ExtResource("12_touqh")
 
 [node name="pillar2" parent="CanvasLayer_Entities" instance=ExtResource("13_7swce")]
 position = Vector2(835, -1510)
+sound = true
+sound_stream = ExtResource("16_vbasj")
 dialog = "A pillar of some sort, this one is empty."
 special_item = 7
 special_dialog = "I put the statuette on the pillar. I heard something falling..."

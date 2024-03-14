@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://jpi2vltxy7ff"]
+[gd_scene load_steps=20 format=3 uid="uid://jpi2vltxy7ff"]
 
 [ext_resource type="Script" path="res://scripts/game_world.gd" id="1_ymw2k"]
 [ext_resource type="Texture2D" uid="uid://cg3jj2s47ofxj" path="res://assets/vfx/tiles/wall_tile.png" id="2_ji1l6"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://bix4vlcwjo80a" path="res://assets/sfx/music/Aberration.wav" id="10_qqbrr"]
 [ext_resource type="Shader" path="res://scenes/levels/glitch.gdshader" id="11_lsatn"]
 [ext_resource type="AudioStream" uid="uid://banyqyk11383s" path="res://assets/sfx/sounds/Noise Glitch 3.mp3" id="11_pn1iv"]
+[ext_resource type="AudioStream" uid="uid://dolqaaingnm0h" path="res://assets/sfx/sounds/map.wav" id="12_6sgnw"]
 
 [sub_resource type="Animation" id="Animation_f5j0t"]
 length = 0.001
@@ -258,3 +259,11 @@ stream = ExtResource("10_qqbrr")
 [node name="GlitchSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_pn1iv")
 volume_db = -5.0
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+
+[node name="RandomNoiseTimer" type="Timer" parent="."]
+wait_time = 20.0
+
+[node name="MapSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_6sgnw")

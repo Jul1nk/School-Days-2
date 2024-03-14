@@ -48,6 +48,7 @@ var dialog_intro = [
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	dialog_timer.connect("timeout", _dialog_continue)
+	$RandomNoiseTimer.connect("timeout", _play_sound)
 	
 	_change_level(Global.lvl_path_classroom1_intro, 0)
 	
@@ -84,6 +85,7 @@ func _process(_delta):
 	
 	# Pause
 	if Input.is_action_just_pressed("pause"):
+		$MapSFX.play()
 		if !player.is_paused:
 			player.pause()
 			player.tp_cam_to_pos()
@@ -94,6 +96,17 @@ func _process(_delta):
 			player.depause()
 			player.visible = true
 			canvas_map.visible = false
+
+
+func _play_sound():
+	if current_level_path != Global.lvl_path_hallway:
+		return
+	var sound = randi()%2
+	if sound == 0:
+		$SFX.stream = load("res://assets/sfx/sounds/random1.wav")
+	else:
+		$SFX.stream = load("res://assets/sfx/sounds/random2.wav")
+	$SFX.play()
 
 
 
@@ -154,6 +167,9 @@ func _change_level(level: String = Global.lvl_path_classroom1, spawn_point: int 
 		animplay_transition.play("glitch_enter")
 	else:
 		animplay_transition.play("exit_level")
+		if level != Global.lvl_path_classroom1_intro and level != Global.lvl_path_classroom1_intro_glitched:
+			$SFX.stream = load("res://assets/sfx/sounds/opendoor.wav")
+			$SFX.play()
 	await animplay_transition.animation_finished
 	
 	if current_level:
@@ -167,13 +183,22 @@ func _change_level(level: String = Global.lvl_path_classroom1, spawn_point: int 
 		player.position = spawn.position
 		player.tp_cam_to_pos()
 	
-	if current_level_path == Global.lvl_path_office and (spawn_point==1 or spawn_point==3):
+	if (current_level_path == Global.lvl_path_office and (spawn_point==1 or spawn_point==3)
+	or current_level_path == Global.lvl_path_end):
 		$Aberration.play()
+	if current_level_path == Global.lvl_path_hallway:
+		var time = randf_range(30.0,60.0)
+		$RandomNoiseTimer.wait_time = time
+		$RandomNoiseTimer.start()
 	
 	if glitched:
 		animplay_transition.play("glitch_exit")
 	else:
 		animplay_transition.play("enter_level")
+		if level != Global.lvl_path_classroom1_intro and level != Global.lvl_path_classroom1_intro_glitched:
+			$SFX.stream = load("res://assets/sfx/sounds/closedoor.wav")
+			$SFX.play()
+			
 	await animplay_transition.animation_finished
 	if level != Global.lvl_path_classroom1_intro and level != Global.lvl_path_classroom1_intro_glitched:
 		player.depause()

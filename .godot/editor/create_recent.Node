@@ -1,8 +1,8 @@
+AnimationPlayer
+Sprite2D
 AudioStreamPlayer
 Timer
-AnimationPlayer
 RichTextLabel
-Sprite2D
 CanvasLayer
 ColorRect
 Camera2D
