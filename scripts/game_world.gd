@@ -49,17 +49,17 @@ var dialog_intro = [
 func _ready():
 	dialog_timer.connect("timeout", _dialog_continue)
 	
-	_change_level(Global.lvl_path_office, 1)
+	_change_level(Global.lvl_path_classroom1_intro, 0)
 	
-	#player._hide()
-	#
-	#await animplay_transition.animation_finished
-	#await animplay_transition.animation_finished
-	#
-	#if current_level_path == Global.lvl_path_classroom1_intro or current_level_path == Global.lvl_path_classroom1_intro_glitched:
-		#for i in range(dialog_intro.size()):
-			#_dialog(dialog_intro[i])
-			#await dialog_finished
+	player._hide()
+	
+	await animplay_transition.animation_finished
+	await animplay_transition.animation_finished
+	
+	if current_level_path == Global.lvl_path_classroom1_intro or current_level_path == Global.lvl_path_classroom1_intro_glitched:
+		for i in range(dialog_intro.size()):
+			_dialog(dialog_intro[i])
+			await dialog_finished
 
 
 
@@ -171,4 +171,4 @@ func _change_level(level: String = Global.lvl_path_classroom1, spawn_point: int 
 	if current_level_path == Global.lvl_path_end:
 		_dialog("Mr.Hibou: Hi Tweek...")
 		await dialog_finished
-		get_tree().quit()
+		get_tree().change_scene_to_file("res://scenes/credits.tscn")

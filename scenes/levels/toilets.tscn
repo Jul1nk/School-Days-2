@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dbfqd8746imoq"]
+[gd_scene load_steps=18 format=3 uid="uid://dbfqd8746imoq"]
 
 [ext_resource type="PackedScene" uid="uid://jxp872moy3fp" path="res://scenes/object_instance.tscn" id="1_ma2k5"]
 [ext_resource type="Texture2D" uid="uid://dytjsekos324e" path="res://assets/vfx/furniture/door_toilets.png" id="2_vgqj6"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://yt24wya1sop2" path="res://assets/vfx/items/key.png" id="9_gsnrf"]
 [ext_resource type="PackedScene" uid="uid://dvkqujajglqg0" path="res://scenes/interactible.tscn" id="11_ogup5"]
 [ext_resource type="Texture2D" uid="uid://bkc76mh7qvcfu" path="res://assets/vfx/misc/mouse_cursor_invis.png" id="12_25nsd"]
+[ext_resource type="Texture2D" uid="uid://bv7wsj03lcb4b" path="res://assets/vfx/misc/blood.png" id="13_ehxd3"]
 
 [node name="toilets" type="Node2D"]
 
@@ -237,6 +238,13 @@ special_sprite_texture = ExtResource("12_25nsd")
 nb_frames = 0
 layer_distance = 0.0
 sprite_texture = ExtResource("12_25nsd")
+
+[node name="object_instance" parent="CanvasLayer_Entities" instance=ExtResource("1_ma2k5")]
+position = Vector2(-259, -929)
+rotation = 0.261799
+nb_frames = 1
+layer_distance = 0.0
+sprite_texture = ExtResource("13_ehxd3")
 
 [node name="CanvasLayer_Floor" type="CanvasLayer" parent="."]
 layer = 0
