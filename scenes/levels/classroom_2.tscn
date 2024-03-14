@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bjqehabcxfsk7"]
+[gd_scene load_steps=25 format=3 uid="uid://bjqehabcxfsk7"]
 
 [ext_resource type="PackedScene" uid="uid://jxp872moy3fp" path="res://scenes/object_instance.tscn" id="1_tsmap"]
 [ext_resource type="Texture2D" uid="uid://ck8cwv1joibkn" path="res://assets/vfx/furniture/table.png" id="3_vigks"]
@@ -19,7 +19,13 @@
 [ext_resource type="Script" path="res://scripts/wall_maker.gd" id="16_b36jm"]
 [ext_resource type="Texture2D" uid="uid://d13ktkheg5rir" path="res://assets/vfx/items/statuette.png" id="16_ge413"]
 [ext_resource type="TileSet" uid="uid://cp21qd1jh162v" path="res://editor/wall_tileset.tres" id="17_5ieb5"]
+[ext_resource type="PackedScene" uid="uid://dvkqujajglqg0" path="res://scenes/interactible.tscn" id="17_6r02l"]
 [ext_resource type="TileSet" uid="uid://dpjo3d3qckywo" path="res://editor/bush2_tileset.tres" id="18_8hfbj"]
+[ext_resource type="Texture2D" uid="uid://bkc76mh7qvcfu" path="res://assets/vfx/misc/mouse_cursor_invis.png" id="18_bo0p1"]
+[ext_resource type="Script" path="res://scripts/interactible.gd" id="19_63xs0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q5ary"]
+size = Vector2(78, 20)
 
 [node name="Classroom2" type="Node2D"]
 
@@ -460,6 +466,183 @@ nb_frames = 4
 layer_distance = 1.0
 solid = true
 sprite_texture = ExtResource("16_ge413")
+
+[node name="interactible_poster" parent="CanvasLayer_Entities" instance=ExtResource("17_6r02l")]
+position = Vector2(-32, -603)
+dialog = "Just some posters..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("18_bo0p1")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("18_bo0p1")
+
+[node name="interactible_poster2" parent="CanvasLayer_Entities" instance=ExtResource("17_6r02l")]
+position = Vector2(-32, -284)
+dialog = "Just some posters..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("18_bo0p1")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("18_bo0p1")
+
+[node name="interactible_poster3" parent="CanvasLayer_Entities" instance=ExtResource("17_6r02l")]
+position = Vector2(-33, -254)
+dialog = "Just some posters..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("18_bo0p1")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("18_bo0p1")
+
+[node name="interactible_postermovie" parent="CanvasLayer_Entities" instance=ExtResource("17_6r02l")]
+position = Vector2(-84, -224)
+dialog = "Hey! I remember this movie!"
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("18_bo0p1")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("18_bo0p1")
+
+[node name="interactible_clock" parent="CanvasLayer_Entities" instance=ExtResource("17_6r02l")]
+position = Vector2(-150, -640)
+dialog = "The clock is stopped..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("18_bo0p1")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("18_bo0p1")
+
+[node name="interactible_window" parent="CanvasLayer_Entities" instance=ExtResource("17_6r02l")]
+position = Vector2(-352, -567)
+dialog = "It's dark outside, I can't see anything..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("18_bo0p1")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("18_bo0p1")
+
+[node name="interactible_window2" parent="CanvasLayer_Entities" instance=ExtResource("17_6r02l")]
+position = Vector2(-352, -502)
+dialog = "It's dark outside, I can't see anything..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("18_bo0p1")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("18_bo0p1")
+
+[node name="interactible_window3" parent="CanvasLayer_Entities" instance=ExtResource("17_6r02l")]
+position = Vector2(-352, -435)
+dialog = "It's dark outside, I can't see anything..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("18_bo0p1")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("18_bo0p1")
+
+[node name="interactible_window4" parent="CanvasLayer_Entities" instance=ExtResource("17_6r02l")]
+position = Vector2(-352, -374)
+dialog = "It's dark outside, I can't see anything..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("18_bo0p1")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("18_bo0p1")
+
+[node name="interactible_window5" parent="CanvasLayer_Entities" instance=ExtResource("17_6r02l")]
+position = Vector2(-352, -310)
+dialog = "It's dark outside, I can't see anything..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("18_bo0p1")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("18_bo0p1")
+
+[node name="interactible_locker" parent="CanvasLayer_Entities" instance=ExtResource("17_6r02l")]
+position = Vector2(-317, -243)
+dialog = "It's our lockers. They are all... locked."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("18_bo0p1")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("18_bo0p1")
+
+[node name="interactible_locker2" parent="CanvasLayer_Entities" instance=ExtResource("17_6r02l")]
+position = Vector2(-274, -243)
+dialog = "It's our lockers. They are all... locked."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("18_bo0p1")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("18_bo0p1")
+
+[node name="interactible_locker3" parent="CanvasLayer_Entities" instance=ExtResource("17_6r02l")]
+position = Vector2(-229, -243)
+dialog = "It's our lockers. They are all... locked."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("18_bo0p1")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("18_bo0p1")
+
+[node name="interactible_locker4" parent="CanvasLayer_Entities" instance=ExtResource("17_6r02l")]
+position = Vector2(-187, -243)
+dialog = "It's our lockers. They are all... locked."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("18_bo0p1")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("18_bo0p1")
+
+[node name="interactible_locker5" parent="CanvasLayer_Entities" instance=ExtResource("17_6r02l")]
+position = Vector2(-145, -243)
+dialog = "It's our lockers. They are all... locked."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("18_bo0p1")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("18_bo0p1")
+
+[node name="interactible_board" type="Node2D" parent="CanvasLayer_Entities"]
+position = Vector2(-236, -640)
+script = ExtResource("19_63xs0")
+dialog = "Is that blood on the board?..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("18_bo0p1")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("18_bo0p1")
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer_Entities/interactible_board"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer_Entities/interactible_board/Area2D"]
+position = Vector2(8, 0)
+shape = SubResource("RectangleShape2D_q5ary")
+
+[node name="interactible_posterboring" parent="CanvasLayer_Entities" instance=ExtResource("17_6r02l")]
+position = Vector2(-32, -478)
+dialog = "They should get better posters because these ones are boring..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("18_bo0p1")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("18_bo0p1")
 
 [node name="CanvasLayer_Floor" type="CanvasLayer" parent="."]
 layer = 0

@@ -1,14 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://cyb7ws7hekoch"]
+[gd_scene load_steps=11 format=3 uid="uid://cyb7ws7hekoch"]
 
 [ext_resource type="TileSet" uid="uid://ur3wjutcoubb" path="res://editor/floor_tileset.tres" id="1_axqoh"]
 [ext_resource type="PackedScene" uid="uid://c8u0xn04yibus" path="res://scenes/door.tscn" id="1_iapxh"]
 [ext_resource type="Script" path="res://scripts/wall_maker.gd" id="2_4d4kj"]
-[ext_resource type="PackedScene" uid="uid://dvkqujajglqg0" path="res://scenes/interactible.tscn" id="2_hqjd5"]
+[ext_resource type="Script" path="res://scripts/interactible.gd" id="2_8jghh"]
 [ext_resource type="TileSet" uid="uid://cp21qd1jh162v" path="res://editor/wall_tileset.tres" id="3_1smmd"]
 [ext_resource type="Texture2D" uid="uid://du5t3qwk5fvw1" path="res://assets/vfx/items/dirt_pile.png" id="3_f7nmv"]
 [ext_resource type="Texture2D" uid="uid://d5i5fu6sgr2d" path="res://assets/vfx/items/dirt_pile_dug.png" id="3_ujst4"]
 [ext_resource type="TileSet" uid="uid://dpjo3d3qckywo" path="res://editor/bush2_tileset.tres" id="4_8rnjp"]
 [ext_resource type="TileSet" uid="uid://drj48xpn73sgp" path="res://editor/grass_tileset.tres" id="5_kehn2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ioolw"]
 
 [node name="Yard" type="Node2D"]
 
@@ -29,8 +31,9 @@ next_level = 6
 spawn_point = 1
 dialog_if_locked = "The door won't move..."
 
-[node name="dirt_pile" parent="CanvasLayer_Entities" instance=ExtResource("2_hqjd5")]
+[node name="dirt_pile" type="Node2D" parent="CanvasLayer_Entities"]
 position = Vector2(-16, -1392)
+script = ExtResource("2_8jghh")
 dialog = "A pile of dirt. I believe someone hid something there..."
 special_item = 9
 special_dialog = "I dug the pile of dirt, a chest was hidden underneath."
@@ -43,6 +46,12 @@ special_sprite_texture = ExtResource("3_ujst4")
 nb_frames = 3
 layer_distance = 1.0
 sprite_texture = ExtResource("3_f7nmv")
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer_Entities/dirt_pile"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer_Entities/dirt_pile/Area2D"]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_ioolw")
 
 [node name="CanvasLayer_Floor" type="CanvasLayer" parent="."]
 layer = 0

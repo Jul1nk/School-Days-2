@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dbixdm50d64p2"]
+[gd_scene load_steps=22 format=3 uid="uid://dbixdm50d64p2"]
 
 [ext_resource type="PackedScene" uid="uid://c8u0xn04yibus" path="res://scenes/door.tscn" id="1_54env"]
 [ext_resource type="TileSet" uid="uid://ur3wjutcoubb" path="res://editor/floor_tileset.tres" id="2_5d8ll"]
@@ -19,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://c7qabv684kr4s" path="res://assets/vfx/items/shovel.png" id="13_0nhv0"]
 [ext_resource type="Texture2D" uid="uid://d21s2t0gftt2t" path="res://assets/vfx/items/suitcase.png" id="14_m0jjm"]
 [ext_resource type="Texture2D" uid="uid://c768pyyk5o3im" path="res://assets/vfx/items/strange_key.png" id="15_8qtmx"]
+[ext_resource type="PackedScene" uid="uid://dvkqujajglqg0" path="res://scenes/interactible.tscn" id="16_cu1ws"]
+[ext_resource type="Texture2D" uid="uid://bkc76mh7qvcfu" path="res://assets/vfx/misc/mouse_cursor_invis.png" id="17_negmd"]
 
 [node name="Office" type="Node2D"]
 
@@ -318,6 +320,186 @@ nb_frames = 16
 layer_distance = 1.0
 solid = true
 sprite_texture = ExtResource("14_m0jjm")
+
+[node name="interactible_poster" parent="CanvasLayer_Entities" instance=ExtResource("16_cu1ws")]
+position = Vector2(299, -224)
+dialog = "Just some posters..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("17_negmd")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("17_negmd")
+
+[node name="interactible_poster2" parent="CanvasLayer_Entities" instance=ExtResource("16_cu1ws")]
+position = Vector2(259, -224)
+dialog = "Just some posters..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("17_negmd")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("17_negmd")
+
+[node name="interactible_poster3" parent="CanvasLayer_Entities" instance=ExtResource("16_cu1ws")]
+position = Vector2(480, -235)
+dialog = "Just some posters..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("17_negmd")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("17_negmd")
+
+[node name="interactible_poster4" parent="CanvasLayer_Entities" instance=ExtResource("16_cu1ws")]
+position = Vector2(480, -342)
+dialog = "Just some posters..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("17_negmd")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("17_negmd")
+
+[node name="interactible_poster5" parent="CanvasLayer_Entities" instance=ExtResource("16_cu1ws")]
+position = Vector2(338, -416)
+dialog = "Just some posters..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("17_negmd")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("17_negmd")
+
+[node name="interactible_poster6" parent="CanvasLayer_Entities" instance=ExtResource("16_cu1ws")]
+position = Vector2(248, -416)
+dialog = "Just some posters..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("17_negmd")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("17_negmd")
+
+[node name="interactible_locker" parent="CanvasLayer_Entities" instance=ExtResource("16_cu1ws")]
+position = Vector2(208, -327)
+dialog = "Lockers, one seems to be open."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("17_negmd")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("17_negmd")
+
+[node name="interactible_locker2" parent="CanvasLayer_Entities" instance=ExtResource("16_cu1ws")]
+position = Vector2(207, -252)
+dialog = "Lockers, one seems to be open."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("17_negmd")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("17_negmd")
+
+[node name="interactible_chair" parent="CanvasLayer_Entities" instance=ExtResource("16_cu1ws")]
+position = Vector2(279, -373)
+dialog = "What happened here?..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("17_negmd")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("17_negmd")
+
+[node name="interactible_office2" parent="CanvasLayer_Entities" instance=ExtResource("16_cu1ws")]
+position = Vector2(618, -227)
+dialog = "I feel uncomfortable here..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("17_negmd")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("17_negmd")
+
+[node name="interactible_office3" parent="CanvasLayer_Entities" instance=ExtResource("16_cu1ws")]
+position = Vector2(766, -250)
+dialog = "I feel uncomfortable here..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("17_negmd")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("17_negmd")
+
+[node name="interactible_office4" parent="CanvasLayer_Entities" instance=ExtResource("16_cu1ws")]
+position = Vector2(765, -294)
+dialog = "I feel uncomfortable here..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("17_negmd")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("17_negmd")
+
+[node name="interactible_office5" parent="CanvasLayer_Entities" instance=ExtResource("16_cu1ws")]
+position = Vector2(816, -337)
+dialog = "I feel uncomfortable here..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("17_negmd")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("17_negmd")
+
+[node name="interactible_office6" parent="CanvasLayer_Entities" instance=ExtResource("16_cu1ws")]
+position = Vector2(816, -292)
+dialog = "I feel uncomfortable here..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("17_negmd")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("17_negmd")
+
+[node name="interactible_office7" parent="CanvasLayer_Entities" instance=ExtResource("16_cu1ws")]
+position = Vector2(811, -252)
+dialog = "I feel uncomfortable here..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("17_negmd")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("17_negmd")
+
+[node name="interactible_office8" parent="CanvasLayer_Entities" instance=ExtResource("16_cu1ws")]
+position = Vector2(668, -409)
+dialog = "I feel uncomfortable here..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("17_negmd")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("17_negmd")
+
+[node name="interactible_office9" parent="CanvasLayer_Entities" instance=ExtResource("16_cu1ws")]
+position = Vector2(628, -399)
+dialog = "I feel uncomfortable here..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("17_negmd")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("17_negmd")
+
+[node name="interactible_office10" parent="CanvasLayer_Entities" instance=ExtResource("16_cu1ws")]
+position = Vector2(592, -371)
+dialog = "I feel uncomfortable here..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("17_negmd")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("17_negmd")
 
 [node name="CanvasLayer_Floor" type="CanvasLayer" parent="."]
 layer = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d0k4tenbpwx7c"]
+[gd_scene load_steps=25 format=3 uid="uid://d0k4tenbpwx7c"]
 
 [ext_resource type="PackedScene" uid="uid://c8u0xn04yibus" path="res://scenes/door.tscn" id="1_7hyee"]
 [ext_resource type="TileSet" uid="uid://ur3wjutcoubb" path="res://editor/floor_tileset.tres" id="1_65irb"]
@@ -21,6 +21,11 @@
 [ext_resource type="Texture2D" uid="uid://tyu3u6ny6alf" path="res://assets/vfx/furniture/pillar_with_statuette.png" id="12_touqh"]
 [ext_resource type="PackedScene" uid="uid://dvkqujajglqg0" path="res://scenes/interactible.tscn" id="13_7swce"]
 [ext_resource type="Texture2D" uid="uid://eiuxlak2qdru" path="res://assets/vfx/items/fallen_book.png" id="17_p6mve"]
+[ext_resource type="Texture2D" uid="uid://bkc76mh7qvcfu" path="res://assets/vfx/misc/mouse_cursor_invis.png" id="18_ynu7n"]
+[ext_resource type="Script" path="res://scripts/interactible.gd" id="19_7vl4t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xecmp"]
+size = Vector2(202, 46)
 
 [node name="Library" type="Node2D"]
 
@@ -345,6 +350,117 @@ dialog = "The book fell off the bookshelf. \"4597\" is written in red."
 nb_frames = 3
 layer_distance = 1.0
 sprite_texture = ExtResource("17_p6mve")
+
+[node name="interactible_poster" parent="CanvasLayer_Entities" instance=ExtResource("13_7swce")]
+position = Vector2(640, -1222)
+dialog = "Just some posters..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("18_ynu7n")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("18_ynu7n")
+
+[node name="interactible_poster2" parent="CanvasLayer_Entities" instance=ExtResource("13_7swce")]
+position = Vector2(640, -1255)
+dialog = "Just some posters..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("18_ynu7n")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("18_ynu7n")
+
+[node name="interactible_poster3" parent="CanvasLayer_Entities" instance=ExtResource("13_7swce")]
+position = Vector2(960, -1257)
+dialog = "Just some posters..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("18_ynu7n")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("18_ynu7n")
+
+[node name="interactible_poster4" parent="CanvasLayer_Entities" instance=ExtResource("13_7swce")]
+position = Vector2(960, -1380)
+dialog = "Just some posters..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("18_ynu7n")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("18_ynu7n")
+
+[node name="interactible_poster5" parent="CanvasLayer_Entities" instance=ExtResource("13_7swce")]
+position = Vector2(960, -1460)
+dialog = "Just some posters..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("18_ynu7n")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("18_ynu7n")
+
+[node name="interactible_poster6" parent="CanvasLayer_Entities" instance=ExtResource("13_7swce")]
+position = Vector2(640, -1478)
+dialog = "Just some posters..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("18_ynu7n")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("18_ynu7n")
+
+[node name="interactible_books" type="Node2D" parent="CanvasLayer_Entities"]
+position = Vector2(718, -1284)
+script = ExtResource("19_7vl4t")
+dialog = "BOOKS!"
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("18_ynu7n")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("18_ynu7n")
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer_Entities/interactible_books"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer_Entities/interactible_books/Area2D"]
+position = Vector2(82, 0)
+shape = SubResource("RectangleShape2D_xecmp")
+
+[node name="interactible_books2" type="Node2D" parent="CanvasLayer_Entities"]
+position = Vector2(718, -1368)
+script = ExtResource("19_7vl4t")
+dialog = "BOOKS!"
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("18_ynu7n")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("18_ynu7n")
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer_Entities/interactible_books2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer_Entities/interactible_books2/Area2D"]
+position = Vector2(82, 0)
+shape = SubResource("RectangleShape2D_xecmp")
+
+[node name="interactible_books3" type="Node2D" parent="CanvasLayer_Entities"]
+position = Vector2(718, -1452)
+script = ExtResource("19_7vl4t")
+dialog = "BOOKS!"
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("18_ynu7n")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("18_ynu7n")
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer_Entities/interactible_books3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer_Entities/interactible_books3/Area2D"]
+position = Vector2(82, 0)
+shape = SubResource("RectangleShape2D_xecmp")
 
 [node name="CanvasLayer_Floor" type="CanvasLayer" parent="."]
 layer = 0

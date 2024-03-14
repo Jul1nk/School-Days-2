@@ -49,7 +49,7 @@ var dialog_intro = [
 func _ready():
 	dialog_timer.connect("timeout", _dialog_continue)
 	
-	_change_level(Global.lvl_path_office, 0)
+	_change_level(Global.lvl_path_office, 1)
 	
 	#player._hide()
 	#

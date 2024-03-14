@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dbfqd8746imoq"]
+[gd_scene load_steps=17 format=3 uid="uid://dbfqd8746imoq"]
 
 [ext_resource type="PackedScene" uid="uid://jxp872moy3fp" path="res://scenes/object_instance.tscn" id="1_ma2k5"]
 [ext_resource type="Texture2D" uid="uid://dytjsekos324e" path="res://assets/vfx/furniture/door_toilets.png" id="2_vgqj6"]
@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://d4iipdqvfce2y" path="res://assets/vfx/wall decoration/mirror.png" id="7_q7f6s"]
 [ext_resource type="PackedScene" uid="uid://c6vipl3r2ocnm" path="res://scenes/item.tscn" id="8_bil5l"]
 [ext_resource type="Texture2D" uid="uid://yt24wya1sop2" path="res://assets/vfx/items/key.png" id="9_gsnrf"]
+[ext_resource type="PackedScene" uid="uid://dvkqujajglqg0" path="res://scenes/interactible.tscn" id="11_ogup5"]
+[ext_resource type="Texture2D" uid="uid://bkc76mh7qvcfu" path="res://assets/vfx/misc/mouse_cursor_invis.png" id="12_25nsd"]
 
 [node name="toilets" type="Node2D"]
 
@@ -185,6 +187,56 @@ dialog = "Picked up Office Key...
 Disgusting..."
 layer_distance = 1.0
 sprite_texture = ExtResource("9_gsnrf")
+
+[node name="interactible_toilet" parent="CanvasLayer_Entities" instance=ExtResource("11_ogup5")]
+position = Vector2(-116, -947)
+dialog = "Everything is dirty..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("12_25nsd")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("12_25nsd")
+
+[node name="interactible_toilet2" parent="CanvasLayer_Entities" instance=ExtResource("11_ogup5")]
+position = Vector2(-152, -947)
+dialog = "Everything is dirty..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("12_25nsd")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("12_25nsd")
+
+[node name="interactible_toilet3" parent="CanvasLayer_Entities" instance=ExtResource("11_ogup5")]
+position = Vector2(-187, -947)
+dialog = "Everything is dirty..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("12_25nsd")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("12_25nsd")
+
+[node name="interactible_toilet4" parent="CanvasLayer_Entities" instance=ExtResource("11_ogup5")]
+position = Vector2(-224, -947)
+dialog = "Everything is dirty..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("12_25nsd")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("12_25nsd")
+
+[node name="interactible_toilet5" parent="CanvasLayer_Entities" instance=ExtResource("11_ogup5")]
+position = Vector2(-258, -947)
+dialog = "Everything is dirty..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("12_25nsd")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("12_25nsd")
 
 [node name="CanvasLayer_Floor" type="CanvasLayer" parent="."]
 layer = 0

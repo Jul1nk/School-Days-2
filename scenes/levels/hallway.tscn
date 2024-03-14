@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://r02esigt7qpy"]
+[gd_scene load_steps=16 format=3 uid="uid://r02esigt7qpy"]
 
 [ext_resource type="PackedScene" uid="uid://c8u0xn04yibus" path="res://scenes/door.tscn" id="1_57idd"]
 [ext_resource type="Texture2D" uid="uid://dytjsekos324e" path="res://assets/vfx/furniture/door_toilets.png" id="2_gjghm"]
@@ -10,6 +10,13 @@
 [ext_resource type="TileSet" uid="uid://cp21qd1jh162v" path="res://editor/wall_tileset.tres" id="5_jnwhn"]
 [ext_resource type="Texture2D" uid="uid://buic3nq46rir5" path="res://assets/vfx/wall decoration/poster4.png" id="5_wjjf3"]
 [ext_resource type="TileSet" uid="uid://dpjo3d3qckywo" path="res://editor/bush2_tileset.tres" id="6_esfvi"]
+[ext_resource type="Texture2D" uid="uid://6reh3bbhkmm6" path="res://assets/vfx/wall decoration/plan.png" id="7_vkiq6"]
+[ext_resource type="Script" path="res://scripts/interactible.gd" id="8_p3dg3"]
+[ext_resource type="Texture2D" uid="uid://bkc76mh7qvcfu" path="res://assets/vfx/misc/mouse_cursor_invis.png" id="9_af0ps"]
+[ext_resource type="PackedScene" uid="uid://dvkqujajglqg0" path="res://scenes/interactible.tscn" id="10_oxedh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ya1n"]
+size = Vector2(20, 37)
 
 [node name="Hallway" type="Node2D"]
 
@@ -219,6 +226,186 @@ scale = Vector2(0.5, 0.5)
 nb_frames = 24
 layer_distance = 0.5
 sprite_texture = ExtResource("3_dvmtb")
+
+[node name="board" parent="CanvasLayer_Entities" instance=ExtResource("2_rwebd")]
+position = Vector2(32, -412)
+rotation = -1.5708
+nb_frames = 16
+layer_distance = 1.0
+sprite_texture = ExtResource("7_vkiq6")
+
+[node name="interactible_map" type="Node2D" parent="CanvasLayer_Entities"]
+position = Vector2(32, -444)
+script = ExtResource("8_p3dg3")
+dialog = "It's a map of the school. I don't need one! I got my own!
+(Press Tab to open map)"
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("9_af0ps")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("9_af0ps")
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer_Entities/interactible_map"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer_Entities/interactible_map/Area2D"]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_6ya1n")
+
+[node name="board2" parent="CanvasLayer_Entities" instance=ExtResource("2_rwebd")]
+position = Vector2(576, -775)
+rotation = -1.5708
+nb_frames = 16
+layer_distance = 1.0
+sprite_texture = ExtResource("7_vkiq6")
+
+[node name="interactible_map2" type="Node2D" parent="CanvasLayer_Entities"]
+position = Vector2(576, -807)
+script = ExtResource("8_p3dg3")
+dialog = "It's a map of the school. I don't need one! I got my own!
+(Press Tab to open map)"
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("9_af0ps")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("9_af0ps")
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer_Entities/interactible_map2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer_Entities/interactible_map2/Area2D"]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_6ya1n")
+
+[node name="interactible_poster" parent="CanvasLayer_Entities" instance=ExtResource("10_oxedh")]
+position = Vector2(261, -576)
+dialog = "Just some posters..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("9_af0ps")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("9_af0ps")
+
+[node name="interactible_poster2" parent="CanvasLayer_Entities" instance=ExtResource("10_oxedh")]
+position = Vector2(32, -659)
+dialog = "Just some posters..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("9_af0ps")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("9_af0ps")
+
+[node name="interactible_poster4" parent="CanvasLayer_Entities" instance=ExtResource("10_oxedh")]
+position = Vector2(992, -706)
+dialog = "Just some posters..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("9_af0ps")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("9_af0ps")
+
+[node name="interactible_poster6" parent="CanvasLayer_Entities" instance=ExtResource("10_oxedh")]
+position = Vector2(993, -890)
+dialog = "Just some posters..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("9_af0ps")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("9_af0ps")
+
+[node name="interactible_poster7" parent="CanvasLayer_Entities" instance=ExtResource("10_oxedh")]
+position = Vector2(847, -832)
+dialog = "Just some posters..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("9_af0ps")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("9_af0ps")
+
+[node name="interactible_poster8" parent="CanvasLayer_Entities" instance=ExtResource("10_oxedh")]
+position = Vector2(688, -863)
+dialog = "Just some posters..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("9_af0ps")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("9_af0ps")
+
+[node name="interactible_poster9" parent="CanvasLayer_Entities" instance=ExtResource("10_oxedh")]
+position = Vector2(665, -1120)
+dialog = "Just some posters..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("9_af0ps")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("9_af0ps")
+
+[node name="interactible_poster10" parent="CanvasLayer_Entities" instance=ExtResource("10_oxedh")]
+position = Vector2(993, -1029)
+dialog = "Just some posters..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("9_af0ps")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("9_af0ps")
+
+[node name="interactible_poster3" parent="CanvasLayer_Entities" instance=ExtResource("10_oxedh")]
+position = Vector2(128, -375)
+dialog = "Just some posters..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("9_af0ps")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("9_af0ps")
+
+[node name="interactible_posterboring" parent="CanvasLayer_Entities" instance=ExtResource("10_oxedh")]
+position = Vector2(576, -713)
+dialog = "They should get better posters because these ones are boring..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("9_af0ps")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("9_af0ps")
+
+[node name="interactible_posterboring2" parent="CanvasLayer_Entities" instance=ExtResource("10_oxedh")]
+position = Vector2(128, -858)
+dialog = "They should get better posters because these ones are boring..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("9_af0ps")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("9_af0ps")
+
+[node name="interactible_poster5" parent="CanvasLayer_Entities" instance=ExtResource("10_oxedh")]
+position = Vector2(128, -1013)
+dialog = "Just some posters..."
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("9_af0ps")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("9_af0ps")
+
+[node name="interactible_postermovie" parent="CanvasLayer_Entities" instance=ExtResource("10_oxedh")]
+position = Vector2(816, -608)
+dialog = "Hey! I remember this movie!"
+special_nb_frames = 0
+special_layer_distance = 0.0
+special_sprite_texture = ExtResource("9_af0ps")
+nb_frames = 0
+layer_distance = 0.0
+sprite_texture = ExtResource("9_af0ps")
 
 [node name="CanvasLayer_Floor" type="CanvasLayer" parent="."]
 layer = 0
