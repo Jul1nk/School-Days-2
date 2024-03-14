@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://jpi2vltxy7ff"]
+[gd_scene load_steps=19 format=3 uid="uid://jpi2vltxy7ff"]
 
 [ext_resource type="Script" path="res://scripts/game_world.gd" id="1_ymw2k"]
 [ext_resource type="Texture2D" uid="uid://cg3jj2s47ofxj" path="res://assets/vfx/tiles/wall_tile.png" id="2_ji1l6"]
@@ -7,7 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://dwle4fws8u3xn" path="res://assets/vfx/misc/map.png" id="5_1gdxp"]
 [ext_resource type="Texture2D" uid="uid://dmlthsrlptg7t" path="res://assets/vfx/misc/mouse_cursor.png" id="6_7734v"]
 [ext_resource type="Theme" uid="uid://bbrmpuciuvk1a" path="res://editor/text_theme.tres" id="7_vk2p7"]
+[ext_resource type="AudioStream" uid="uid://xfqqnifhr06u" path="res://assets/sfx/music/School Days 2 theme.wav" id="9_0ps18"]
+[ext_resource type="AudioStream" uid="uid://bix4vlcwjo80a" path="res://assets/sfx/music/Aberration.wav" id="10_qqbrr"]
 [ext_resource type="Shader" path="res://scenes/levels/glitch.gdshader" id="11_lsatn"]
+[ext_resource type="AudioStream" uid="uid://banyqyk11383s" path="res://assets/sfx/sounds/Noise Glitch 3.mp3" id="11_pn1iv"]
 
 [sub_resource type="Animation" id="Animation_f5j0t"]
 length = 0.001
@@ -244,3 +247,14 @@ follow_viewport_enabled = true
 material = SubResource("ShaderMaterial_1u1gt")
 scale = Vector2(64, 64)
 texture = ExtResource("2_ji1l6")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_0ps18")
+autoplay = true
+
+[node name="Aberration" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_qqbrr")
+
+[node name="GlitchSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_pn1iv")
+volume_db = -5.0

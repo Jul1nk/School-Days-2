@@ -100,6 +100,9 @@ func _process(_delta):
 func _dialog(text):
 	
 	if text == "GLITCH":
+		$GlitchSFX.play()
+		$Music.stream = load("res://assets/sfx/music/Solitude.wav")
+		$Music.play()
 		$Black.modulate = Color.BLACK
 		_change_level(Global.lvl_path_classroom1_intro_glitched, 0, true)
 		await animplay_transition.animation_finished
@@ -107,6 +110,7 @@ func _dialog(text):
 		emit_signal("dialog_finished")
 		return
 	elif text == "GLITCH FINISH":
+		$GlitchSFX.play()
 		$Black.modulate = Color.BLACK
 		_change_level(Global.lvl_path_classroom1, 1, true)
 		await animplay_transition.animation_finished
@@ -115,6 +119,9 @@ func _dialog(text):
 		emit_signal("dialog_finished")
 		return
 	elif text == "DEGLITCH":
+		$GlitchSFX.play()
+		$Music.stream = load("res://assets/sfx/music/School Days 2 theme.wav")
+		$Music.play()
 		$Black.modulate = Color(20/255.0,35/255.0,58/255.0)
 		_change_level(Global.lvl_path_classroom1_intro, 0, true)
 		await animplay_transition.animation_finished
@@ -160,6 +167,9 @@ func _change_level(level: String = Global.lvl_path_classroom1, spawn_point: int 
 		player.position = spawn.position
 		player.tp_cam_to_pos()
 	
+	if current_level_path == Global.lvl_path_office and (spawn_point==1 or spawn_point==3):
+		$Aberration.play()
+	
 	if glitched:
 		animplay_transition.play("glitch_exit")
 	else:
@@ -169,6 +179,6 @@ func _change_level(level: String = Global.lvl_path_classroom1, spawn_point: int 
 		player.depause()
 	
 	if current_level_path == Global.lvl_path_end:
-		_dialog("Mr.Hibou: Hi Tweek...")
+		_dialog("\nMr.Hibou: Hi Tweek...")
 		await dialog_finished
 		get_tree().change_scene_to_file("res://scenes/credits.tscn")
